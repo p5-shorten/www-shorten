@@ -1,0 +1,669 @@
+____________________________________________________________________________
+[   301] By: iain                                  on 2003/11/13  10:02:23
+        Log: - 1.88
+	   ! main/Changes main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   300] By: iain                                  on 2003/11/13  10:02:08
+        Log: - Tidied up return values and authorship.
+	   ! main/lib/WWW/Shorten/OneShortLink.pm
+____________________________________________________________________________
+[   299] By: iain                                  on 2003/11/13  09:47:04
+        Log: - EkDk service removed.
+             - ShortLink service removed.
+             - qURL service removed.
+	   ! main/lib/WWW/Shorten/EkDk.pm main/lib/WWW/Shorten/ShortLink.pm
+	   ! main/lib/WWW/Shorten/qURL.pm main/t/ekdk.t main/t/qurl.t
+	   ! main/t/shortlink.t
+____________________________________________________________________________
+[   298] By: iain                                  on 2003/11/12  23:01:01
+        Log: - Upped TinyClick.pm's version.
+	   ! main/lib/WWW/Shorten/TinyClick.pm
+____________________________________________________________________________
+[   297] By: iain                                  on 2003/11/12  23:00:13
+        Log: - TinyClick made their URLs slightly harder to find.
+	   ! main/lib/WWW/Shorten/TinyClick.pm
+____________________________________________________________________________
+[   296] By: iain                                  on 2003/11/12  22:59:05
+        Log: - Metamark tests tidied.
+	   ! main/t/metamark.t
+____________________________________________________________________________
+[   295] By: iain                                  on 2003/11/12  22:58:37
+        Log: - Notlong tests tidied.
+	   ! main/t/notlong.t
+____________________________________________________________________________
+[   294] By: iain                                  on 2003/11/12  22:58:00
+        Log: - Added OneShortLink, http://1sl.net/
+	   + main/lib/WWW/Shorten/OneShortLink.pm main/t/oneshort.t
+____________________________________________________________________________
+[   293] By: iain                                  on 2003/11/12  22:56:52
+        Log: - Shorl test precedence fixed.
+	   ! main/t/shorl.t
+____________________________________________________________________________
+[   292] By: iain                                  on 2003/11/12  22:55:48
+        Log: - SmLnk ID scheme has changed.
+	   ! main/t/smlnk.t
+____________________________________________________________________________
+[   291] By: iain                                  on 2003/09/10  11:51:30
+        Log: - Mention CGI::Shorten
+	   ! main/Changes
+____________________________________________________________________________
+[   290] By: iain                                  on 2003/09/10  11:50:20
+        Log: - Mention CGI::Shorten
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   289] By: iain                                  on 2003/09/08  11:03:28
+        Log: - Skip the right modules in the subclass list.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   288] By: iain                                  on 2003/09/08  00:43:04
+        Log: - Added links to search.cpan.org and backpan.
+             - Add 1.88
+	   ! main/Changes
+____________________________________________________________________________
+[   287] By: iain                                  on 2003/09/08  00:42:31
+        Log: - Use Class::Factory::Util to provide randomised selection.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   286] By: iain                                  on 2003/09/08  00:05:34
+        Log: - Better abstract.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   285] By: iain                                  on 2003/09/08  00:01:07
+        Log: - Added lin.kz
+	   + main/lib/WWW/Shorten/Linkz.pm main/t/linkz.t
+	   ! main/Changes main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   284] By: iain                                  on 2003/09/02  16:40:57
+        Log: - 1.86
+	   ! main/Changes
+____________________________________________________________________________
+[   283] By: iain                                  on 2003/09/02  16:29:05
+        Log: - Added URLjr.com
+	   + main/lib/WWW/Shorten/URLjr.pm main/t/urljr.t
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   282] By: iain                                  on 2003/09/02  16:28:16
+        Log: - Fixed wrong URL in docs.
+             - Removed trailing slash in deparse URL.
+	   ! main/lib/WWW/Shorten/BabyURL.pm
+____________________________________________________________________________
+[   281] By: iain                                  on 2003/09/02  16:19:07
+        Log: - Added BabyURL.com
+	   + main/lib/WWW/Shorten/BabyURL.pm main/t/babyurl.t
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   280] By: iain                                  on 2003/09/02  15:53:48
+        Log: - Fixed Eric's email.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   279] By: iain                                  on 2003/08/31  01:31:54
+        Log: - Licence = noun. License = verb.
+	   ! main/lib/WWW/Shorten.pm main/lib/WWW/Shorten/EkDk.pm
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   ! main/lib/WWW/Shorten/Metamark.pm
+	   ! main/lib/WWW/Shorten/NotLong.pm main/lib/WWW/Shorten/Shorl.pm
+	   ! main/lib/WWW/Shorten/ShortLink.pm
+	   ! main/lib/WWW/Shorten/SmLnk.pm main/lib/WWW/Shorten/SnipURL.pm
+	   ! main/lib/WWW/Shorten/TinyClick.pm
+	   ! main/lib/WWW/Shorten/TinyURL.pm
+	   ! main/lib/WWW/Shorten/Tinylink.pm main/lib/WWW/Shorten/V3.pm
+	   ! main/lib/WWW/Shorten/generic.pm main/lib/WWW/Shorten/qURL.pm
+____________________________________________________________________________
+[   278] By: iain                                  on 2003/08/31  01:28:42
+        Log: - Licence = noun. License = verb.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   277] By: iain                                  on 2003/08/30  01:07:04
+        Log: - 1.85
+	   ! main/Changes
+____________________________________________________________________________
+[   276] By: iain                                  on 2003/08/30  01:06:53
+        Log: - Assorted documentation nit fixing.
+	   ! main/lib/WWW/Shorten.pm main/lib/WWW/Shorten/EkDk.pm
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   ! main/lib/WWW/Shorten/Metamark.pm
+	   ! main/lib/WWW/Shorten/NotLong.pm main/lib/WWW/Shorten/Shorl.pm
+	   ! main/lib/WWW/Shorten/ShortLink.pm
+	   ! main/lib/WWW/Shorten/SmLnk.pm main/lib/WWW/Shorten/SnipURL.pm
+	   ! main/lib/WWW/Shorten/TinyClick.pm
+	   ! main/lib/WWW/Shorten/TinyURL.pm
+	   ! main/lib/WWW/Shorten/Tinylink.pm main/lib/WWW/Shorten/V3.pm
+	   ! main/lib/WWW/Shorten/generic.pm main/lib/WWW/Shorten/qURL.pm
+____________________________________________________________________________
+[   275] By: iain                                  on 2003/08/29  17:59:40
+        Log: - Added v3.net
+	   + main/lib/WWW/Shorten/V3.pm main/t/v3.t
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   274] By: iain                                  on 2003/08/29  17:15:00
+        Log: - Fixed qURL documentation.
+	   ! main/lib/WWW/Shorten/qURL.pm
+____________________________________________________________________________
+[   273] By: iain                                  on 2003/08/29  17:14:41
+        Log: - Added TinyLink.com support.
+	   + main/lib/WWW/Shorten/Tinylink.pm main/t/tinylink.t
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   272] By: iain                                  on 2003/08/29  17:14:19
+        Log: - SmLnk.pm now uses the SmLnk API.
+	   ! main/lib/WWW/Shorten/SmLnk.pm main/t/smlnk.t
+____________________________________________________________________________
+[   271] By: iain                                  on 2003/08/27  12:33:09
+        Log: - Changed URL for shorlfilter.
+	   ! main/Changes main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   270] By: iain                                  on 2003/08/26  23:25:53
+        Log: - Added qurl.net
+             - Mentioned shorlfilter.
+	   + main/lib/WWW/Shorten/qURL.pm main/t/qurl.t
+	   ! main/Changes main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   265] By: iain                                  on 2003/07/23  12:13:49
+        Log: - Added ShortLink.us
+	   + main/lib/WWW/Shorten/ShortLink.pm main/t/shortlink.t
+	   ! main/Changes main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   264] By: iain                                  on 2003/07/23  11:36:59
+        Log: - Unified version numbers
+	   ! main/Changes main/lib/WWW/Shorten.pm
+	   ! main/lib/WWW/Shorten/EkDk.pm
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   ! main/lib/WWW/Shorten/Metamark.pm
+	   ! main/lib/WWW/Shorten/NotLong.pm main/lib/WWW/Shorten/Shorl.pm
+	   ! main/lib/WWW/Shorten/SmLnk.pm main/lib/WWW/Shorten/SnipURL.pm
+	   ! main/lib/WWW/Shorten/TinyClick.pm
+	   ! main/lib/WWW/Shorten/TinyURL.pm
+	   ! main/lib/WWW/Shorten/generic.pm
+____________________________________________________________________________
+[   263] By: iain                                  on 2003/07/23  11:31:02
+        Log: - Redundant.
+	   - main/t/00checkyaml.t
+____________________________________________________________________________
+[   262] By: iain                                  on 2003/07/23  11:30:34
+        Log: - Autogen
+	   - main/t/00signature.t
+____________________________________________________________________________
+[   261] By: iain                                  on 2003/07/23  11:19:36
+        Log: - Autogen.
+	   - main/AUTHORS main/MANIFEST main/MANIFEST.SKIP main/Makefile.PL
+	   - main/t/00pod.t
+____________________________________________________________________________
+[   260] By: iain                                  on 2003/07/23  11:19:24
+        Log: - Now in RT.cpan.org
+	   - main/TODO
+____________________________________________________________________________
+[   258] By: iain                                  on 2003/07/23  11:12:01
+        Log: - Minor test nits fixed.
+	   ! main/Changes main/t/notlong.t main/t/snipurl.t
+____________________________________________________________________________
+[   257] By: iain                                  on 2003/07/23  11:10:44
+        Log: - QuickOnes.org doesn't exist any more.
+	   - main/lib/WWW/Shorten/QuickOnes.pm main/t/quickones.t
+	   ! main/Changes main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   256] By: iain                                  on 2003/07/17  10:18:31
+        Log: - Removing Fcol.org support.
+	   - main/lib/WWW/Shorten/Fcol.pm main/t/fcol.t
+	   ! main/Changes main/MANIFEST main/lib/WWW/Shorten.pm
+	   ! main/t/00pod.t
+____________________________________________________________________________
+[   246] By: iain                                  on 2003/03/11  19:16:03
+        Log: - 1.5.8
+	   ! main/Build.PL main/Changes
+____________________________________________________________________________
+[   245] By: iain                                  on 2003/03/11  19:06:15
+        Log: - MANIFEST update.
+	   ! main/MANIFEST
+____________________________________________________________________________
+[   244] By: iain                                  on 2003/03/11  19:04:34
+        Log: - Sample configuration file for shorten script added.
+	   + main/bin/shortenrc
+____________________________________________________________________________
+[   243] By: iain                                  on 2003/03/11  19:03:06
+        Log: - shorten script souped up. Can now be configured.
+	   ! main/bin/shorten
+____________________________________________________________________________
+[   242] By: iain                                  on 2003/03/11  18:40:29
+        Log: - Updated all BUG sections.
+	   ! main/lib/WWW/Shorten.pm main/lib/WWW/Shorten/EkDk.pm
+	   ! main/lib/WWW/Shorten/Fcol.pm
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   ! main/lib/WWW/Shorten/Metamark.pm
+	   ! main/lib/WWW/Shorten/NotLong.pm
+	   ! main/lib/WWW/Shorten/QuickOnes.pm
+	   ! main/lib/WWW/Shorten/Shorl.pm main/lib/WWW/Shorten/SmLnk.pm
+	   ! main/lib/WWW/Shorten/SnipURL.pm
+	   ! main/lib/WWW/Shorten/TinyClick.pm
+	   ! main/lib/WWW/Shorten/TinyURL.pm
+	   ! main/lib/WWW/Shorten/generic.pm
+____________________________________________________________________________
+[   236] By: iain                                  on 2003/03/10  00:48:52
+        Log: - 1.5.7
+	   ! main/Build.PL main/Changes
+____________________________________________________________________________
+[   235] By: iain                                  on 2003/03/10  00:45:35
+        Log: - Improved MASL tests.
+	   ! main/t/masl.t
+____________________________________________________________________________
+[   232] By: iain                                  on 2003/03/07  13:35:14
+        Log: - Added link to NotLong's comparison page to WWW::Shorten.
+             - Revised BUGS section of WWW::Shorten. Others will be done.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   231] By: iain                                  on 2003/03/07  13:25:40
+        Log: - MakeAShorterLink.pm has minor POD fixups.
+             - MASL now returns the original URL if it was too short.
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+____________________________________________________________________________
+[   230] By: iain                                  on 2003/03/07  13:24:43
+        Log: - |>
+             Modules return undef with any error.
+             Previously they'd returned an empty string for some errors.
+	   ! main/lib/WWW/Shorten/EkDk.pm main/lib/WWW/Shorten/Fcol.pm
+	   ! main/lib/WWW/Shorten/NotLong.pm
+	   ! main/lib/WWW/Shorten/QuickOnes.pm
+	   ! main/lib/WWW/Shorten/Shorl.pm main/lib/WWW/Shorten/SmLnk.pm
+	   ! main/lib/WWW/Shorten/TinyClick.pm
+	   ! main/lib/WWW/Shorten/TinyURL.pm
+____________________________________________________________________________
+[   229] By: iain                                  on 2003/03/05  12:24:10
+        Log: - 1.5.6
+	   ! main/Build.PL main/Changes
+____________________________________________________________________________
+[   228] By: iain                                  on 2003/03/05  12:23:45
+        Log: - Added SERVICES section to pod, listing services' URLs.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   227] By: iain                                  on 2003/03/05  12:19:40
+        Log: - Not interested in urllog
+	   ! main/TODO
+____________________________________________________________________________
+[   226] By: iain                                  on 2003/03/05  11:59:24
+        Log: - Added Test::Pod
+	   + main/t/00pod.t
+	   ! main/MANIFEST
+____________________________________________________________________________
+[   225] By: iain                                  on 2003/03/05  11:18:50
+        Log: - Remove redundant tests.
+	   - main/t/ws_newnames.t main/t/ws_notlong.t main/t/ws_quickones.t
+	   - main/t/ws_shorl.t main/t/ws_smlnk.t main/t/ws_snipurl.t
+	   - main/t/ws_tinyurl.t
+	   ! main/MANIFEST
+____________________________________________________________________________
+[   224] By: iain                                  on 2003/03/05  11:17:14
+        Log: - Added TinyClick.com
+	   + main/lib/WWW/Shorten/TinyClick.pm main/t/tinyclick.t
+	   ! main/MANIFEST main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   216] By: iain                                  on 2003/02/22  14:17:53
+        Log: - 1.5.6 changes
+	   ! main/Changes
+____________________________________________________________________________
+[   214] By: iain                                  on 2003/01/08  01:53:12
+        Log: - bin/shorten wasn't in the manifest, thus not in the dist.
+	   ! main/MANIFEST
+____________________________________________________________________________
+[   213] By: iain                                  on 2003/01/08  01:39:30
+        Log: - 1.5.5
+	   ! main/Build.PL main/Changes
+____________________________________________________________________________
+[   212] By: iain                                  on 2003/01/08  01:39:10
+        Log: - Corrected Metamark doco.
+             - Metamark uses POST rather than GET now.
+             - Ask mentioned in various bits.
+	   ! main/AUTHORS main/lib/WWW/Shorten.pm
+	   ! main/lib/WWW/Shorten/Metamark.pm
+____________________________________________________________________________
+[   211] By: iain                                  on 2003/01/07  14:47:14
+        Log: - 1.5.4
+	   ! main/Build.PL main/Changes
+____________________________________________________________________________
+[   210] By: iain                                  on 2003/01/07  14:46:34
+        Log: - Added Metamark and 'shorten' to the docs.
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[   209] By: iain                                  on 2003/01/07  14:39:36
+        Log: - Added 'shorten'. A useful little program.
+	   + main/bin/shorten
+____________________________________________________________________________
+[   208] By: iain                                  on 2003/01/07  14:37:02
+        Log: - Makefile.PL updated with new recommended stub.
+	   ! main/Makefile.PL
+____________________________________________________________________________
+[   207] By: iain                                  on 2003/01/07  14:27:10
+        Log: - SnipURL.com modified their API. Code updated.
+	   ! main/lib/WWW/Shorten/SnipURL.pm main/t/snipurl.t
+	   ! main/t/ws_snipurl.t
+____________________________________________________________________________
+[   206] By: iain                                  on 2003/01/07  13:58:03
+        Log: - Smlnk test added to depot.
+	   + main/t/ws_smlnk.t
+____________________________________________________________________________
+[   205] By: iain                                  on 2003/01/07  13:57:39
+        Log: - Module::Build uses META.yml now rather than .yaml
+	   ! main/MANIFEST main/t/00checkyaml.t
+____________________________________________________________________________
+[   204] By: iain                                  on 2003/01/07  13:57:03
+        Log: - Added Ask's Metamark service.
+	   + main/lib/WWW/Shorten/Metamark.pm main/t/metamark.t
+	   ! main/MANIFEST
+____________________________________________________________________________
+[   148] By: iain                                  on 2002/12/02  10:31:39
+        Log: 1.5.3 changes.
+	   ! main/Build.PL main/Changes
+____________________________________________________________________________
+[   147] By: iain                                  on 2002/12/02  10:31:25
+        Log: - Changes updated.
+	   ! main/TODO
+____________________________________________________________________________
+[    48] By: iain                                  on 2002/11/05  12:18:06
+        Log: - AUTHORS list added. Have to automate it at some point.
+             - ChangeLog added (genlog of the p4 logs).
+	   + main/AUTHORS
+	   ! main/MANIFEST
+____________________________________________________________________________
+[    47] By: iain                                  on 2002/11/04  13:26:07
+        Log: - Just reformatting.
+	   ! main/TODO
+____________________________________________________________________________
+[    46] By: iain                                  on 2002/11/04  13:06:47
+        Log: - Tests no longer use a dave.org URL.
+             - Uses one of mine instead ( perl.dellah.org ).
+	   ! main/t/fcol.t main/t/masl.t main/t/notlong.t
+	   ! main/t/quickones.t main/t/shorl.t main/t/snipurl.t
+	   ! main/t/tinyurl.t main/t/ws_masl.t main/t/ws_notlong.t
+	   ! main/t/ws_quickones.t main/t/ws_shorl.t main/t/ws_snipurl.t
+	   ! main/t/ws_tinyurl.t
+____________________________________________________________________________
+[    43] By: iain                                  on 2002/11/01  13:24:59
+        Log: - Continuing 1.5.2.
+             - Added SmLnk.com
+             - Updated Shorten.pm to mention the EdDk, Fcol and SmLnk.
+	   + main/lib/WWW/Shorten/SmLnk.pm main/t/smlnk.t
+	   ! main/Changes main/MANIFEST main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[    42] By: iain                                  on 2002/11/01  13:23:19
+        Log: - Fixed to accomodate site change.
+             - lynx.php doesn't appear to be doing as it used to.
+	   ! main/lib/WWW/Shorten/SnipURL.pm main/t/snipurl.t
+	   ! main/t/ws_snipurl.t
+____________________________________________________________________________
+[    40] By: iain                                  on 2002/10/30  16:33:54
+        Log: - 1.5.2 changes.
+	   ! main/Changes
+____________________________________________________________________________
+[    39] By: iain                                  on 2002/10/30  16:33:28
+        Log: - More name changing tests.
+             - Inheritance tends to make symbol table futzing harder.
+	   + main/t/00load_a.t main/t/00load_b.t
+	   ! main/MANIFEST main/lib/WWW/Shorten/generic.pm main/t/00load.t
+____________________________________________________________________________
+[    37] By: iain                                  on 2002/10/30  16:21:06
+        Log: - Function name changing is possible.
+             - newnames.t and ws_newnames.t test this.
+             - import() for WWW::Shorten simplified by shunting stuff to the base class.
+	   + main/t/ws_newnames.t
+	   ! main/MANIFEST main/lib/WWW/Shorten.pm
+	   ! main/lib/WWW/Shorten/generic.pm main/t/newnames.t
+____________________________________________________________________________
+[    36] By: iain                                  on 2002/10/30  15:27:21
+        Log: - Versions updated for 1.5.2
+             - Have to think of something to with change logs now.
+             - MANIFEST updated appropriately.
+             - New tests added.
+	   + main/t/newnames.t
+	   ! main/Build.PL main/Changes main/MANIFEST
+____________________________________________________________________________
+[    35] By: iain                                  on 2002/10/30  15:23:36
+        Log: Versions moved to x.yy, and aren't taken from CVS ids.
+	   ! main/lib/WWW/Shorten/EkDk.pm main/lib/WWW/Shorten/Fcol.pm
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   ! main/lib/WWW/Shorten/NotLong.pm
+	   ! main/lib/WWW/Shorten/QuickOnes.pm
+	   ! main/lib/WWW/Shorten/Shorl.pm main/lib/WWW/Shorten/SnipURL.pm
+	   ! main/lib/WWW/Shorten/TinyURL.pm
+	   ! main/lib/WWW/Shorten/generic.pm
+____________________________________________________________________________
+[    34] By: iain                                  on 2002/10/29  12:22:18
+        Log: + $DEBUG mode.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/SnipURL.pm
+____________________________________________________________________________
+[    33] By: iain                                  on 2002/10/29  12:22:09
+        Log: + 1.5.1
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/Build.PL main/Changes
+____________________________________________________________________________
+[    32] By: iain                                  on 2002/10/25  12:06:18
+        Log: + The new edition.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/t/00checkyaml.t
+____________________________________________________________________________
+[    31] By: iain                                  on 2002/10/25  12:06:06
+        Log: + ABSTRACT added.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[    30] By: iain                                  on 2002/10/25  12:05:59
+        Log: + README is now auto-generated.
+             + MANIFEST updated.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/MANIFEST
+____________________________________________________________________________
+[    29] By: iain                                  on 2002/10/25  12:05:59
+        Log: + README is now auto-generated.
+             + MANIFEST updated.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   - main/README
+____________________________________________________________________________
+[    28] By: iain                                  on 2002/10/25  11:54:32
+        Log: + redir.ek.dk tests.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   + main/t/ekdk.t
+____________________________________________________________________________
+[    27] By: iain                                  on 2002/10/25  11:51:55
+        Log: - Module::Build rather than ExtUtils::MakeMaker.
+             - SIGNATURE added.
+             - Default style is 'MakeAShorterLink'.
+             - THANKS section added.
+             - LICENSE AND COPYRIGHT section added.
+             - SnipURL.pm uses the API interface.
+             - Auxiliary files cleaned up.
+             - Basic tests added.
+             - Fcol.org and add.redir.ek.dk added.
+             - Tests for Fcol and EkDk added.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   + main/.cvsignore main/Build.PL main/MANIFEST.SKIP
+	   + main/lib/WWW/Shorten/EkDk.pm main/t/00checkyaml.t
+	   + main/t/00load.t main/t/00signature.t main/t/fcol.t
+	   ! main/Changes main/MANIFEST main/Makefile.PL main/TODO
+	   ! main/lib/WWW/Shorten.pm main/lib/WWW/Shorten/Fcol.pm
+____________________________________________________________________________
+[    26] By: iain                                  on 2002/10/25  11:06:25
+        Log: + SnipURL.pm now uses the API interface.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/SnipURL.pm
+____________________________________________________________________________
+[    25] By: iain                                  on 2002/10/25  11:05:52
+        Log: + fcol.org support.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   + main/lib/WWW/Shorten/Fcol.pm
+____________________________________________________________________________
+[    24] By: iain                                  on 2002/09/21  14:14:02
+        Log: + 1.4.2
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/Changes main/Makefile.PL
+____________________________________________________________________________
+[    23] By: iain                                  on 2002/09/21  14:11:46
+        Log: + Changed module description.
+             + credited shank.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/SnipURL.pm
+____________________________________________________________________________
+[    22] By: iain                                  on 2002/09/21  13:37:31
+        Log: + Fixed scope of $code.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/t/notlong.t main/t/ws_notlong.t
+____________________________________________________________________________
+[    21] By: iain                                  on 2002/09/21  13:30:23
+        Log: + Correct scopes for variables.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/t/notlong.t main/t/shorl.t
+____________________________________________________________________________
+[    20] By: iain                                  on 2002/09/21  13:30:13
+        Log: + Remove mention of ($url,$password) syntax, since this module doesn't
+             have that.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/SnipURL.pm
+____________________________________________________________________________
+[    19] By: iain                                  on 2002/09/21  13:29:45
+        Log: + Mention the newer modules rather than just the original three.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[    18] By: iain                                  on 2002/09/21  13:29:33
+        Log: + Version updated.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/Makefile.PL
+____________________________________________________________________________
+[    17] By: iain                                  on 2002/09/20  11:32:18
+        Log: + Typo.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/t/01version.t
+____________________________________________________________________________
+[    16] By: iain                                  on 2002/09/20  11:32:01
+        Log: + BUGS section added to NotLong
+             + THANKS section added to TinyURL
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/NotLong.pm
+	   ! main/lib/WWW/Shorten/TinyURL.pm
+____________________________________________________________________________
+[    15] By: iain                                  on 2002/09/20  11:28:53
+        Log: + Tests for new modules added.
+             + List versions (good for test reports)
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   + main/t/01version.t main/t/notlong.t main/t/quickones.t
+	   + main/t/snipurl.t main/t/ws_notlong.t main/t/ws_quickones.t
+	   + main/t/ws_snipurl.t
+____________________________________________________________________________
+[    14] By: iain                                  on 2002/09/20  11:28:37
+        Log: + Refactoring to use W::S::generic.
+             + NotLong, QuickOnes, SnipURL added.
+             + TinyURL uses the generic interface.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   + main/lib/WWW/Shorten/NotLong.pm
+	   + main/lib/WWW/Shorten/QuickOnes.pm
+	   + main/lib/WWW/Shorten/SnipURL.pm
+	   + main/lib/WWW/Shorten/generic.pm
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   ! main/lib/WWW/Shorten/Shorl.pm main/lib/WWW/Shorten/TinyURL.pm
+____________________________________________________________________________
+[    13] By: iain                                  on 2002/09/20  11:27:52
+        Log: + Refactoring to use W::S::generic.
+             + Allow parameters to generic masl()
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[    12] By: iain                                  on 2002/09/20  11:27:06
+        Log: + QuickOnes, SnipURL and NotLong added.
+             + 1.4
+             + TODO Added.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   + main/TODO
+	   ! main/MANIFEST main/Makefile.PL main/README
+____________________________________________________________________________
+[    11] By: iain                                  on 2002/09/16  13:54:47
+        Log: + 1.3.2 emendments.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/Changes
+____________________________________________________________________________
+[    10] By: iain                                  on 2002/09/16  13:52:37
+        Log: + Bump it up.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/Makefile.PL
+____________________________________________________________________________
+[     9] By: iain                                  on 2002/09/16  13:41:17
+        Log: + Mention where to report bugs.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/README main/lib/WWW/Shorten.pm
+	   ! main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   ! main/lib/WWW/Shorten/Shorl.pm main/lib/WWW/Shorten/TinyURL.pm
+____________________________________________________________________________
+[     8] By: iain                                  on 2002/09/04  20:33:05
+        Log: + Version update.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/README
+____________________________________________________________________________
+[     7] By: iain                                  on 2002/09/04  20:32:29
+        Log: + Documentation nits.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/Shorl.pm main/lib/WWW/Shorten/TinyURL.pm
+____________________________________________________________________________
+[     6] By: iain                                  on 2002/09/04  20:32:19
+        Log: + Updated.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/Changes
+____________________________________________________________________________
+[     5] By: iain                                  on 2002/09/04  20:26:14
+        Log: + Document behaviour.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/Shorl.pm
+____________________________________________________________________________
+[     4] By: iain                                  on 2002/09/04  20:26:01
+        Log: + Hardwire package version.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/Makefile.PL
+____________________________________________________________________________
+[     3] By: iain                                  on 2002/09/04  20:20:46
+        Log: + Returns password in list context.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten/Shorl.pm main/t/shorl.t
+____________________________________________________________________________
+[     2] By: iain                                  on 2002/08/29  18:24:43
+        Log: + Corrected apostrophe.
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   ! main/lib/WWW/Shorten.pm
+____________________________________________________________________________
+[     1] By: iain                                  on 2002/08/29  17:55:54
+        Log: + 1.1
+             
+             [imported from CVS by cvs2p4 at 2002/10/30 01:14:15]
+	   + main/Changes main/MANIFEST main/Makefile.PL main/README
+	   + main/lib/WWW/Shorten.pm
+	   + main/lib/WWW/Shorten/MakeAShorterLink.pm
+	   + main/lib/WWW/Shorten/Shorl.pm main/lib/WWW/Shorten/TinyURL.pm
+	   + main/t/masl.t main/t/shorl.t main/t/tinyurl.t main/t/ws_masl.t
+	   + main/t/ws_shorl.t main/t/ws_tinyurl.t

@@ -1,0 +1,96 @@
+#!/usr/bin/perl -w
+use strict;
+
+# Determine our service, default is Shorl for no real reason
+use Config::Auto 0.04;
+my $config = Config::Auto::parse();
+my $service = $config->{service} || 'Shorl';
+$service = "WWW::Shorten::$service";
+
+# Import it
+eval "require $service";
+if ($@) {
+    die "Invalid service in your configuration.\n";
+}
+$service->import('makeashorterlink');
+
+# Get argument
+die "No URL specified!\n" unless @ARGV;
+my $url = $ARGV[0];
+$url = "http://$url" unless $url =~ m[^\w+://];
+
+# Convert
+my $out = eval 'makeashorterlink( $url )';
+$out = "Error" if $@ or not defined $out;
+
+# Output
+print "$out\n";
+
+__END__
+
+=head1 NAME
+
+shorten - CLI program to demonstrate use of WWW::Shorten
+
+=head1 SYNOPSIS
+
+    % shorten books.perl.org/book/171
+    http://tinyclick.com/?2x6nss
+
+    # Or, if you specify a different service in your config file
+
+    % shorten books.perl.org/book/171
+    http://snurl.com/xc3
+
+=head1 CONFIGURATION
+
+As we use the C<Config::Auto> module for configuration, shorten's
+fairly flexible when it comes to format.
+
+Configuration will be found in whichever of the following files
+comes first.
+
+    shortenconfig
+    ~/shortenconfig
+    /etc/shortenconfig
+    shorten.config
+    ~/shorten.config
+    /etc/shorten.config
+    shortenrc
+    ~/shortenrc
+    /etc/shortenrc
+    .shortenrc
+    ~/.shortenrc
+    /etc/.shortenrc
+
+Generally, I use the format:
+
+    service = MakeAShorterLink
+
+which is simple and works. C<service> is the only configuration keyword
+at present. Its value should be a correctly capitalized service name as
+per L<WWW::Shorten>'s documentation.
+
+=head1 BUGS, REQUESTS, COMMENTS
+
+Please report any requests, suggestions or bugs via the system at
+L<http://rt.cpan.org/>, or email E<lt>bug-WWW-Shorten@rt.cpan.orgE<gt>.
+This makes it much easier for me to track things and thus means
+your problem is less likely to be neglected.
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright E<copy> Iain Truskett, 2002. All rights reserved.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 AUTHOR
+
+Iain Truskett <spoon@cpan.org>
+
+=head1 SEE ALSO
+
+L<perl>
+
+=cut
