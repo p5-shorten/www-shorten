@@ -1,4 +1,4 @@
-use Test::More tests => 5;
+use Test::More tests => 7;
 
 BEGIN { use_ok WWW::Shorten::Shorl };
 
@@ -27,3 +27,8 @@ my $url = 'http://perl.dellah.org/WWW-Shorten-1.5.2.tar.gz';
 	    "make it shorter, get password [$shorl, $password]"
        );
 }
+
+eval { &makeashorterlink() };
+ok($@);
+eval { &makealongerlink() };
+ok($@);

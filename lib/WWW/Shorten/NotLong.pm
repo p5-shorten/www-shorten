@@ -1,3 +1,28 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::NotLong - Perl interface to notlong.com
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten 'NotLong';
+
+  $short_url = makeashorterlink($long_url);
+  $short_url = makeashorterlink($long_url, nickname => $nickname);
+  ($short_url,$password) = makeashorterlink($long_url);
+  ($short_url,$password) = makeashorterlink($long_url, nickname => $nickname);
+
+  $long_url  = makealongerlink($short_url);
+  $long_url  = makealongerlink($nickname);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site notlong.com.  Notlong.com simply maintains
+a database of long URLs, each of which has a unique identifier.
+
+=cut
+
 package WWW::Shorten::NotLong;
 
 use 5.006;
@@ -6,9 +31,26 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.81";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the notlong.com web site passing it
+your long URL and will return the shorter (notlong) version. If used in a
+list context, then it will return both the notlong URL and the password.
+
+If you pass a nickname, the notlong service will use your provided
+(alpha-numeric) string as the unique identifier, provided that it has
+not already been assigned previously.
+
+Note that notlong.com, unlike TinyURL and MakeAShorterLink, returns a
+unique code for every submission.
+
+=cut
 
 sub makeashorterlink ($;%)
 {
@@ -38,6 +80,16 @@ sub makeashorterlink ($;%)
     return;
 }
 
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full notlong URL or just the
+notlong identifier/nickname.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
+
 sub makealongerlink ($)
 {
     my $notlong_url = shift
@@ -57,45 +109,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-# Below is stub documentation for your module. You better edit it!
-
-=head1 NAME
-
-WWW::Shorten::NotLong - Perl interface to notlong.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten 'NotLong';
-
-  $short_url = makeashorterlink($long_url);
-  $short_url = makeashorterlink($long_url, nickname => $nickname);
-  ($short_url,$password) = makeashorterlink($long_url);
-  ($short_url,$password) = makeashorterlink($long_url, nickname => $nickname);
-
-  $long_url  = makealongerlink($short_url);
-  $long_url  = makealongerlink($nickname);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site notlong.com.  Notlong.com simply maintains
-a database of long URLs, each of which has a unique identifier.
-
-The function C<makeashorterlink> will call the notlong.com web site passing it
-your long URL and will return the shorter (notlong) version. If used in a
-list context, then it will return both the notlong URL and the password.
-
-If you pass a nickname, the notlong service will use your provided
-(alpha-numeric) string as the unique identifier, provided that it has
-not already been assigned previously.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full notlong URL or just the
-notlong identifier/nickname.
-
-If anything goes wrong, then either function will return C<undef>.
-
-Note that notlong.com, unlike TinyURL and MakeAShorterLink, returns a
-unique code for every submission.
 
 =head2 EXPORT
 

@@ -1,3 +1,27 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::SnipURL - Perl interface to SnipURL.com
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten::SnipURL;
+
+  use WWW::Shorten 'SnipURL';
+
+  $short_url = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web service SnipURL.com. SnipURL maintains a
+database of long URLs, each of which has a unique identifier or
+nickname. For more features, please visit http://snipurl.com/features
+
+=cut
+
 package WWW::Shorten::SnipURL;
 
 use 5.006;
@@ -6,10 +30,20 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.81";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
 use URI;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the SnipURL web site passing it
+your long URL and will return the shorter SnipURL version. If used in a
+list context, then it will return both the Snip URL and the password.
+
+=cut
 
 sub makeashorterlink ($;%)
 {
@@ -32,6 +66,16 @@ sub makeashorterlink ($;%)
     }
     return undef;
 }
+
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full Snip URL or just the
+SnipURL identifier.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
 
 sub makealongerlink ($)
 {
@@ -57,36 +101,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::SnipURL - Perl interface to SnipURL.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten::SnipURL;
-
-  use WWW::Shorten 'SnipURL';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web service SnipURL.com. SnipURL maintains a
-database of long URLs, each of which has a unique identifier or
-nickname. For more features, please visit http://snipurl.com/features
-
-The function C<makeashorterlink> will call the SnipURL web site passing it
-your long URL and will return the shorter SnipURL version. If used in a
-list context, then it will return both the Snip URL and the password.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full Snip URL or just the
-SnipURL identifier.
-
-If anything goes wrong, then either function will return C<undef>.
 
 =head2 EXPORT
 

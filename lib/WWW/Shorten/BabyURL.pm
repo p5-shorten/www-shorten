@@ -1,3 +1,26 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::BabyURL - Perl interface to BabyURL.com
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten 'BabyURL';
+
+  $short_url = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+  $long_url  = makealongerlink($nickname);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site BabyURL.com.  BabyURL.com simply maintains
+a database of long URLs, each of which has a unique identifier.
+
+
+=cut
+
 package WWW::Shorten::BabyURL;
 
 use 5.006;
@@ -6,13 +29,25 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.86";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
 
 # POST http://babyurl.com/index.php?bu_op=createurl
 #   bu_url=                         (textarea)
 #   Submit=Make BabyURL             (submit)
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the BabyURL.com web site passing it
+your long URL and will return the shorter (BabyURL) version.
+
+Multiple submissions of the same URL will result in the same code being
+returned.
+
+=cut
 
 sub makeashorterlink ($)
 {
@@ -34,6 +69,16 @@ sub makeashorterlink ($)
     return;
 }
 
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full BabyURL URL or just the
+BabyURL identifier/nickname.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
+
 sub makealongerlink ($)
 {
     my $code = shift
@@ -51,36 +96,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::BabyURL - Perl interface to BabyURL.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten 'BabyURL';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-  $long_url  = makealongerlink($nickname);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site BabyURL.com.  BabyURL.com simply maintains
-a database of long URLs, each of which has a unique identifier.
-
-The function C<makeashorterlink> will call the BabyURL.com web site passing it
-your long URL and will return the shorter (BabyURL) version.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full BabyURL URL or just the
-BabyURL identifier/nickname.
-
-If anything goes wrong, then either function will return C<undef>.
-
-Multiple submissions of the same URL will result in the same code being
-returned.
 
 =head2 EXPORT
 

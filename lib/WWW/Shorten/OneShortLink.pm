@@ -1,3 +1,26 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::OneShortLink - Perl interface to 1sl.net
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten::OneShortLink;
+
+  use WWW::Shorten 'OneShortLink';
+
+  $short_url = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site 1sl.net. OneShortLink simply maintains
+a database of long URLs, each of which has a unique identifier.
+
+=cut
+
 package WWW::Shorten::OneShortLink;
 
 use 5.006;
@@ -6,9 +29,18 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.88";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the OneShortLink web site passing it
+your long URL and will return the shorter OneShortLink version.
+
+=cut
 
 sub makeashorterlink ($)
 {
@@ -35,6 +67,16 @@ sub makeashorterlink ($)
     return; 
 }
 
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full OneShortLink URL or just the
+OneShortLink identifier.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
+
 sub makealongerlink ($)
 {
     my $short_url = shift 
@@ -48,47 +90,15 @@ sub makealongerlink ($)
 
     return unless $resp->is_success;
 
-    return if $resp->content =~ m!That doesn't look like a Make A Shorter Link key.!;
-
     if ($resp->content =~ m!<meta HTTP-EQUIV="Refresh" CONTENT="[0-9]+\; URL=(.*)"!i) {
         return $1;
     }
 
-    return unless $resp->is_redirect;
-    return $resp->header('Location');
-
+    return;
 }
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::OneShortLink - Perl interface to 1sl.net
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten::OneShortLink;
-
-  use WWW::Shorten 'OneShortLink';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site 1sl.net. OneShortLink simply maintains
-a database of long URLs, each of which has a unique identifier.
-
-The function C<makeashorterlink> will call the OneShortLink web site passing it
-your long URL and will return the shorter OneShortLink version.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full OneShortLink URL or just the
-OneShortLink identifier.
-
-If anything goes wrong, then either function will return C<undef>.
 
 =head2 EXPORT
 

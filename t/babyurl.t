@@ -1,4 +1,4 @@
-use Test::More tests => 4;
+use Test::More tests => 6;
 
 BEGIN { use_ok WWW::Shorten::BabyURL };
 
@@ -13,3 +13,7 @@ is ( makeashorterlink($url), $prefix.$code, 'make it shorter');
 is ( makealongerlink($prefix.$code), $url, 'make it longer');
 is ( makealongerlink($code), $url, 'make it longer by Id',);
 
+eval { &makeashorterlink() };
+ok($@);
+eval { &makealongerlink() };
+ok($@);

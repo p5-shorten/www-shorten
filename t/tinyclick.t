@@ -1,4 +1,4 @@
-use Test::More tests => 5;
+use Test::More tests => 7;
 
 BEGIN { use_ok WWW::Shorten::TinyClick };
 
@@ -11,3 +11,8 @@ is ( makealongerlink( $short ) => $url, 'make it longer' );
 
 my ($rs) = $short =~ /\? (.*) $/x;
 is ( makealongerlink($rs) => $url, 'make it longer by Id' );
+
+eval { &makeashorterlink() };
+ok($@);
+eval { &makealongerlink() };
+ok($@);

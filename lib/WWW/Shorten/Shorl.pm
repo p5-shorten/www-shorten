@@ -1,3 +1,27 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::Shorl - Perl interface to shorl.com
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten::Shorl;
+
+  use WWW::Shorten 'Shorl';
+
+  $short_url = makeashorterlink($long_url);
+  ($short_url,$password) = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site shorl.com.  Shorl simply maintains
+a database of long URLs, each of which has a unique identifier.
+
+=cut
+
 package WWW::Shorten::Shorl;
 
 use 5.006;
@@ -6,9 +30,22 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.81";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the Shorl web site passing it
+your long URL and will return the shorter Shorl version. If used in a
+list context, then it will return both the Shorl URL and the password.
+
+Note that Shorl, unlike TinyURL and MakeAShorterLink, returns a unique code
+for every submission.
+
+=cut
 
 sub makeashorterlink ($)
 {
@@ -34,6 +71,16 @@ sub makeashorterlink ($)
     return;
 }
 
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full Shorl URL or just the
+Shorl identifier.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
+
 sub makealongerlink ($)
 {
     my $shorl_url = shift 
@@ -54,38 +101,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::Shorl - Perl interface to shorl.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten::Shorl;
-
-  use WWW::Shorten 'Shorl';
-
-  $short_url = makeashorterlink($long_url);
-  ($short_url,$password) = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site shorl.com.  Shorl simply maintains
-a database of long URLs, each of which has a unique identifier.
-
-The function C<makeashorterlink> will call the Shorl web site passing it
-your long URL and will return the shorter Shorl version. If used in a
-list context, then it will return both the Shorl URL and the password.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full Shorl URL or just the
-Shorl identifier.
-
-If anything goes wrong, then either function will return C<undef>.
-
-Note that Shorl, unlike TinyURL and MakeAShorterLink, returns a unique code for every submission.
 
 =head2 EXPORT
 

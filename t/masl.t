@@ -1,4 +1,4 @@
-use Test::More tests => 7;
+use Test::More tests => 10;
 
 BEGIN { use_ok WWW::Shorten::MakeAShorterLink };
 
@@ -19,3 +19,10 @@ BEGIN { use_ok WWW::Shorten::MakeAShorterLink };
     isnt ( $shorter => "" , "Short URL is is not blank." );
     is ( $url => $shorter, "Shorl URL is the original URL." );
 }
+
+ok(not makeashorterlink('XXX'));
+
+eval { &makeashorterlink() };
+ok($@);
+eval { &makealongerlink() };
+ok($@);

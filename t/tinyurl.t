@@ -1,4 +1,4 @@
-use Test::More tests => 4;
+use Test::More tests => 6;
 
 BEGIN { use_ok WWW::Shorten::TinyURL };
 
@@ -10,3 +10,7 @@ is ( makeashorterlink($url), $prefix.$code, 'make it shorter');
 is ( makealongerlink($prefix.$code), $prefix2.$code, 'make it longer');
 is ( makealongerlink($code), $prefix2.$code, 'make it longer by Id',);
 
+eval { &makeashorterlink() };
+ok($@);
+eval { &makealongerlink() };
+ok($@);

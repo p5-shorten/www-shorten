@@ -1,5 +1,5 @@
 package WWW::Shorten::_dead;
-$VERSION = "1.88";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 die <<'EOF';
 
 This WWW::Shorten service is inactive.

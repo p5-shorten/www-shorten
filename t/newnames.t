@@ -1,4 +1,4 @@
-use Test::More tests => 4;
+use Test::More tests => 6;
 
 
 use WWW::Shorten qw( SnipURL :short );
@@ -10,3 +10,8 @@ use WWW::Shorten qw( SnipURL :default );
 
 ok( exists $::{'makeashorterlink'}, 'shorter exists');
 ok( exists $::{'makealongerlink'}, 'longer exists');
+
+eval { &makeashorterlink() };
+ok($@);
+eval { &makealongerlink() };
+ok($@);

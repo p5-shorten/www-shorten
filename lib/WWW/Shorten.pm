@@ -1,50 +1,5 @@
 #$Id$
 
-package WWW::Shorten;
-
-use 5.006;
-use strict;
-use warnings;
-
-use base qw( WWW::Shorten::generic );
-our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
-
-use Carp;
-
-my $style;
-
-sub import
-{
-    my $class = shift;
-    $style = shift;
-    $style = 'Metamark' unless defined $style;
-    my $package = "${class}::${style}";
-    eval {
-	my $file = $package;
-	$file =~ s/::/\//g;
-	require "$file.pm";
-    };
-    croak $@ if $@;
-    $package->import( @_ );
-}
-
-sub makeashorterlink ($;@)
-{
-    my $url = shift or croak 'No URL passed to makeashorterlink';
-    return "WWW::Shorten::${style}::makeashorterlink"->($url, @_);
-}
-
-sub makealongerlink ($) {
-    my $code = shift 
-	or croak 'No key / URL passed to makealongerlink';
-    return "WWW::Shorten::${style}::makealongerlink"->($code);
-}
-
-1;
-
-__END__
-
 =head1 NAME
 
 WWW::Shorten - Interface to URL shortening sites.
@@ -58,22 +13,22 @@ WWW::Shorten - Interface to URL shortening sites.
   use WWW::Shorten 'NotLong';
   use WWW::Shorten 'OneShortLink';
   use WWW::Shorten 'Shorl';
-  use WWW::Shorten 'SmLnk';
   use WWW::Shorten 'SnipURL';
   use WWW::Shorten 'TinyClick';
   use WWW::Shorten 'TinyLink';
   use WWW::Shorten 'TinyURL';
-  use WWW::Shorten 'URLjr';
   use WWW::Shorten 'V3';
 
-  # These 3 are now inactive and will give an
+  # These 5 are now inactive and will give an
   # error if you try to use them.
   use WWW::Shorten 'EkDk';
   use WWW::Shorten 'qURL';
   use WWW::Shorten 'ShortLink';
+  use WWW::Shorten 'SmLnk';
+  use WWW::Shorten 'URLjr';
 
   # Individual modules have have their
-  # own syntactic varations.
+  # own syntactic variations.
 
   # See the documentation for the particular
   # module you intend to use for details, trips
@@ -104,6 +59,49 @@ identifier.
 
 If anything goes wrong, then either function will return C<undef>.
 
+=cut
+
+package WWW::Shorten;
+
+use 5.006;
+use strict;
+use warnings;
+
+use base qw( WWW::Shorten::generic );
+our @EXPORT = qw(makeashorterlink makealongerlink);
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
+
+use Carp;
+
+my $style;
+
+=head1 Subroutines
+
+=head2 import
+
+Called when the module is C<use>d. Loads the correct sub-module
+
+=cut
+
+sub import
+{
+    my $class = shift;
+    $style = shift;
+    $style = 'Metamark' unless defined $style;
+    my $package = "${class}::${style}";
+    eval {
+	my $file = $package;
+	$file =~ s/::/\//g;
+	require "$file.pm";
+    };
+    croak $@ if $@;
+    $package->import( @_ );
+}
+
+1;
+
+__END__
+
 =head2 EXPORT
 
 makeashorterlink, makealongerlink
@@ -111,6 +109,8 @@ makeashorterlink, makealongerlink
 Or, if you specify C<:short> on the import line, you instead
 get C<short_link> and C<long_link>. If you explicitly want the
 default set, use C<:default>.
+
+Actually these functions are exported from the relevant subclass.
 
 =head1 COMMAND LINE PROGRAM
 
@@ -227,6 +227,9 @@ L<perl>, L<CGI::Shorten>.
 
 #
 # $Log$
+# Revision 1.93  2004/10/30 12:52:01  dave
+# Work on improving test coverage
+#
 # Revision 1.92  2004/10/25 21:03:53  dave
 # Removed unnecessary "no strict 'refs'"
 #

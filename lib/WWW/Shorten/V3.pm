@@ -1,3 +1,25 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::V3 - Perl interface to v3.net
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten 'V3';
+
+  $short_url = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+  $long_url  = makealongerlink($nickname);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site v3.net.  v3.net simply maintains
+a database of long URLs, each of which has a unique identifier.
+
+=cut
+
 package WWW::Shorten::V3;
 
 use 5.006;
@@ -9,6 +31,18 @@ our @EXPORT = qw(makeashorterlink makealongerlink);
 our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the v3.net web site passing it
+your long URL and will return the shorter (V3) version.
+
+Multiple submissions of the same URL will result in different codes
+being returned.
+
+=cut
 
 sub makeashorterlink ($)
 {
@@ -30,6 +64,16 @@ sub makeashorterlink ($)
     return;
 }
 
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full V3 URL or just the
+V3 identifier/nickname.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
+
 sub makealongerlink ($)
 {
     my $code = shift
@@ -47,36 +91,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::V3 - Perl interface to v3.net
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten 'V3';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-  $long_url  = makealongerlink($nickname);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site v3.net.  v3.net simply maintains
-a database of long URLs, each of which has a unique identifier.
-
-The function C<makeashorterlink> will call the v3.net web site passing it
-your long URL and will return the shorter (V3) version.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full V3 URL or just the
-V3 identifier/nickname.
-
-If anything goes wrong, then either function will return C<undef>.
-
-Multiple submissions of the same URL will result in different codes
-being returned.
 
 =head2 EXPORT
 

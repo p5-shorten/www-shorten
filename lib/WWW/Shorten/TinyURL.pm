@@ -1,3 +1,25 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::TinyURL - Perl interface to tinyurl.com
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten::TinyURL;
+  use WWW::Shorten 'TinyURL';
+
+  $short_url = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site tinyurl.com.  TinyURL simply maintains
+a database of long URLs, each of which has a unique identifier.
+
+=cut
+
 package WWW::Shorten::TinyURL;
 
 use 5.006;
@@ -6,9 +28,18 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw( makeashorterlink makealongerlink );
-our $VERSION = "1.81";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the TinyURL web site passing
+it your long URL and will return the shorter TinyURL version.
+
+=cut
 
 sub makeashorterlink ($)
 {
@@ -27,6 +58,16 @@ sub makeashorterlink ($)
     }
     return;
 }
+
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full TinyURL URL or just the
+TinyURL identifier.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
 
 sub makealongerlink ($)
 {
@@ -48,33 +89,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::TinyURL - Perl interface to tinyurl.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten::TinyURL;
-  use WWW::Shorten 'TinyURL';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site tinyurl.com.  TinyURL simply maintains
-a database of long URLs, each of which has a unique identifier.
-
-The function C<makeashorterlink> will call the TinyURL web site passing
-it your long URL and will return the shorter TinyURL version.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full TinyURL URL or just the
-TinyURL identifier.
-
-If anything goes wrong, then either function will return C<undef>.
 
 =head2 EXPORT
 

@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = "1.81";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use LWP;
 use Carp;
@@ -36,7 +36,7 @@ sub import
     }
     else
     {
-	croak "Unknown function set.";
+	croak "Unknown function set - $set.";
     }
 }
 

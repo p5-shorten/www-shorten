@@ -1,5 +1,5 @@
 package WWW::Shorten::qURL;
-$VERSION = "1.88";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 require WWW::Shorten::_dead;
 
 0;

@@ -1,4 +1,4 @@
-use Test::More tests => 4;
+use Test::More tests => 6;
 
 BEGIN { use_ok WWW::Shorten::Tinylink };
 
@@ -25,3 +25,8 @@ is (
     $url,
     'make it longer by Id',
 );
+
+eval { &makeashorterlink() };
+ok($@);
+eval { &makealongerlink() };
+ok($@);

@@ -1,3 +1,26 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::Tinylink - Perl interface to Tinylink.com
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten 'Tinylink';
+
+  $short_url = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+  $long_url  = makealongerlink($nickname);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site Tinylink.com. Tinylink.com simply
+maintains a database of long URLs, each of which has a unique
+identifier.
+
+=cut
+
 package WWW::Shorten::Tinylink;
 
 use 5.006;
@@ -6,9 +29,21 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.84";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the Tinylink.com web site
+passing it your long URL and will return the shorter (tinylink) version.
+
+Multiple submissions of the same URL will result in different codes
+being returned.
+
+=cut
 
 sub makeashorterlink ($)
 {
@@ -26,6 +61,16 @@ sub makeashorterlink ($)
     }
     return;
 }
+
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full Tinylink URL or just the
+Tinylink identifier/nickname.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
 
 sub makealongerlink ($)
 {
@@ -60,37 +105,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::Tinylink - Perl interface to Tinylink.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten 'Tinylink';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-  $long_url  = makealongerlink($nickname);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site Tinylink.com. Tinylink.com simply
-maintains a database of long URLs, each of which has a unique
-identifier.
-
-The function C<makeashorterlink> will call the Tinylink.com web site
-passing it your long URL and will return the shorter (tinylink) version.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full Tinylink URL or just the
-Tinylink identifier/nickname.
-
-If anything goes wrong, then either function will return C<undef>.
-
-Multiple submissions of the same URL will result in different codes
-being returned.
 
 =head2 EXPORT
 

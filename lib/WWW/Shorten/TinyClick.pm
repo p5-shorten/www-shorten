@@ -1,3 +1,27 @@
+# $Id$
+
+=head1 NAME
+
+WWW::Shorten::TinyClick - Perl interface to tinyclick.com
+
+=head1 SYNOPSIS
+
+  use WWW::Shorten::TinyClick;
+
+  use WWW::Shorten 'TinyClick';
+
+  $short_url = makeashorterlink($long_url);
+
+  $long_url  = makealongerlink($short_url);
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site tinyclick.com.  TinyClick simply
+maintains a database of long URLs, each of which has a unique
+identifier.
+
+=cut
+
 package WWW::Shorten::TinyClick;
 
 use 5.006;
@@ -6,10 +30,19 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.88";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
 use URI;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the TinyClick web site
+passing it your long URL and will return the shorter TinyClick version.
+
+=cut
 
 sub makeashorterlink ($)
 {
@@ -29,6 +62,16 @@ sub makeashorterlink ($)
     }
     return;
 }
+
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full TinyClick URL or just the
+TinyClick identifier.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
 
 sub makealongerlink ($)
 {
@@ -51,35 +94,6 @@ sub makealongerlink ($)
 1;
 
 __END__
-
-=head1 NAME
-
-WWW::Shorten::TinyClick - Perl interface to tinyclick.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten::TinyClick;
-
-  use WWW::Shorten 'TinyClick';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site tinyclick.com.  TinyClick simply
-maintains a database of long URLs, each of which has a unique
-identifier.
-
-The function C<makeashorterlink> will call the TinyClick web site
-passing it your long URL and will return the shorter TinyClick version.
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full TinyClick URL or just the
-TinyClick identifier.
-
-If anything goes wrong, then either function will return C<undef>.
 
 =head2 EXPORT
 
