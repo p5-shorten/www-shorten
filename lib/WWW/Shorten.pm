@@ -215,6 +215,9 @@ Iain Truskett <spoon@cpan.org>
 
 Based on WWW::MakeAShorterLink by Dave Cross <dave@dave.org.uk>
 
+In 2004 Dave Cross took over the maintenance of this distribution
+following the death of Iain Truskett.
+
 =head1 SEE ALSO
 
 L<perl>, L<CGI::Shorten>.
