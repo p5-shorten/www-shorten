@@ -4,7 +4,6 @@ package WWW::Shorten;
 
 use 5.006;
 use strict;
-no strict 'refs';
 use warnings;
 
 use base qw( WWW::Shorten::generic );
@@ -228,6 +227,9 @@ L<perl>, L<CGI::Shorten>.
 
 #
 # $Log$
+# Revision 1.92  2004/10/25 21:03:53  dave
+# Removed unnecessary "no strict 'refs'"
+#
 # Revision 1.91  2004/10/24 16:31:16  dave
 # Changed author in Makefile.PL.
 # Get $VERSION from CVS tag.
