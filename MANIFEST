@@ -37,6 +37,7 @@ SIGNATURE
 t/00load.t
 t/00load_a.t
 t/00load_b.t
+t/00noexp.t
 t/00sig.t
 t/01version.t
 t/99pod.t
