@@ -6,8 +6,6 @@ my $re = qr!^ \Qhttp://\E ([\w]+) \Q.notlong.com\E/? $ !x;
 my $code;
 my $url = 'http://perl.dellah.org/WWW-Shorten-1.5.2.tar.gz';
 
-diag "WWW::Shorten::NotLong ".WWW::Shorten::NotLong->VERSION();
-
 {
     my $notlong = makeashorterlink( $url );
 
