@@ -9,7 +9,7 @@ use warnings;
 
 use base qw( WWW::Shorten::generic );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.88";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
 
@@ -228,6 +228,10 @@ L<perl>, L<CGI::Shorten>.
 
 #
 # $Log$
+# Revision 1.91  2004/10/24 16:31:16  dave
+# Changed author in Makefile.PL.
+# Get $VERSION from CVS tag.
+#
 # Revision 1.90  2004/10/24 16:27:45  dave
 # Add some CVS tags
 #

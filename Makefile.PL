@@ -10,7 +10,7 @@ WriteMakefile(
             },
     ($] >= 5.005 ?
       (ABSTRACT_FROM => 'lib/WWW/Shorten.pm',
-      AUTHOR     => 'Iain Truskett <spoon@cpan.org>') : ()),
+      AUTHOR     => 'Dave Cross <dave@dave.org.uk>') : ()),
     ( eval($ExtUtils::MakeMaker::VERSION) >= 6.10 ?
         ( NO_META => 1, ) : ()),
 );
