@@ -8,6 +8,7 @@ WriteMakefile(
                 'URI' => '1.27',
                 'Test::More' => '0.47',
             },
+    SIGN => 1,
     ($] >= 5.005 ?
       (ABSTRACT_FROM => 'lib/WWW/Shorten.pm',
       AUTHOR     => 'Dave Cross <dave@dave.org.uk>') : ()),

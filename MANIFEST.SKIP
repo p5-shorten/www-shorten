@@ -17,3 +17,5 @@
 ^log$
 ^data\.yaml$
 ^blibdirs$
+^cover_db/
+\.tmp$

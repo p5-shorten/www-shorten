@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.37.
+signed via the Module::Signature module, version 0.41.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,23 +14,23 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 a9aa42ac2742041ad0aaaab4a0e55a7a11e2af68 AUTHORS
+SHA1 695f73e0c8faf085044a75d4994921a71069aa41 AUTHORS
 SHA1 7a95fc8778fbce1f60d222e0d0d1dbb6c649461f Artistic
 SHA1 531e6b5c470d4726483fd68833391653eace0a92 COPYING
 SHA1 3c8a2a26c7df1de3266692762d6a3269204ed3d4 CREDITS
-SHA1 597182d25b645a4e083aeb5abec3f2302fa3d4bf ChangeLog
-SHA1 d364afe1cae260b9dfe51b333345aa34daf03c08 Changes
+SHA1 3ec0a4a68ccc6840bc51e4ac924d536233e6983b ChangeLog.SPOON
+SHA1 818ead31ac9d7d20c7f5652ef6509f8c5f0cff32 Changes
 SHA1 6eb11d09d3fc9035009a36e71295f354bbe7fbef INSTALL
 SHA1 63eb77518fc6daadc6ce09b209b391bf5c1bb975 LICENCE
-SHA1 e61e978c7d5590d8549a6d9f01a90802e3845ae4 MANIFEST
-SHA1 1c6168540048666d39dc92a9e091ef61dbdbd038 MANIFEST.SKIP
+SHA1 59bff3f516c609fd1d00d9607179ee9773163072 MANIFEST
+SHA1 2fd114c55417e7a0e451f24a2b1ab08b65383fa7 MANIFEST.SKIP
 SHA1 c242c1cfb7a6f6e19e27e5d85c37c53179779e5b META.yml
-SHA1 f825017c90420ee560ce564355c424905eb6d8b0 Makefile.PL
+SHA1 7ad0aaa136aed81aa816cff5c46e57228752088b Makefile.PL
 SHA1 a10cc52a61e4888491755b53298f1038edb82d22 README
 SHA1 208a9b4efba5e666b5c0d9c1a4abe11316196693 TODO
 SHA1 3f286e5da41cdd270871dfafc54928edffe8782a bin/shorten
 SHA1 6fcc0e25e8603adcc7f95e930c1f3089e281830e bin/shortenrc
-SHA1 6c5ed3701b59560e1c0116afdeb5aba2a61a4d6b lib/WWW/Shorten.pm
+SHA1 23efd4ba7d056c1308d9391bebf8b1705f42f847 lib/WWW/Shorten.pm
 SHA1 72c272c780a9692a4ff34d6d343fb4bd0250f53d lib/WWW/Shorten/BabyURL.pm
 SHA1 6a218322f9f8a08f0e9cf69f878f46966294e321 lib/WWW/Shorten/EkDk.pm
 SHA1 2f7222a7154a536b3c26aea05b768fbc950191be lib/WWW/Shorten/Linkz.pm
@@ -76,9 +76,9 @@ SHA1 4b052b349314c47b636e41b9053c5d88147ac9a0 t/urljr.t
 SHA1 433d17517cf1a485c63c73124b38ca21b35a526e t/v3.t
 SHA1 2fff119d53d2ebe6ce51db74f33a4533e05e0d73 t/ws_masl.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.3 (GNU/Linux)
+Version: GnuPG v1.2.4 (GNU/Linux)
 
-iD8DBQE/sryHzL8gm6KQWMgRAk4iAJ0cww9a3LT8kGdak33R/tlEi/SgqwCeMFyv
-tQApyBzA4mEaJnOytM8LpAk=
-=MpQk
+iD8DBQFBfCcdhlYrNpFq+8ERAkFTAJ4kR7GI+flfjlLWOe2bAGT0x6A+zQCeJHUH
+egxmPxAfs/l4vyYUPPLCYZ4=
+=RGpR
 -----END PGP SIGNATURE-----
