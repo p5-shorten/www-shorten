@@ -1,3 +1,5 @@
+#$Id$
+
 package WWW::Shorten;
 
 use 5.006;
@@ -223,3 +225,10 @@ following the death of Iain Truskett.
 L<perl>, L<CGI::Shorten>.
 
 =cut
+
+#
+# $Log$
+# Revision 1.90  2004/10/24 16:27:45  dave
+# Add some CVS tags
+#
+#
