@@ -6,7 +6,7 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.85";
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
 
@@ -23,7 +23,7 @@ sub makeashorterlink ($)
     if ($resp->content =~ m!
         href="(http://\d+\.v3\.net/)"
         [^>]+>
-        \d+\.v3\.net</a>
+        http://\d+\.v3\.net</a>
 	!xs) {
 	return $1;
     }
