@@ -11,21 +11,21 @@ WWW::Shorten - Interface to URL shortening sites.
   use WWW::Shorten 'MakeAShorterLink';
   use WWW::Shorten 'Metamark';
   use WWW::Shorten 'NotLong';
-  use WWW::Shorten 'OneShortLink';
   use WWW::Shorten 'Shorl';
   use WWW::Shorten 'SnipURL';
   use WWW::Shorten 'TinyClick';
   use WWW::Shorten 'TinyLink';
   use WWW::Shorten 'TinyURL';
-  use WWW::Shorten 'V3';
 
-  # These 5 are now inactive and will give an
+  # These 7 are now inactive and will give an
   # error if you try to use them.
   use WWW::Shorten 'EkDk';
+  use WWW::Shorten 'OneShortLink';
   use WWW::Shorten 'qURL';
   use WWW::Shorten 'ShortLink';
   use WWW::Shorten 'SmLnk';
   use WWW::Shorten 'URLjr';
+  use WWW::Shorten 'V3';
 
   # Individual modules have have their
   # own syntactic variations.
@@ -227,6 +227,9 @@ L<perl>, L<CGI::Shorten>.
 
 #
 # $Log$
+# Revision 1.94  2005/05/19 21:37:48  dave
+# Removed a couple of dead services - 1sl and v3
+#
 # Revision 1.93  2004/10/30 12:52:01  dave
 # Work on improving test coverage
 #
