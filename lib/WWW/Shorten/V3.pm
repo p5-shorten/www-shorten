@@ -1,4 +1,10 @@
 # $Id$
+package WWW::Shorten::V3;
+our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
+require WWW::Shorten::_dead;
+
+0;
+__END__
 
 =head1 NAME
 
@@ -6,21 +12,30 @@ WWW::Shorten::V3 - Perl interface to v3.net
 
 =head1 SYNOPSIS
 
-  use WWW::Shorten 'V3';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-  $long_url  = makealongerlink($nickname);
+    # No appropriate synopsis.
 
 =head1 DESCRIPTION
 
-A Perl interface to the web site v3.net.  v3.net simply maintains
-a database of long URLs, each of which has a unique identifier.
+A Perl interface to the web site v3.net.
+
+Unfortunately, this service became inactive at some point between 1.90
+and 1.91, so this module will merely give you an error if you try to use
+it. Feel free to pick a different L<service|WWW::Shorten>.
+
+=head1 SUPPORT, LICENCE, THANKS and SUCH
+
+See the main L<WWW::Shorten> docs.
+
+=head1 AUTHORS
+
+Iain Truskett <spoon@cpan.org>, Dave Cross <dave@dave.org.uk>
+
+=head1 SEE ALSO
+
+L<WWW::Shorten>, L<perl>, L<http://makeurl.v3.net/>
 
 =cut
 
-package WWW::Shorten::V3;
 
 use 5.006;
 use strict;
@@ -28,7 +43,6 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
 use Carp;
 

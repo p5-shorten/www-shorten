@@ -84,7 +84,7 @@ If anything goes wrong, then either function will return C<undef>.
 sub makealongerlink ($)
 {
     my $shorl_url = shift 
-	or croak 'No Shorl key / URL passed to makealongerlink';
+        or croak 'No Shorl key / URL passed to makealongerlink';
     my $ua = __PACKAGE__->ua();
 
     $shorl_url = "http://shorl.com/$shorl_url"
@@ -92,10 +92,9 @@ sub makealongerlink ($)
 
     my $resp = $ua->get($shorl_url);
 
-    return undef unless $resp->is_redirect;
-    my $url = $resp->header('Location');
+    return if $resp->is_error;
+    my ($url) = $resp->content =~ /URL=(.+)\"/;
     return $url;
-
 }
 
 1;
