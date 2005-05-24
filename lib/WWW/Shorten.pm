@@ -195,11 +195,11 @@ your problem is less likely to be neglected.
 
 =head1 LICENCE AND COPYRIGHT
 
-WWW::Shorten::NotLong copyright E<copy> Eric Hammond <ehammond@thinksome.com>.
+WWW::Shorten::NotLong copyright (c) Eric Hammond <ehammond@thinksome.com>.
 
-WWW::Shorten::MakeAShorterLink copyright E<copy> Dave Cross <dave@dave.org.uk>.
+WWW::Shorten::MakeAShorterLink copyright (c) Dave Cross <dave@dave.org.uk>.
 
-Other modules copyright E<copy> Iain Truskett, 2002-2003. All rights
+Other modules copyright (c) Iain Truskett, 2002-2003. All rights
 reserved.
 
 This library is free software; you can redistribute it and/or modify
@@ -227,6 +227,10 @@ L<perl>, L<CGI::Shorten>.
 
 #
 # $Log$
+# Revision 1.95  2005/05/24 20:20:20  dave
+# Correct copyright signs in pod.
+# Skip lin.kz tests while it's broken.
+#
 # Revision 1.94  2005/05/19 21:37:48  dave
 # Removed a couple of dead services - 1sl and v3
 #
