@@ -67,7 +67,7 @@ use 5.006;
 use strict;
 use warnings;
 
-use base qw( WWW::Shorten::generic );
+use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
 our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 
@@ -128,12 +128,6 @@ to filter a file, converting long URLs to short ones.
 There is also a F<bin> directory in this distribution which contains a
 sample program.
 
-=head1 FURTHER INFORMATION
-
-http://dellah.org/shorten/ has a collection of related
-resources: articles, services, programs (both to use services
-and to run services). It's a Wiki --- feel free to edit it.
-
 =head1 RELATED MODULES
 
 =head2 Similar Aim
@@ -180,10 +174,8 @@ And especial thanks to all providers of these services.
 
 =head1 BUGS, REQUESTS, COMMENTS
 
-Support for this module is provided via the datetime@perl.org email
-list. See http://lists.perl.org/ for more details.
-
-Alternatively, log them via the CPAN RT system via the web or email:
+Support for this module is supplied using the CPAN RT system via the web
+or email:
 
     http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Shorten
     ( shorter URL: http://xrl.us/rfb )
@@ -227,6 +219,9 @@ L<perl>, L<CGI::Shorten>.
 
 #
 # $Log$
+# Revision 1.96  2005/09/03 15:32:33  dave
+# Removed outdated or incorrect references in the Pod.
+#
 # Revision 1.95  2005/05/24 20:20:20  dave
 # Correct copyright signs in pod.
 # Skip lin.kz tests while it's broken.
