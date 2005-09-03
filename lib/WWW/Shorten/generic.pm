@@ -1,3 +1,4 @@
+# $Id$
 package WWW::Shorten::generic;
 
 use 5.006;

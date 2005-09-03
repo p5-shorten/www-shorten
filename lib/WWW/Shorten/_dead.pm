@@ -1,4 +1,9 @@
+# $Id$
 package WWW::Shorten::_dead;
+
+use strict;
+use warnings;
+
 our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 die <<'EOF';
 

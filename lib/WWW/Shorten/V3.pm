@@ -1,5 +1,9 @@
 # $Id$
 package WWW::Shorten::V3;
+
+use strict;
+use warnings;
+
 our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
 require WWW::Shorten::_dead;
 
