@@ -2,7 +2,7 @@ use Test::More tests => 7;
 
 BEGIN { use_ok WWW::Shorten::Metamark };
 
-my $url = 'http://dellah.org/';
+my $url = 'http://dave.org.uk/';
 my $short = makeashorterlink( $url );
 ok((defined $short), 'Reasonable response');
 like ( $short => qr{^http://xrl\.us/\w+$}, 'make it shorter' );
