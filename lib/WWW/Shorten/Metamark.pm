@@ -71,21 +71,13 @@ sub makealongerlink ($)
 	or croak 'No Metamark key / URL passed to makealongerlink';
     my $ua = __PACKAGE__->ua();
 
-    $short_url =~ s{ ^\Qhttp://xrl.us/\E }{}x;
-    $short_url = "http://xrl.us/$short_url" unless $short_url =~ m!^http://!i;
-    $ua->cookie_jar({});
-    $ua->cookie_jar->set_cookie(
-	0,
-	z => '1/rc/1/q/5Phox2UBRVHMAAA-hCdUCC5D4A89/lr/1041904089/600E9895',
-	'/' => 'xrl.us',
-	undef, 1, 0, 2400,0 
-    );
-
-    my $resp = $ua->get($short_url);
-    return undef unless $resp->is_redirect;
-    my $url = $resp->header('Location');
-    return $url;
-
+    my $resp  = $ua->post( 'http://metamark.net/api/rest/simple', [
+        short_url => $short_url,
+    ] );
+    return unless $resp->is_success;
+    return if $resp->content =~ /^ERROR:/;
+    # I love REST. It's so simple when done properly.
+    return $resp->content;
 }
 
 1;
