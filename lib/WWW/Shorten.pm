@@ -11,16 +11,16 @@ WWW::Shorten - Interface to URL shortening sites.
   use WWW::Shorten 'MakeAShorterLink';
   use WWW::Shorten 'Metamark';
   use WWW::Shorten 'NotLong';
+  use WWW::Shorten 'OneShortLink';
   use WWW::Shorten 'Shorl';
   use WWW::Shorten 'SnipURL';
   use WWW::Shorten 'TinyClick';
   use WWW::Shorten 'TinyLink';
   use WWW::Shorten 'TinyURL';
 
-  # These 7 are now inactive and will give an
+  # These 6 are now inactive and will give an
   # error if you try to use them.
   use WWW::Shorten 'EkDk';
-  use WWW::Shorten 'OneShortLink';
   use WWW::Shorten 'qURL';
   use WWW::Shorten 'ShortLink';
   use WWW::Shorten 'SmLnk';
@@ -219,6 +219,9 @@ L<perl>, L<CGI::Shorten>.
 
 #
 # $Log$
+# Revision 1.97  2005/10/09 21:54:47  dave
+# Reinstated support for 1sl.net.
+#
 # Revision 1.96  2005/09/03 15:32:33  dave
 # Removed outdated or incorrect references in the Pod.
 #
