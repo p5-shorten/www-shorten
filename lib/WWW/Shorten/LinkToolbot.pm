@@ -22,7 +22,7 @@ sub makeashorterlink  ($;$)
 
   return unless $resp->is_success;
 
-  if ($resp->content =~ m!stored as: <a href='(.*)' class='link'>!) {
+  if ($resp->content =~ m!<input type='text' name='link' value='(.*?)'!) {
       return $1;
   }
   return;
