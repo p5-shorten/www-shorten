@@ -1,69 +1,8 @@
-package WWW::Shorten::LinkToolbot;
-
-use 5.006;
-use strict;
-use warnings;
-
-use base qw( WWW::Shorten::generic Exporter );
-our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = "1.89";
-
-use Carp;
-
-
-sub makeashorterlink  ($;$)
-{
-  my $remote = 'http://link.toolbot.com/index.php';
-  my $url = shift or croak 'No URL provided';
-  my $tag = shift || '';
-  my $ua = __PACKAGE__->ua();
-
-  my $resp = $ua->post($remote, [ url => $url, action => 'generate']);
-
-  return unless $resp->is_success;
-
-  if ($resp->content =~ m!<input type='text' name='link' value='(.*?)'!) {
-      return $1;
-  }
-  return;
-}
-
-sub makealongerlink ($)
-{
-  my $query = shift or croak 'No key or URL provided';
-  my $ua = __PACKAGE__->ua();
-  my $url;
-  my $redirection_count;
-
-  $query = "http://link.toolbot.com/$query"
-    unless $query =~ m!^http://!i;
-
-  my $resp = $ua->get($query);
-
-  ## Other modules have something like this here:
-  #    return undef unless $resp->is_success;
-  ## This works fine for meta-tag-type redirect. But with a 
-  ## true redirect, if the target site is unreachable then 
-  ## $resp->is_success will be false -- even though the link
-  ## was found in the DB.  We want to give them the URL anyway
-  ## so we do not return in this case.  Somebody better with 
-  ## Perl could probably find a more robust solution for this.
-
-  return undef 
-    if $resp->content =~ m!Can\'t find that one!;
-
-  $url = $resp->header('Location');
-  $redirection_count = $resp->header('X-Redirection-Count');
-  return wantarray ? ($url, $redirection_count) : $url;
-}
-
-1;
-
-__END__
+# $Id$
 
 =head1 NAME
 
-WWW::Shorten::LinkToolbot - Perl interface to link.toolbot.com
+WWW::Shorten::LinkToolbot - Perl interface to metamark.net
 
 =head1 SYNOPSIS
 
@@ -71,11 +10,10 @@ WWW::Shorten::LinkToolbot - Perl interface to link.toolbot.com
 
   use WWW::Shorten 'LinkToolbot';
 
-  $short_url = makeashorterlink("http://example.com/looooong");
+  $short_url = makeashorterlink($long_url);
 
-  $long_url = makealongerlink($short_url_or_key);
+  $long_url  = makealongerlink($short_url_or_key);
   ($long_url, $hitcount) = makealongerlink($short_url_or_key);
-  
 
 =head1 DESCRIPTION
 
@@ -105,6 +43,88 @@ of the same URL, nor does it refuse to generate a URL that is longer
 than the original.
 
 For more information, see L<WWW::Shorten>.
+
+=cut
+
+package WWW::Shorten::LinkToolbot;
+
+use 5.006;
+use strict;
+use warnings;
+
+use base qw( WWW::Shorten::generic Exporter );
+our @EXPORT = qw(makeashorterlink makealongerlink);
+our $VERSION = "1.89";
+
+use Carp;
+
+=head1 Functions
+
+=head2 makeashorterlink
+
+The function C<makeashorterlink> will call the Metamark web site passing it
+your long URL and will return the shorter Metamark version.
+
+=cut
+
+sub makeashorterlink  ($;$)
+{
+  my $remote = 'http://link.toolbot.com/index.php';
+  my $url = shift or croak 'No URL provided';
+  my $tag = shift || '';
+  my $ua = __PACKAGE__->ua();
+
+  my $resp = $ua->post($remote, [ url => $url, action => 'generate']);
+
+  return unless $resp->is_success;
+
+  if ($resp->content =~ m!<input type='text' name='link' value='(.*?)'!) {
+      return $1;
+  }
+  return;
+}
+
+=head2 makealongerlink
+
+The function C<makealongerlink> does the reverse. C<makealongerlink>
+will accept as an argument either the full Metamark URL or just the
+Metamark identifier.
+
+If anything goes wrong, then either function will return C<undef>.
+
+=cut
+
+sub makealongerlink ($)
+{
+  my $query = shift or croak 'No key or URL provided';
+  my $ua = __PACKAGE__->ua();
+  my $url;
+  my $redirection_count;
+
+  $query = "http://link.toolbot.com/$query"
+    unless $query =~ m!^http://!i;
+
+  my $resp = $ua->get($query);
+
+  ## Other modules have something like this here:
+  #    return undef unless $resp->is_success;
+  ## This works fine for meta-tag-type redirect. But with a 
+  ## true redirect, if the target site is unreachable then 
+  ## $resp->is_success will be false -- even though the link
+  ## was found in the DB.  We want to give them the URL anyway
+  ## so we do not return in this case.  Somebody better with 
+  ## Perl could probably find a more robust solution for this.
+
+  return if $resp->content =~ m!Can\'t find that one!;
+
+  $url = $resp->header('Location');
+  $redirection_count = $resp->header('X-Redirection-Count');
+  return wantarray ? ($url, $redirection_count) : $url;
+}
+
+1;
+
+__END__
 
 =head2 EXPORT
 
