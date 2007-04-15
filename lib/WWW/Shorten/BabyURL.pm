@@ -1,5 +1,5 @@
 # $Id$
-package WWW::Shorten::babyURL;
+package WWW::Shorten::BabyURL;
 
 use strict;
 use warnings;
@@ -33,7 +33,7 @@ See the main L<WWW::Shorten> docs.
 
 =head1 AUTHOR
 
-Iain Truskett <spoon@cpan.org>
+Iain Truskett <spoon@cpan.org>, Dave Cross <dave@mag-sol.com>
 
 =head1 SEE ALSO
 
