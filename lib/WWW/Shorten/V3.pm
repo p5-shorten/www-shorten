@@ -4,7 +4,7 @@ package WWW::Shorten::V3;
 use strict;
 use warnings;
 
-our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
+our $VERSION = '1.93';
 require WWW::Shorten::_dead;
 
 0;
