@@ -189,9 +189,7 @@ your problem is less likely to be neglected.
 
 WWW::Shorten::NotLong copyright (c) Eric Hammond <ehammond@thinksome.com>.
 
-WWW::Shorten::MakeAShorterLink copyright (c) Dave Cross <dave@dave.org.uk>.
-
-Other modules copyright (c) Iain Truskett, 2002-2003. All rights
+Other modules copyright (c) Magnum Solutions Ltd., 2007. All rights
 reserved.
 
 This library is free software; you can redistribute it and/or modify
@@ -216,33 +214,3 @@ following the death of Iain Truskett.
 L<perl>, L<CGI::Shorten>.
 
 =cut
-
-#
-# $Log$
-# Revision 1.97  2005/10/09 21:54:47  dave
-# Reinstated support for 1sl.net.
-#
-# Revision 1.96  2005/09/03 15:32:33  dave
-# Removed outdated or incorrect references in the Pod.
-#
-# Revision 1.95  2005/05/24 20:20:20  dave
-# Correct copyright signs in pod.
-# Skip lin.kz tests while it's broken.
-#
-# Revision 1.94  2005/05/19 21:37:48  dave
-# Removed a couple of dead services - 1sl and v3
-#
-# Revision 1.93  2004/10/30 12:52:01  dave
-# Work on improving test coverage
-#
-# Revision 1.92  2004/10/25 21:03:53  dave
-# Removed unnecessary "no strict 'refs'"
-#
-# Revision 1.91  2004/10/24 16:31:16  dave
-# Changed author in Makefile.PL.
-# Get $VERSION from CVS tag.
-#
-# Revision 1.90  2004/10/24 16:27:45  dave
-# Add some CVS tags
-#
-#
