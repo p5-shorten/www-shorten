@@ -204,7 +204,7 @@ L<perlgpl> as supplied with Perl 5.8.1 and later.
 
 Iain Truskett <spoon@cpan.org>
 
-Based on WWW::MakeAShorterLink by Dave Cross <dave@dave.org.uk>
+Based on WWW::MakeAShorterLink by Dave Cross <dave@mag-sol.com>
 
 In 2004 Dave Cross took over the maintenance of this distribution
 following the death of Iain Truskett.
