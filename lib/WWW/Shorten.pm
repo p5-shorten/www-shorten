@@ -69,7 +69,7 @@ use warnings;
 
 use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
+our $VERSION = 1.98;
 
 use Carp;
 
