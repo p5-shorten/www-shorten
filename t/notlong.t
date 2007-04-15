@@ -2,9 +2,9 @@ use Test::More tests => 8;
 
 BEGIN { use_ok WWW::Shorten::NotLong };
 
-my $re = qr!^ \Qhttp://\E ([\w]+) \Q.notlong.com\E/? $ !x;
+my $re = qr!^ \Qhttp://\E ([-\w]+) \Q.notlong.com\E/? $ !x;
 my $code;
-my $url = 'http://perl.dellah.org/WWW-Shorten-1.5.2.tar.gz';
+my $url = 'http://dave.org.uk/code/WWW-Shorten/dist/';
 
 {
     my $notlong = makeashorterlink( $url );
@@ -24,7 +24,7 @@ my $url = 'http://perl.dellah.org/WWW-Shorten-1.5.2.tar.gz';
     my ($notlong, $password) = makeashorterlink( $url );
 
     ok ( (defined $notlong and $notlong =~ $re
-		and defined $password and $password =~ m!^ [a-z]+ $ !x),
+		and defined $password and $password =~ m!^ [-a-z]+ $ !x),
 	    "make it shorter, get password [$notlong, $password]"
        );
 }
@@ -36,7 +36,7 @@ my $url = 'http://perl.dellah.org/WWW-Shorten-1.5.2.tar.gz';
 
     ok ( ( defined $notlong and $notlong =~ $re
 		and $1 eq $code
-		and defined $password and $password =~ m!^ [a-z]+ $ !x),
+		and defined $password and $password =~ m!^ [-a-z]+ $ !x),
 	"make it shorter, with given code, and get password"
     );
 }

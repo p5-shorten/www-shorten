@@ -57,11 +57,11 @@ sub makeashorterlink ($;%)
     my $url = shift or croak 'No URL passed to makeashorterlink';
     my $ua = __PACKAGE__->ua();
     my %args = @_;
-    my $nickname = delete $args{'nickname'} || '';
+    my $nickname = delete $args{'nickname'} || 'ws-' . $$ . int rand 100;
     my $notlong = 'http://notlong.com/';
     my $resp = $ua->post($notlong, [
 	url => $url,
-	(length $nickname) ? (nickname => $nickname) : (),
+	nickname => $nickname,
 	]);
     return unless $resp->is_success;
     if ($resp->content =~ m!
@@ -73,7 +73,7 @@ sub makeashorterlink ($;%)
         .*?
 	Password:
 	\s+
-	(\w+)
+	([-\w]+)
 	!xs) {
 	return wantarray ? ($1, $2) : $1;
     }
