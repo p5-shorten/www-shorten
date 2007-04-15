@@ -57,9 +57,9 @@ sub makeashorterlink ($)
     if ($resp->content =~ m!
 	\QShorl:\E
 	\s+
-	<a \s+ href=" /\w+  ">
+	<a \s+ href="http://shorl.com/\w+"\s+rel="nofollow">
 	(\Qhttp://shorl.com/\E\w+)
-	</a>
+	</a>.*
 	<br>
 	[\r\n\s]*
 	\QPassword:\E
