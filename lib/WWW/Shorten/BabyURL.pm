@@ -1,105 +1,31 @@
 # $Id$
+package WWW::Shorten::babyURL;
 
-=head1 NAME
-
-WWW::Shorten::BabyURL - Perl interface to BabyURL.com
-
-=head1 SYNOPSIS
-
-  use WWW::Shorten 'BabyURL';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-  $long_url  = makealongerlink($nickname);
-
-=head1 DESCRIPTION
-
-A Perl interface to the web site BabyURL.com.  BabyURL.com simply maintains
-a database of long URLs, each of which has a unique identifier.
-
-
-=cut
-
-package WWW::Shorten::BabyURL;
-
-use 5.006;
 use strict;
 use warnings;
 
-use base qw( WWW::Shorten::generic Exporter );
-our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
+our $VERSION = '1.90';
+require WWW::Shorten::_dead;
 
-use Carp;
-
-# POST http://babyurl.com/index.php?bu_op=createurl
-#   bu_url=                         (textarea)
-#   Submit=Make BabyURL             (submit)
-
-=head1 Functions
-
-=head2 makeashorterlink
-
-The function C<makeashorterlink> will call the BabyURL.com web site passing it
-your long URL and will return the shorter (BabyURL) version.
-
-Multiple submissions of the same URL will result in the same code being
-returned.
-
-=cut
-
-sub makeashorterlink ($)
-{
-    my $url = shift or croak 'No URL passed to makeashorterlink';
-    my $ua = __PACKAGE__->ua();
-    my $resp = $ua->post( 'http://babyurl.com/index.php?bu_op=createurl' , [
-        bu_url => $url,
-        Submit => 'Make BabyURL',
-        ],
-    );
-    return unless $resp->is_success;
-    if ($resp->content =~ m!
-        \Q<input type="hidden" name="babyurl" value="\E
-        (http://babyurl\.com/\w+)
-        \Q">\E
-	!x) {
-	return $1;
-    }
-    return;
-}
-
-=head2 makealongerlink
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full BabyURL URL or just the
-BabyURL identifier/nickname.
-
-If anything goes wrong, then either function will return C<undef>.
-
-=cut
-
-sub makealongerlink ($)
-{
-    my $code = shift
-	or croak 'No BabyURL nickname/URL passed to makealongerlink';
-    my $ua = __PACKAGE__->ua();
-
-    $code = "http://babyurl.com/$code" unless $code =~ m!^http://!i;
-
-    my $resp = $ua->get($code);
-    my $location = $resp->header('Location');
-    return $location if defined $location;
-    return;
-}
-
-1;
+0;
 
 __END__
 
-=head2 EXPORT
+=head1 NAME
 
-makeashorterlink, makealongerlink
+WWW::Shorten::BabyURL - Perl interface to babyurl.com
+
+=head1 SYNOPSIS
+
+    # No appropriate synopsis.
+
+=head1 DESCRIPTION
+
+A Perl interface to the web site babyurl.com.
+
+Unfortunately, this service became inactive at some point between 1.89
+and 1.90, so this module will merely give you an error if you try to use
+it. Feel free to pick a different L<service|WWW::Shorten>.
 
 =head1 SUPPORT, LICENCE, THANKS and SUCH
 
@@ -111,6 +37,6 @@ Iain Truskett <spoon@cpan.org>
 
 =head1 SEE ALSO
 
-L<WWW::Shorten>, L<perl>, L<http://BabyURL.com/>
+L<WWW::Shorten>, L<perl>
 
 =cut
