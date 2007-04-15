@@ -1,4 +1,15 @@
 # $Id$
+package WWW::Shorten::MakeAShorterLink;
+
+use strict;
+use warnings;
+
+our $VERSION = '1.90';
+require WWW::Shorten::_dead;
+
+0;
+
+__END__
 
 =head1 NAME
 
@@ -6,106 +17,15 @@ WWW::Shorten::MakeAShorterLink - Perl interface to makeashorterlink.com
 
 =head1 SYNOPSIS
 
-  use WWW::Shorten::MakeAShorterLink;
-
-  use WWW::Shorten 'MakeAShorterLink';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
+    # No appropriate synopsis.
 
 =head1 DESCRIPTION
 
-A Perl interface to the web site makeashorterlink.com (MASL to its
-friends). MASL simply maintains a database of long URLs, each of which
-has a unique identifier.
+A Perl interface to the web site babyurl.com.
 
-=cut
-
-package WWW::Shorten::MakeAShorterLink;
-
-use 5.006;
-use strict;
-use warnings;
-
-use base qw( WWW::Shorten::generic Exporter );
-our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = sprintf "%d.%02d", '$Revision$ ' =~ /(\d+)\.(\d+)/;
-
-use Carp;
-
-=head1 Functions
-
-=head2 makeashorterlink
-
-The function C<makeashorterlink> will call the MASL web site passing it 
-your long URL and will return the shorter MASL version.
-
-If the URL to be shortened is already as short, or shorter, than how
-MASL would make it, then the URL you gave is returned. If anything else
-goes wrong, then either function will return C<undef>.
-
-=cut
-
-sub makeashorterlink ($)
-{
-  my $masl = 'http://www.makeashorterlink.com/index.php';
-  my $url = shift or croak 'No URL passed to makeashorterlink';
-  my $ua = __PACKAGE__->ua();
-
-  my $resp = $ua->post($masl,
-                       [ url => $url ]);
-
-  return unless $resp->is_success;
-
-  if ($resp->content =~ m!Your shorter link is: <a href="(.*)">!) {
-      return $1;
-  } elsif ($resp->content =~ m!<h2>URL already short:</h2>!) {
-      return $url;
-  }
-  return;
-}
-
-=head2 makealongerlink
-
-The function C<makealongerlink> does the reverse. C<makealongerlink>
-will accept as an argument either the full MASL URL or just the MASL
-identifier.
-
-For more information, see L<WWW::Shorten>.
-
-=cut
-
-sub makealongerlink ($)
-{
-  my $masl_url = shift 
-    or croak 'No MASL key / URL passed to makealongerlink';
-  my $ua = __PACKAGE__->ua();
-
-  $masl_url = "http://www.makeashorterlink.com/?$masl_url"
-    unless $masl_url =~ m!^http://!i;
-
-  my $resp = $ua->get($masl_url);
-
-  return unless $resp->is_success;
-
-  return 
-    if $resp->content =~ m!That doesn\'t look like a Make A Shorter Link key.!;
-
-  if ($resp->content =~ m!<meta HTTP-EQUIV="Refresh" CONTENT="5\; URL=(.*)"!i) {
-    return $1;
-  }
-
-  return;
-}
-
-1;
-
-__END__
-
-=head2 EXPORT
-
-makeashorterlink, makealongerlink
+Unfortunately, this service became inactive at some point between 1.89
+and 1.90, so this module will merely give you an error if you try to use
+it. Feel free to pick a different L<service|WWW::Shorten>.
 
 =head1 SUPPORT, LICENCE, THANKS and SUCH
 
@@ -113,13 +33,10 @@ See the main L<WWW::Shorten> docs.
 
 =head1 AUTHOR
 
-Dave Cross <dave@dave.org.uk>
-Subtle modifications by Iain Truskett <spoon@cpan.org>
-Original LWP hacking by Alex Page <grimoire@corinne.cpio.org>
-C<makealongerlink> idea by Simon Batistoni <simon@hitherto.net>
+Iain Truskett <spoon@cpan.org>, Dave Cross <dave@mag-sol.com>
 
 =head1 SEE ALSO
 
-L<WWW::Shorten>, L<perl>, L<http://makeashorterlink.com/>
+L<WWW::Shorten>, L<perl>
 
 =cut
