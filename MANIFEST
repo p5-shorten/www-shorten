@@ -62,5 +62,4 @@ t/tinylink.t
 t/tinyurl.t
 t/urljr.t
 t/v3.t
-t/ws_masl.t
 TODO
