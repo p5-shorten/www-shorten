@@ -49,21 +49,14 @@ sub makeashorterlink ($;%)
 {
     my $url = shift or croak 'No URL passed to makeashorterlink';
     my $ua = __PACKAGE__->ua();
-    my ($nick,$pass) = @_;
-    my $snipurl = 'http://snipurl.com/site/index';
-    my $resp = $ua->post($snipurl, [
-	url => $url,
-	nickname => (defined $nick ? $nick : ''),
-	private_key => (defined $pass ? $pass : ''),
-	]);
+    my ($nick, $pass) = @_;
+    my $snipurl = "http://snipurl.com/site/snip?r=simple&link=$url";
+    $snipurl .= "&snipnick=$nick" if defined $nick;
+    $snipurl .= "&snippk=$pass" if defined $pass;
+    my $resp = $ua->get($snipurl);
+
     return unless $resp->is_success;
-    if ($resp->content =~ m!
-	<a \s+ class="snipped" \s+
-            href="(http://snipurl\.com/\w+)"
-	!xm) {
-	return $1;
-    }
-    return undef;
+    return $resp->content;
 }
 
 =head2 makealongerlink
