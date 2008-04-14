@@ -30,7 +30,7 @@ use warnings;
 
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = '1.90';
+our $VERSION = '1.91';
 
 use Carp;
 use URI;
@@ -50,17 +50,16 @@ sub makeashorterlink ($;%)
     my $url = shift or croak 'No URL passed to makeashorterlink';
     my $ua = __PACKAGE__->ua();
     my ($nick,$pass) = @_;
-    my $snipurl = 'http://snipurl.com/teindex.php';
+    my $snipurl = 'http://snipurl.com/site/index';
     my $resp = $ua->post($snipurl, [
-	link => $url,
-	alias => (defined $nick ? $nick : ''),
-	protected_key => (defined $pass ? $pass : ''),
+	url => $url,
+	nickname => (defined $nick ? $nick : ''),
+	private_key => (defined $pass ? $pass : ''),
 	]);
     return unless $resp->is_success;
     if ($resp->content =~ m!
-	<a \s+ href=['"] ([^'"]+) ['"][^>]*>
-	(http://sn(?:ip)?url\.com/\w+)
-	</a>
+	<a \s+ class="snipped" \s+
+            href="(http://snipurl\.com/\w+)"
 	!xm) {
 	return $1;
     }
@@ -94,8 +93,7 @@ sub makealongerlink ($)
 
     my $content = $resp->content;
     return undef if $content eq 'ERROR';
-    my ($link) = $content =~ m! " ([^"]+) " !xi;
-    return $link;
+    return $content;
 }
 
 1;
