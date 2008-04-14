@@ -2,7 +2,7 @@ use Test::More tests => 7;
 
 BEGIN { use_ok WWW::Shorten::Shorl };
 
-my $url = 'http://dave.org.uk/code/WWW-Shorten/WWW-Shorten.-1.93.tar.gz';
+my $url = 'http://code.mag-sol.cpm/WWW-Shorten/WWW-Shorten-1.98.tar.gz';
 
 {
     my $shorl = makeashorterlink( $url );
