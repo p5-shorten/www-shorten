@@ -30,6 +30,7 @@ lib/WWW/Shorten/URLjr.pm
 lib/WWW/Shorten/V3.pm
 LICENCE
 Makefile.PL
+Build.PL
 MANIFEST
 MANIFEST.SKIP
 META.yml
