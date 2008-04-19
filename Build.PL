@@ -19,7 +19,7 @@ my $build = Module::Build->new(
                                  'Test::Signature'     => 0,
                                },               
 			       create_makefile_pl => 'traditional',
-                               script_giles       => [ 'bin/shorten' ],
+                               script_files       => [ 'bin/shorten' ],
 			       sign        => 1,
 );
 
