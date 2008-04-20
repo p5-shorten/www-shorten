@@ -3,10 +3,14 @@ use Test::More tests => 7;
 BEGIN { use_ok WWW::Shorten::SnipURL };
 
 my $url = 'http://code.mag-sol.com/WWW-Shorten/WWW-Shorten.1.95.tar.gz';
-my $code = '24f2g';
+my $code;
 my $prefix_RE = qr{http://sn(?:ip)?url\.com/};
 my $prefix = 'http://snipurl.com/';
 my $shortened = makeashorterlink($url);
+
+if ($shortened =~ m|\Q$prefix\E(\w+)|) {
+  $code = $1;
+}
 
 like ( $shortened, qr/$prefix_RE$code/, 'make it shorter');
 is ( makealongerlink($prefix.$code), $url, 'make it longer');
