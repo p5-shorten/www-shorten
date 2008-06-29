@@ -1,23 +1,30 @@
 # $Id$
 
+use strict;
+use warnings;
+
+our $VERSION = '1.91';
+require WWW::Shorten::_dead;
+
+0;
+__END__
+
 =head1 NAME
 
 WWW::Shorten::Tinylink - Perl interface to Tinylink.com
 
 =head1 SYNOPSIS
 
-  use WWW::Shorten 'Tinylink';
-
-  $short_url = makeashorterlink($long_url);
-
-  $long_url  = makealongerlink($short_url);
-  $long_url  = makealongerlink($nickname);
+  # No appropriate solution
 
 =head1 DESCRIPTION
 
 A Perl interface to the web site Tinylink.com. Tinylink.com simply
 maintains a database of long URLs, each of which has a unique
 identifier.
+
+Unfortunately, at some point in the middle of 2088, Tinylink.com stopped
+returning useable URLs and therefore this module is now deprecated.
 
 =cut
 
