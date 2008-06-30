@@ -23,7 +23,7 @@ A Perl interface to the web site Tinylink.com. Tinylink.com simply
 maintains a database of long URLs, each of which has a unique
 identifier.
 
-Unfortunately, at some point in the middle of 2088, Tinylink.com stopped
+Unfortunately, at some point in the middle of 2008, Tinylink.com stopped
 returning useable URLs and therefore this module is now deprecated.
 
 =cut
