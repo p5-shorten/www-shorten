@@ -34,7 +34,6 @@ MANIFEST
 MANIFEST.SKIP
 META.yml
 README
-SIGNATURE
 t/00load.t
 t/00load_a.t
 t/00load_b.t
