@@ -2,7 +2,7 @@ use Module::Build;
 
 my $build = Module::Build->new(
 			       module_name => 'WWW::Shorten',
-                               dist_version => '2.01',
+                               dist_version => '2.02',
 			       license     => 'perl',
 			       requires    => {
                                  'perl'                => '5.006',
