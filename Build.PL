@@ -20,7 +20,6 @@ my $build = Module::Build->new(
                                },               
 			       create_makefile_pl => 'traditional',
                                script_files       => [ 'bin/shorten' ],
-			       sign        => 1,
 );
 
 $build->create_build_script;
