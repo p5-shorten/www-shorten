@@ -6,7 +6,6 @@ WWW::Shorten - Interface to URL shortening sites.
 
 =head1 SYNOPSIS
 
-  use WWW::Shorten 'BabyURL';
   use WWW::Shorten 'Linkz';
   use WWW::Shorten 'MakeAShorterLink';
   use WWW::Shorten 'Metamark';
@@ -17,15 +16,6 @@ WWW::Shorten - Interface to URL shortening sites.
   use WWW::Shorten 'TinyClick';
   use WWW::Shorten 'TinyLink';
   use WWW::Shorten 'TinyURL';
-
-  # These 6 are now inactive and will give an
-  # error if you try to use them.
-  use WWW::Shorten 'EkDk';
-  use WWW::Shorten 'qURL';
-  use WWW::Shorten 'ShortLink';
-  use WWW::Shorten 'SmLnk';
-  use WWW::Shorten 'URLjr';
-  use WWW::Shorten 'V3';
 
   # Individual modules have have their
   # own syntactic variations.
@@ -69,7 +59,7 @@ use warnings;
 
 use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = 1.98;
+our $VERSION = '3.00';
 
 use Carp;
 
@@ -128,13 +118,50 @@ to filter a file, converting long URLs to short ones.
 There is also a F<bin> directory in this distribution which contains a
 sample program.
 
+=head1 NO LONGER SUPPORTED
+
+The URL-shortening industry is pretty volatile. Many sites exist for a
+while and then go away. The most famous of those is probably Make A Shorter
+Link (the site that originally inspired this suite of modules). MASL has
+been acquired by TinyURL.com and no longer exists.
+
+Here is a list of sites that were once supported by this module and are no
+longer with us:
+
+=over 4
+
+=item MakeAShorterLink
+
+=item BabyURL
+
+=item EkDk
+
+=item qURL (although the differently capitalised Qurl.com now uses their old domain)
+
+=item ShortLink
+
+=item SmLnk
+
+=item URLjr
+
+=item V3
+
+=back
+
+See Joshua Schachter's blog entry at
+L<http://joshua.schachter.org/2009/04/on-url-shorteners.html> for some
+very interesting discussion on some problems that can be caused by the
+volatility of this part of the web industry.
+
 =head1 RELATED MODULES
 
 =head2 Similar Aim
 
 L<WWW::MakeAShorterLink> is what this module was originally based upon.
 That module is obsoleted by L<WWW::Shorten::MakeAShorterLink>, one of
-the many subclasses of L<WWW::Shorten>.
+the many subclasses of L<WWW::Shorten>. Of course, with the demise of
+Make A Shorter Link, neither the obsolete module nor it's replacement are
+of any use.
 
 =head2 Same Area, Different Purpose
 
@@ -202,7 +229,7 @@ L<perlgpl> as supplied with Perl 5.8.1 and later.
 
 =head1 AUTHOR
 
-Iain Truskett <spoon@cpan.org>
+Original Iain Truskett <spoon@cpan.org>
 
 Based on WWW::MakeAShorterLink by Dave Cross <dave@mag-sol.com>
 
