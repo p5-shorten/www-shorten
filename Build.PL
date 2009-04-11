@@ -2,7 +2,7 @@ use Module::Build;
 
 my $build = Module::Build->new(
 			       module_name => 'WWW::Shorten',
-                               dist_version => '2.02',
+                               dist_version => '2.03',
 			       license     => 'perl',
 			       requires    => {
                                  'perl'                => '5.006',
@@ -20,7 +20,6 @@ my $build = Module::Build->new(
                                },               
 			       create_makefile_pl => 'traditional',
                                script_files       => [ 'bin/shorten' ],
-			       sign        => 1,
 );
 
 $build->create_build_script;
