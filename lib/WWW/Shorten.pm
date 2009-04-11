@@ -61,6 +61,8 @@ use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
 our $VERSION = '3.00';
 
+our $DEFAULT_SERVICE = 'Metamark';
+
 use Carp;
 
 my $style;
@@ -73,11 +75,10 @@ Called when the module is C<use>d. Loads the correct sub-module
 
 =cut
 
-sub import
-{
+sub import {
     my $class = shift;
     $style = shift;
-    $style = 'Metamark' unless defined $style;
+    $style = $DEFAULT_SERVICE unless defined $style;
     my $package = "${class}::${style}";
     eval {
 	my $file = $package;
