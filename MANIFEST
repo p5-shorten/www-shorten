@@ -16,7 +16,6 @@ lib/WWW/Shorten/Metamark.pm
 lib/WWW/Shorten/NotLong.pm
 lib/WWW/Shorten/OneShortLink.pm
 lib/WWW/Shorten/Shorl.pm
-lib/WWW/Shorten/SnipURL.pm
 lib/WWW/Shorten/TinyClick.pm
 lib/WWW/Shorten/Tinylink.pm
 lib/WWW/Shorten/TinyURL.pm
