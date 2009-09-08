@@ -42,7 +42,6 @@ t/newnames.t
 t/notlong.t
 t/oneshort.t
 t/shorl.t
-t/snipurl.t
 t/tinyclick.t
 t/tinylink.t
 t/tinyurl.t
