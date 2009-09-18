@@ -12,7 +12,6 @@ WWW::Shorten - Interface to URL shortening sites.
   use WWW::Shorten 'NotLong';
   use WWW::Shorten 'OneShortLink';
   use WWW::Shorten 'Shorl';
-  use WWW::Shorten 'SnipURL';
   use WWW::Shorten 'TinyClick';
   use WWW::Shorten 'TinyLink';
   use WWW::Shorten 'TinyURL';
@@ -29,7 +28,7 @@ WWW::Shorten - Interface to URL shortening sites.
   $long_url  = makealongerlink($short_url);
 
   # If you don't like the function names:
-  use WWW::Shorten 'SnipURL', ':short';
+  use WWW::Shorten 'Metamark', ':short';
   $short_url = short_link( $long_url );
   $long_url = long_link( $short_url );
 
