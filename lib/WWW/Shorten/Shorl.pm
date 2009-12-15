@@ -33,6 +33,8 @@ our @EXPORT = qw(makeashorterlink makealongerlink);
 our $VERSION = '1.91';
 
 use Carp;
+use URI;
+use URI::QueryParam;
 
 =head1 Functions
 
@@ -51,8 +53,10 @@ sub makeashorterlink ($)
 {
     my $url = shift or croak 'No URL passed to makeashorterlink';
     my $ua = __PACKAGE__->ua();
-    my $shorl = 'http://shorl.com/create.php';
-    my $resp = $ua->post($shorl, [ url => $url ]);
+    $ua->agent('Mozilla/5.0');
+    my $shorl = URI->new('http://shorl.com/create.php');
+    $shorl->query_form( url => $url );
+    my $resp = $ua->get($shorl);
     return unless $resp->is_success;
     if ($resp->content =~ m!
 	\QShorl:\E
