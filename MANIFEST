@@ -13,7 +13,6 @@ lib/WWW/Shorten/Linkz.pm
 lib/WWW/Shorten/LinkToolbot.pm
 lib/WWW/Shorten/MakeAShorterLink.pm
 lib/WWW/Shorten/Metamark.pm
-lib/WWW/Shorten/Shorl.pm
 lib/WWW/Shorten/TinyClick.pm
 lib/WWW/Shorten/Tinylink.pm
 lib/WWW/Shorten/TinyURL.pm
@@ -37,7 +36,6 @@ t/linktoolbot.t
 t/masl.t
 t/metamark.t
 t/newnames.t
-t/shorl.t
 t/tinyclick.t
 t/tinylink.t
 t/tinyurl.t
