@@ -8,6 +8,7 @@ my $build = Module::Build->new(
                                  'LWP'                 => '5.75',
                                  'LWP::UserAgent'      => '2.023',
                                  'URI'                 => '1.27',
+                                 'Config::Auto'        => 0,
                                },
 			       build_requires => {
                                  'Test::More'          => '0.47',
