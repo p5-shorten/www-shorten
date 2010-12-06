@@ -1,10 +1,23 @@
 #!/usr/bin/perl -w
 use strict;
 
-# Determine our service, default is Shorl for no real reason
-use Config::Auto 0.04;
-my $config = Config::Auto::parse();
-my $service = $config->{service} || 'Metamark';
+use Getopt::Long;
+
+my %args;
+GetOptions(\%args, 'service=s');
+
+# Determine our service, default is Metamark for no real reason
+my $config;
+# eval in case we don't have Config::Auto installed
+eval 'use Config::Auto 0.04';
+
+unless ($@) {
+  # eval in case we don't have a config file
+  $config = eval 'Config::Auto::parse()';
+}
+
+my $service = $args{service} || $ENV{SHORTEN_SERVICE} ||
+              $config->{service} || 'Metamark';
 $service = "WWW::Shorten::$service";
 
 # Import it
@@ -44,6 +57,33 @@ shorten - CLI program to demonstrate use of WWW::Shorten
 
 =head1 CONFIGURATION
 
+The service used can be controlled in various ways. The program will
+use the first of the following values that it finds:
+
+=over 4
+
+=item *
+
+The value of the C<--service> command line option.
+
+=item *
+
+The value of the C<SHORTEN_SERVICE> environment variable.
+
+=item *
+
+The value of the C<service> option from the configuration file (see
+below).
+
+=item *
+
+If none of the above options is found, the program defaults to using
+Metamark.
+
+=back
+
+=head1 CONFIGURATION FILE
+
 As we use the C<Config::Auto> module for configuration, shorten's
 fairly flexible when it comes to format.
 
@@ -80,13 +120,14 @@ your problem is less likely to be neglected.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright E<copy> Iain Truskett, 2002. All rights reserved.
+Copyright E<copy> Magnum Solutions Ltd, 2002 - 2010. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
+Dave Cross <dave@mag-sol.com>, taking over from
 Iain Truskett <spoon@cpan.org>
 
 =head1 SEE ALSO
