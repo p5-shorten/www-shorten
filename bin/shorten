@@ -4,7 +4,7 @@ use strict;
 # Determine our service, default is Shorl for no real reason
 use Config::Auto 0.04;
 my $config = Config::Auto::parse();
-my $service = $config->{service} || 'Shorl';
+my $service = $config->{service} || 'Metamark';
 $service = "WWW::Shorten::$service";
 
 # Import it
