@@ -47,13 +47,24 @@ shorten - CLI program to demonstrate use of WWW::Shorten
 
 =head1 SYNOPSIS
 
-    % shorten books.perl.org/book/171
-    http://tinyclick.com/?2x6nss
+    # Default shortening service is Metamark
+    $ shorten books.perl.org/book/171
+    http://xrl.us/dv8
 
-    # Or, if you specify a different service in your config file
+    # Change with an environment variable
+    $ SHORTEN_SERVICE=TinyURL shorten books.perl.org/book/171
+    http://tinyurl.com/ye7gjf4
 
-    % shorten books.perl.org/book/171
-    http://snurl.com/xc3
+    # Change with command line option
+    $ shorten --service=TinyURL books.perl.org/book/171
+    http://tinyurl.com/ye7gjf4
+
+    # Change using config file
+    $ cat ~/.shortenrc 
+    service = TinyURL
+    $ shorten books.perl.org/book/171
+    http://tinyurl.com/ye7gjf4
+
 
 =head1 CONFIGURATION
 
