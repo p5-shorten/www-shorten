@@ -23,7 +23,7 @@ use warnings;
 
 our $VERSION = 1.92;
 
-use LWP;
+use WWW::Shorten::UserAgent;
 use Carp;
 
 my %name_sets =
@@ -73,7 +73,7 @@ sub ua
     my $self = shift;
     return $ua if defined $ua;
     my $v = $self->VERSION();
-    $ua = LWP::UserAgent->new(
+    $ua = WWW::Shorten::UserAgent->new(
 	env_proxy => 1,
 	timeout => 30,
 	agent => "$self/$v",
