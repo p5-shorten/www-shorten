@@ -16,6 +16,7 @@ lib/WWW/Shorten/Metamark.pm
 lib/WWW/Shorten/TinyClick.pm
 lib/WWW/Shorten/Tinylink.pm
 lib/WWW/Shorten/TinyURL.pm
+lib/WWW/Shorten/UserAgent.pm
 LICENCE
 Makefile.PL
 Build.PL
