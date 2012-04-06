@@ -1,16 +1,16 @@
-LICENCE FOR WWW::Shorten 1.88
+LICENCE FOR WWW::Shorten 3.03
 
-WWW::Shorten::NotLong copyright © Eric Hammond <ehammond@thinksome.com>.
+WWW::Shorten::NotLong copyright (c) Eric Hammond <ehammond@thinksome.com>.
 
-WWW::Shorten::MakeAShorterLink copyright © Dave Cross <dave@dave.org.uk>.
+Other modules copyright (c) Magnum Solutions Ltd., 2007. All rights
+reserved.
 
 Other modules copyright © Iain Truskett, 2002-2003. All rights
 reserved.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.000 or,
-at your option, any later version of Perl 5 you may have available.
+This module is free software.  You can redistribute it and/or
+modify it under the terms of the Artistic License 2.0.
 
-The full text of the licences can be found in the Artistic and
-COPYING files included with this module, or in perlartistic and
-perlgpl as supplied with Perl 5.8.1 and later.
+This program is distributed in the hope that it will be useful,
+but without any warranty; without even the implied warranty of
+merchantability or fitness for a particular purpose.

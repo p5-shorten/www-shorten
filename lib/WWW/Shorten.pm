@@ -58,7 +58,7 @@ use warnings;
 
 use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = '3.02';
+our $VERSION = '3.03';
 
 our $DEFAULT_SERVICE = 'Metamark';
 
@@ -219,13 +219,12 @@ WWW::Shorten::NotLong copyright (c) Eric Hammond <ehammond@thinksome.com>.
 Other modules copyright (c) Magnum Solutions Ltd., 2007. All rights
 reserved.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.000 or,
-at your option, any later version of Perl 5 you may have available.
+This module is free software.  You can redistribute it and/or
+modify it under the terms of the Artistic License 2.0.
 
-The full text of the licences can be found in the F<Artistic> and
-F<COPYING> files included with this module, or in L<perlartistic> and
-L<perlgpl> as supplied with Perl 5.8.1 and later.
+This program is distributed in the hope that it will be useful,
+but without any warranty; without even the implied warranty of
+merchantability or fitness for a particular purpose.
 
 =head1 AUTHOR
 
