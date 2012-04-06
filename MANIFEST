@@ -40,3 +40,4 @@ t/tinyclick.t
 t/tinylink.t
 t/tinyurl.t
 TODO
+META.json
