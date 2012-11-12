@@ -58,7 +58,7 @@ use warnings;
 
 use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = '3.03';
+our $VERSION = '3.04';
 
 our $DEFAULT_SERVICE = 'Metamark';
 
@@ -160,7 +160,7 @@ volatility of this part of the web industry.
 L<WWW::MakeAShorterLink> is what this module was originally based upon.
 That module is obsoleted by L<WWW::Shorten::MakeAShorterLink>, one of
 the many subclasses of L<WWW::Shorten>. Of course, with the demise of
-Make A Shorter Link, neither the obsolete module nor it's replacement are
+Make A Shorter Link, neither the obsolete module nor its replacement are
 of any use.
 
 =head2 Same Area, Different Purpose
