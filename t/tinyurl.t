@@ -10,7 +10,7 @@ is ( makeashorterlink($url), $prefix.$code, 'make it shorter');
 is ( makealongerlink($prefix.$code), $url, 'make it longer');
 is ( makealongerlink($code), $url, 'make it longer by Id',);
 
-eval { &makeashorterlink() };
+eval { makeashorterlink() };
 ok($@, 'makeashorterlink fails with no args');
-eval { &makealongerlink() };
+eval { makealongerlink() };
 ok($@, 'makealongerlink fails with no args');

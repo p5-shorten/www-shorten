@@ -12,7 +12,7 @@ is ( makealongerlink( $short ) => $url, 'make it longer' );
 my ($rs) = $short =~ m# / (\w+) $ #x;
 is ( makealongerlink($rs) => $url, 'make it longer by Id' );
 
-eval { &makeashorterlink() };
+eval { makeashorterlink() };
 ok($@);
-eval { &makealongerlink() };
+eval { makealongerlink() };
 ok($@);

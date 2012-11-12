@@ -11,7 +11,7 @@ use WWW::Shorten qw( Metamark :default );
 ok( exists $::{'makeashorterlink'}, 'shorter exists');
 ok( exists $::{'makealongerlink'}, 'longer exists');
 
-eval { &makeashorterlink() };
+eval { makeashorterlink() };
 ok($@);
-eval { &makealongerlink() };
+eval { makealongerlink() };
 ok($@);

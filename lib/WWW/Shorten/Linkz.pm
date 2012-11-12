@@ -51,7 +51,7 @@ being returned.
 
 =cut
 
-sub makeashorterlink ($)
+sub makeashorterlink
 {
     my $url = shift or croak 'No URL passed to makeashorterlink';
     my $ua = __PACKAGE__->ua();
@@ -78,7 +78,7 @@ If anything goes wrong, then either function will return C<undef>.
 
 =cut
 
-sub makealongerlink ($)
+sub makealongerlink
 {
     my $code = shift
 	or croak 'No Linkz nickname/URL passed to makealongerlink';

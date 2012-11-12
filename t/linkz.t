@@ -16,8 +16,8 @@ SKIP: {
   my ($code) = $shortened =~ $re;
   is (makealongerlink($code), $url, 'make it longer by Id');
 
-  eval { &makeashorterlink() };
+  eval { makeashorterlink() };
   ok($@);
-  eval { &makealongerlink() };
+  eval { makealongerlink() };
   ok($@);
 }
