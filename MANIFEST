@@ -29,8 +29,8 @@ t/00load_b.t
 t/00noexp.t
 t/00sig.t
 t/01version.t
-t/98pod-coverage.t
-t/99pod.t
+xt/98pod-coverage.t
+xt/99pod.t
 t/linkz.t
 t/linktoolbot.t
 t/masl.t
