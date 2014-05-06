@@ -2,11 +2,14 @@ use Test::More tests => 6;
 
 BEGIN { use_ok WWW::Shorten::TinyURL };
 
-my $url = 'http://search.cpan.org/dist/WWW-Shorten/';
+my $url = 'https://metacpan.org/release/WWW-Shorten';
 my $return = makeashorterlink($url);
 my ($code) = $return =~ /(\w+)$/;
 my $prefix = 'http://tinyurl.com/';
 is ( makeashorterlink($url), $prefix.$code, 'make it shorter');
+# Slight pause to increase the chance that all of TinyURL's servers
+# know about the new link
+sleep(5);
 is ( makealongerlink($prefix.$code), $url, 'make it longer');
 is ( makealongerlink($code), $url, 'make it longer by Id',);
 
