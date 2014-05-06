@@ -31,12 +31,12 @@ The latest release version of WWW::Shorten can be downloaded
 from any CPAN site:
 
     http://www.cpan.org/modules/by-authors/id/S/SP/SPOON/
-    http://search.cpan.org/dist/WWW-Shorten/
+    https://metacpan.org/release/WWW-Shorten/
 
 Interim and development versions may also be available
-from the author's web site:
+from github:
 
-    http://dellah.org/perl/
+    http://github.com/davorg/www-shorten
 
 WWW::Shorten is distributed as a gzipped tar archive file:
 
@@ -60,22 +60,6 @@ You can then 'cd' into the directory created,
 
 INSTALLING MANUALLY
 -------------------
-
-First, verify the package's integrity by ensuring you have
-Module::Signature installed, then type:
-
-    % cpansign -v
-
-That will check each file's integrity, as well as the signature's
-validity, thus verifying the integrity of the entire package.
-If "==> Signature verified OK! <==" is not displayed, the
-distribution may already have been compromised, and you should not run
-its Makefile.PL.
-
-Ideally, you should confirm with a third party that the finger print and
-key id by which the signature was signed is indeed the key it is meant
-to be (ideally you'll have an appropriate web of trust set up, but
-that's not always possible).
 
 The 'make install' (done later) will install the modules and scripts on
 your system. You may need administrator privileges to perform this task.
@@ -118,18 +102,3 @@ If it worked, then become root and type:
     # make install
 
 Congratulations. You've just installed WWW::Shorten.
-
-If you have a copy of cpantest installed, type:
-
-    % cpantest -g pass -nc -p `basename \`pwd\`` -auto
-
-Or:
-    % cpantest -g pass -nc -p WWW-Shorten-1.88 -auto
-
-That will tell both me and other potential users that the module
-built correctly on your machine.
-
-
-cheers,
-Iain (aka Spoon).
-http://iain.truskett.id.au/
