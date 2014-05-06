@@ -166,7 +166,7 @@ of any use.
 =head2 Same Area, Different Purpose
 
 L<CGI::Shorten> provides building blocks for you to create your own URL
-shortening service. It provides routines to shoretn a URL, lengthen one,
+shortening service. It provides routines to shorten a URL, lengthen one,
 and it keeps a store. Nice and easy.
 
 =head1 THANKS
