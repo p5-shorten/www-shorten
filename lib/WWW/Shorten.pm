@@ -58,7 +58,7 @@ use warnings;
 
 use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = '3.04';
+our $VERSION = '3.05';
 
 our $DEFAULT_SERVICE = 'Metamark';
 
