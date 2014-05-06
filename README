@@ -4,25 +4,7 @@ WWW::Shorten
 
 For installation details, see INSTALL.
 
-For usage, see the doco. Either use perldoc or view it
+For usage, see the documentation. Either use perldoc or view it
 on the web at:
-    <http://search.cpan.org/dist/WWW-Shorten/>
+    <https://metacpan.org/release/WWW-Shorten>
 
-Changes for 1.88 (13 Nov 2003)
-   - Added OneShortLink, http://1sl.net/
-   - EkDk service removed.
-   - ShortLink service removed.
-   - qURL service removed.
-   - TinyClick made their URLs slightly harder to find.
-   - SmLnk ID scheme has changed.
-   - Metamark tests tidied.
-   - Notlong tests tidied.
-   - Shorl test precedence fixed.
-   - Mention CGI::Shorten.
-   - Mention http://dellah.org/shorten/
-
-
-For a complete list of changes, see the Changes file.
-
-
-by Iain Truskett.
