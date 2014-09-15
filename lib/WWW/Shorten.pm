@@ -8,7 +8,6 @@ WWW::Shorten - Interface to URL shortening sites.
 
   use WWW::Shorten 'Linkz';
   use WWW::Shorten 'MakeAShorterLink';
-  use WWW::Shorten 'Metamark';
   use WWW::Shorten 'NotLong';
   use WWW::Shorten 'OneShortLink';
   use WWW::Shorten 'Shorl';
@@ -28,7 +27,7 @@ WWW::Shorten - Interface to URL shortening sites.
   $long_url  = makealongerlink($short_url);
 
   # If you don't like the function names:
-  use WWW::Shorten 'Metamark', ':short';
+  use WWW::Shorten 'TinyURL', ':short';
   $short_url = short_link( $long_url );
   $long_url = long_link( $short_url );
 
@@ -58,9 +57,9 @@ use warnings;
 
 use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = '3.05';
+our $VERSION = '3.06';
 
-our $DEFAULT_SERVICE = 'Metamark';
+our $DEFAULT_SERVICE = 'TinyURL';
 
 use Carp;
 
@@ -135,6 +134,8 @@ longer with us:
 =item BabyURL
 
 =item EkDk
+
+=item Metamark
 
 =item qURL (although the differently capitalised Qurl.com now uses their old domain)
 

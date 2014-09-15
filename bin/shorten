@@ -17,7 +17,7 @@ unless ($@) {
 }
 
 my $service = $args{service} || $ENV{SHORTEN_SERVICE} ||
-              $config->{service} || 'Metamark';
+              $config->{service} || 'TinyURL';
 $service = "WWW::Shorten::$service";
 
 # Import it
