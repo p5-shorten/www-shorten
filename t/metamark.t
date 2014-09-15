@@ -1,6 +1,9 @@
-use Test::More tests => 7;
+use Test::More;
+plan skip_all => 'Metamark shortening has been closed';
 
-BEGIN { use_ok WWW::Shorten::Metamark };
+plan tests => 6;
+
+use WWW::Shorten::Metamark;
 
 my $url = 'http://dave.org.uk/';
 my $short = makeashorterlink( $url );
