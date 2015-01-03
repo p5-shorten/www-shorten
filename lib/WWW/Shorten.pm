@@ -6,6 +6,7 @@ WWW::Shorten - Interface to URL shortening sites.
 
 =head1 SYNOPSIS
 
+  use WWW::Shorten 'Google';
   use WWW::Shorten 'Linkz';
   use WWW::Shorten 'MakeAShorterLink';
   use WWW::Shorten 'NotLong';
