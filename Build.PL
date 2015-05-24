@@ -18,6 +18,15 @@ my $build = Module::Build->new(
                                  'Test::Pod::Coverage' => 0,
                                  'Test::Signature'     => 0,
                                },               
+                   'meta_merge' => {
+                                 'keywords' => [
+                                   'short URL',
+                                   'shortening',
+                                 ],
+                                 'resources' => {
+                                   'repository' => 'https://github.com/davorg/www-shorten'
+                                 }
+                               },
 			       create_makefile_pl => 'traditional',
                                script_files       => [ 'bin/shorten' ],
 );
