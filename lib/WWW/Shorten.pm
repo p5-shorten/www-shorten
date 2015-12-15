@@ -112,7 +112,7 @@ gives you a shortened version of it.
 Adam Kessel wrote F<shorlfilter>, a program that uses C<WWW::Shorten>
 to filter a file, converting long URLs to short ones.
 
-    http://bostoncoop.net/adam/shorlfilter
+    http://adam.rosi-kessel.org/weblog/2003/09/07/shorlfilter
 
 There is also a F<bin> directory in this distribution which contains a
 sample program.
