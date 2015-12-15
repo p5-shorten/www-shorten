@@ -11,8 +11,10 @@ is ( makeashorterlink($url), $prefix.$code, 'make it shorter');
 # Slight pause to increase the chance that all of TinyURL's servers
 # know about the new link
 sleep(5);
-is ( makealongerlink($prefix.$code), $url, 'make it longer');
-is ( makealongerlink($code), $url, 'make it longer by Id',);
+is ( makealongerlink($prefix.$code), $url, 'make it longer')
+    or diag "\$_error_message = $_error_message";
+is ( makealongerlink($code), $url, 'make it longer by Id',)
+    or diag "\$_error_message = $_error_message";
 
 eval { makeashorterlink() };
 ok($@, 'makeashorterlink fails with no args');

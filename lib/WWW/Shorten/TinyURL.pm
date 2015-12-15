@@ -84,6 +84,7 @@ sub makealongerlink
 {
     my $tinyurl_url = shift
         or croak 'No TinyURL key / URL passed to makealongerlink';
+    $_error_message = '';
     my $ua = __PACKAGE__->ua();
 
     $tinyurl_url = "http://tinyurl.com/$tinyurl_url"
@@ -91,7 +92,22 @@ sub makealongerlink
 
     my $resp = $ua->get($tinyurl_url);
 
-    return undef unless $resp->is_redirect;
+    unless ($resp->is_redirect) {
+        my $content = $resp->content;
+        if ($content =~ /Error/) {
+            if ($content =~ /<html/) {
+                $_error_message = 'Error is a html page';
+            } elsif (length($content) > 100) {
+                $_error_message = substr($content, 0, 100);
+            } else {
+                $_error_message = $content;
+            }
+        } else {
+            $_error_message = 'Unknown error';
+        }
+
+        return undef;
+    }
     my $url = $resp->header('Location');
     return $url;
 
