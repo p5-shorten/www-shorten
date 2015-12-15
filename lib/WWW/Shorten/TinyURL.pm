@@ -29,6 +29,7 @@ use warnings;
 use base qw( WWW::Shorten::generic Exporter );
 our @EXPORT = qw( makeashorterlink makealongerlink );
 our $VERSION = '1.90';
+our $_error_message ='';
 
 use Carp;
 
@@ -44,6 +45,7 @@ it your long URL and will return the shorter TinyURL version.
 sub makeashorterlink
 {
     my $url = shift or croak 'No URL passed to makeashorterlink';
+    $_error_message = '';
     my $ua = __PACKAGE__->ua();
     my $tinyurl = 'http://tinyurl.com/api-create.php';
     my $resp = $ua->post($tinyurl, [
@@ -52,7 +54,16 @@ sub makeashorterlink
 	]);
     return undef unless $resp->is_success;
     my $content = $resp->content;
-    return undef if $content =~ /Error/;
+    if ($content =~ /Error/) {
+        if ($content =~ /<html/) {
+            $_error_message = 'Error is a html page';
+        } elsif (length($content) > 100) {
+            $_error_message = substr($content, 0, 100);
+        } else {
+            $_error_message = $content;
+        }
+        return undef ;
+    }
     if ($resp->content =~ m!(\Qhttp://tinyurl.com/\E\w+)!x) {
 	return $1;
     }

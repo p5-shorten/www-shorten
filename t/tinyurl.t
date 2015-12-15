@@ -1,9 +1,10 @@
-use Test::More tests => 6;
+use Test::More tests => 7;
 
 BEGIN { use_ok WWW::Shorten::TinyURL };
 
 my $url = 'https://metacpan.org/release/WWW-Shorten';
 my $return = makeashorterlink($url);
+ok($return, 'not a error') or diag "\$_error_message = $_error_message";
 my ($code) = $return =~ /(\w+)$/;
 my $prefix = 'http://tinyurl.com/';
 is ( makeashorterlink($url), $prefix.$code, 'make it shorter');
