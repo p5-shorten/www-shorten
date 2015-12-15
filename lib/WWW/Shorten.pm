@@ -79,9 +79,9 @@ sub import {
     $style = $DEFAULT_SERVICE unless defined $style;
     my $package = "${class}::${style}";
     eval {
-	my $file = $package;
-	$file =~ s/::/\//g;
-	require "$file.pm";
+        my $file = $package;
+        $file =~ s/::/\//g;
+        require "$file.pm";
     };
     croak $@ if $@;
     $package->import( @_ );

@@ -63,8 +63,8 @@ sub makeashorterlink
     return unless $resp->is_success;
     if ($resp->content =~ m!
         \Q<a href="\E(\Qhttp://tinylink.com/?\E\w+)"
-	!x) {
-	return $1;
+        !x) {
+        return $1;
     }
     return;
 }
@@ -82,7 +82,7 @@ If anything goes wrong, then either function will return C<undef>.
 sub makealongerlink
 {
     my $code = shift
-	or croak 'No Tinylink nickname/URL passed to makealongerlink';
+        or croak 'No Tinylink nickname/URL passed to makealongerlink';
     my $ua = __PACKAGE__->ua();
 
     my $short;

@@ -49,9 +49,9 @@ sub makeashorterlink
     my $ua = __PACKAGE__->ua();
     my $tinyurl = 'http://tinyurl.com/api-create.php';
     my $resp = $ua->post($tinyurl, [
-	url => $url,
-	source => "PerlAPI-$VERSION",
-	]);
+        url => $url,
+        source => "PerlAPI-$VERSION",
+    ]);
     return undef unless $resp->is_success;
     my $content = $resp->content;
     if ($content =~ /Error/) {
@@ -65,7 +65,7 @@ sub makeashorterlink
         return undef ;
     }
     if ($resp->content =~ m!(\Qhttp://tinyurl.com/\E\w+)!x) {
-	return $1;
+        return $1;
     }
     return;
 }
@@ -82,8 +82,8 @@ If anything goes wrong, then either function will return C<undef>.
 
 sub makealongerlink
 {
-    my $tinyurl_url = shift 
-	or croak 'No TinyURL key / URL passed to makealongerlink';
+    my $tinyurl_url = shift
+        or croak 'No TinyURL key / URL passed to makealongerlink';
     my $ua = __PACKAGE__->ua();
 
     $tinyurl_url = "http://tinyurl.com/$tinyurl_url"

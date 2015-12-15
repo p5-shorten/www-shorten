@@ -62,8 +62,8 @@ sub makeashorterlink
     return unless $resp->is_success;
     if ($resp->content =~ m!
         \Q<a href="\E(\Qhttp://lin.kz/?\E\w+)"
-	!x) {
-	return $1;
+        !x) {
+        return $1;
     }
     return;
 }
@@ -81,7 +81,7 @@ If anything goes wrong, then either function will return C<undef>.
 sub makealongerlink
 {
     my $code = shift
-	or croak 'No Linkz nickname/URL passed to makealongerlink';
+        or croak 'No Linkz nickname/URL passed to makealongerlink';
     my $ua = __PACKAGE__->ua();
     $code = "http://lin.kz/?$code" unless $code =~ m!^http://!i;
 
