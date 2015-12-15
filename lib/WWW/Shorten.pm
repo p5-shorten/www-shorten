@@ -57,7 +57,7 @@ use warnings;
 
 use base qw(WWW::Shorten::generic);
 our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = '3.06';
+our $VERSION = '3.08';
 
 our $DEFAULT_SERVICE = 'TinyURL';
 
