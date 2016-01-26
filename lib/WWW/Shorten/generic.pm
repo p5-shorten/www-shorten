@@ -10,7 +10,7 @@ WWW::Shorten::generic - Methods shared across all WWW::Shorten modules
 
 =head1 DESCRIPTION
 
-Contains methds that are shared across all WWW::Shorten implemenation
+Contains methods that are shared across all WWW::Shorten implemenation
 modules.
 
 =cut
