@@ -6,9 +6,9 @@
 ^blib/
 ^Makefile$
 ^WWW-Shorten-
-^MANIFEST.bak$
+^MANIFEST\.bak$
 ^pm_to_blib$
-^Makefile.[a-z]+$
+^Makefile\.[a-z]+$
 \.cvsignore$
 \B\.svn\b
 ^diff
@@ -22,4 +22,5 @@
 \.tmp$
 ~$
 ^\.
-^MYMETA.yml$
+^MYMETA\.yml$
+^README\.md$
