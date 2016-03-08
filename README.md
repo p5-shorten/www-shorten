@@ -103,7 +103,7 @@ See Joshua Schachter's blog entry at
 very interesting discussion on some problems that can be caused by the
 volatility of this part of the web industry.
 
-# RELATED MODULES
+# SEE ALSO
 
 ## Similar Aim
 
@@ -118,6 +118,33 @@ of any use.
 [CGI::Shorten](https://metacpan.org/pod/CGI::Shorten) provides building blocks for you to create your own URL
 shortening service. It provides routines to shorten a URL, lengthen one,
 and it keeps a store. Nice and easy.
+
+# BUGS, REQUESTS, COMMENTS
+
+Please submit any [issues](https://github.com/p5-shorten/www-shorten/issues) you
+might have.  We appreciate all help, suggestions, noted problems, and especially patches.
+
+Support for this module is supplied primarily via the using the
+[GitHub Issues](https://github.com/p5-shorten/www-shorten/issues) but we also
+happily respond to issues submitted to the
+[CPAN RT](http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Shorten) system via the web
+or email: &lt;bug-www-shorten@rt.cpan.org>
+
+* https://github.com/p5-shorten/www-shorten/issues
+* http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Shorten
+* ( shorter URL: http://xrl.us/rfb )
+* &lt;bug-www-shorten@rt.cpan.org>
+
+# AUTHOR
+
+Original Iain Truskett &lt;spoon@cpan.org>
+
+Based on WWW::MakeAShorterLink by Dave Cross &lt;dave@mag-sol.com>
+
+In 2004 Dave Cross took over the maintenance of this distribution
+following the death of Iain Truskett.
+
+In 2016, Chase Whitener took over the maintenance of this distribution.
 
 # THANKS
 
@@ -149,22 +176,10 @@ P J Goodwin for providing the code for [WWW::Shorten::OneShortLink](https://meta
 
 And especial thanks to all providers of these services.
 
-# BUGS, REQUESTS, COMMENTS
-
-Support for this module is supplied using the CPAN RT system via the web
-or email:
-
-http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Shorten
-( shorter URL: http://xrl.us/rfb )
-
-&lt;bug-www-shorten@rt.cpan.org>
-
-This makes it much easier for me to track things and thus means
-your problem is less likely to be neglected.
-
 # LICENCE AND COPYRIGHT
 
-[WWW::Shorten::NotLong](https://metacpan.org/pod/WWW::Shorten::NotLong) copyright (c) Eric Hammond &lt;ehammond@thinksome.com>.
+[WWW::Shorten::NotLong](https://metacpan.org/pod/WWW::Shorten::NotLong)
+copyright (c) Eric Hammond &lt;ehammond@thinksome.com>.
 
 Other modules copyright (c) Magnum Solutions Ltd., 2007. All rights
 reserved.
@@ -175,18 +190,3 @@ modify it under the terms of the Artistic License 2.0.
 This program is distributed in the hope that it will be useful,
 but without any warranty; without even the implied warranty of
 merchantability or fitness for a particular purpose.
-
-# AUTHOR
-
-Original Iain Truskett &lt;spoon@cpan.org>
-
-Based on WWW::MakeAShorterLink by Dave Cross &lt;dave@mag-sol.com>
-
-In 2004 Dave Cross took over the maintenance of this distribution
-following the death of Iain Truskett.
-
-In 2016, Chase Whitener took over the maintenance of this distribution.
-
-# SEE ALSO
-
-[perl](https://metacpan.org/pod/perl), [CGI::Shorten](https://metacpan.org/pod/CGI::Shorten).
