@@ -10,23 +10,23 @@ like($res, qr/inactive/, "::_dead is inactive");
 
 $res = undef;
 $res = try_use('WWW::Shorten::LinkToolbot');
-like($res, qr/inactive/, "::LinkToolbot is inactive");
+like($res, qr/Attempt to reload/, "::LinkToolbot is inactive");
 
 $res = undef;
 $res = try_use('WWW::Shorten::Metamark');
-like($res, qr/inactive/, "::Metamark is inactive");
+like($res, qr/Attempt to reload/, "::Metamark is inactive");
 
 $res = undef;
 $res = try_use('WWW::Shorten::MakeAShorterLink');
-like($res, qr/inactive/, "::MakeAShorterLink is inactive");
+like($res, qr/Attempt to reload/, "::MakeAShorterLink is inactive");
 
 $res = undef;
 $res = try_use('WWW::Shorten::TinyClick');
-like($res, qr/inactive/, "::TinyClick is inactive");
+like($res, qr/Attempt to reload/, "::TinyClick is inactive");
 
 $res = undef;
 $res = try_use('WWW::Shorten::Tinylink');
-like($res, qr/inactive/, "::Tinylink is inactive");
+like($res, qr/Attempt to reload/, "::Tinylink is inactive");
 
 done_testing();
 
@@ -34,7 +34,8 @@ sub try_use {
     my $module = shift;
     return do {
         local $@;
-        eval { require $module; };
+        $module =~ s/::/\//g;
+        eval { require "$module.pm"; };
         $@;
     };
 }
