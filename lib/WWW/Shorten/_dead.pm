@@ -1,10 +1,11 @@
-# $Id$
 package WWW::Shorten::_dead;
 
 use strict;
 use warnings;
 
-our $VERSION = '1.92';
+our $VERSION = '3.090';
+$VERSION = eval $VERSION;
+
 die <<'EOF';
 
 This WWW::Shorten service is inactive.
@@ -26,3 +27,5 @@ WWW::Shorten::_dead - Where dead link-shortening services got
 
 This is just a module that we use for link-shortening services that
 we used to support but which no longer exist.
+
+=cut

@@ -1,8 +1,19 @@
-# $Id$
+package WWW::Shorten::Metamark;
+
+use 5.006;
+use strict;
+use warnings;
+
+our $VERSION = '3.090';
+$VERSION = eval $VERSION;
+
+require WWW::Shorten::_dead;
+
+1;
 
 =head1 NAME
 
-WWW::Shorten::Metamark - Perl interface to metamark.net
+WWW::Shorten::Metamark
 
 =head1 SYNOPSIS
 
@@ -10,20 +21,8 @@ WWW::Shorten::Metamark - Perl interface to metamark.net
 
 =head1 DESCRIPTION
 
-A Perl interface to the web site metamark.net.
-
-From September 2014, Metamark is no longer accepting new URLs.
+Unfortunately, this service became inactive at some point between 1.89
+and 1.90, so this module will merely give you an error if you try to use
+it. Feel free to pick a different L<service|WWW::Shorten>.
 
 =cut
-
-package WWW::Shorten::Metamark;
-
-use 5.006;
-use strict;
-use warnings;
-
-our $VERSION = '1.91';
-
-require WWW::Shorten::_dead;
-
-0;

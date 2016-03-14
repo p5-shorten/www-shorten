@@ -1,26 +1,131 @@
-\.sw.$
+# Avoid version control files.
 \bRCS\b
 \bCVS\b
-^_build/
-^Build$
-^blib/
-^Makefile$
-^WWW-Shorten-
-^MANIFEST\.bak$
-^pm_to_blib$
-^Makefile\.[a-z]+$
-\.cvsignore$
+,v$
+,B$
+,D$
 \B\.svn\b
-^diff
-^patch
-\.patch$
-^log$
-^data\.yaml$
+\B\.cvsignore$
+\B\.git\b
+\B\.gitignore$
+\B\.bzr\b
+\B\.bzrignore$
+
+^blib/
 ^blibdirs$
-^cover_db/
-^WWW-Shorten/
-\.tmp$
+^blibdirs\.ts$
+^bpm_to_blib\.ts$
+^Makefile$
+^Makefile\.old$
+^MakeMaker-\d
+^MANIFEST\.bak$
+^MANIFEST\.SKIP$
+^MYMETA\.
+^pm_to_blib$
+^pod2htm.*
+
+# Module::Build
+^Build$
+^_build/
+^Build.bat$
+^Build.COM$
+^BUILD.COM$
+^build.com$
+
+# Author Extras
+^inc/.*\.pod$
+^pkg/
+
+# Editors
 ~$
-^\.
-^MYMETA\.yml$
-^README\.md$
+\#$
+\b\.#
+\.kpf$
+\.sw[pmno]$
+^\.vimrc$
+
+# OS X
+^\.DS_Store$
+^\.Trash/
+\B\._
+
+# VMS
+\bDescrip.MMS$
+\bDESCRIP.MMS$
+\bdescrip.mms$
+
+# Development
+^benchmarks/
+^core$
+^cover_db\b
+^nytprof\b
+^covered\b
+^debian/
+^devel\.
+^.devel-local$
+^out$
+^tmon.out$
+
+# Author Notes
+^notes
+^todo
+^ToDo$
+
+# Common Junk Files
+\.bak$
+\.diff$
+^foo\b.*
+\.old$
+\.orig$
+\.patch$
+\.rej$
+\.tdy$
+\.tmp$
+^\w$
+\.ttc$
+\.pmc$
+
+# Distribution tarballs
+^[^/]+\.tar\.gz$
+
+# Travis CI
+.travis.yml
+.perltidyrc
+
+# Avoid temp and backup files.
+~$
+\#$
+\.#
+
+# Avoid OS-specific files/dirs
+#   Mac OSX metadata
+\B\.DS_Store
+#   Mac OSX SMB mount metadata files
+\B\._
+
+# Avoid archives of this distribution
+\.gz$
+\.ppd$
+\.ppmx$
+\.tgz$
+\.deb$
+\bdebian
+\bDebian_CPANTS.txt$
+-stamp$
+
+# Avoid Eclipse files
+.cproject
+.includepath
+.project
+.settings
+
+# Avoid distdir
+\d+\.\d+\b
+^MYMETA.yml$
+^MYMETA\.json$
+
+# Avoid compiler artifacts
+\bcompilet
+\btest-
+\.exe$
+\.o$

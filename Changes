@@ -1,6 +1,10 @@
-3.100   2016-03-09
-    - Painstaking cleanup of changes/version history
-    - combined tests for the dead services into one
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
+    - changed to Dist::Zilla
+    - added author tests
+    - Cleaned up documentation
+    - Cleaned up Changes file
 
 3.08    2015-12-15
     - Dave Cross (DAVECROSS)

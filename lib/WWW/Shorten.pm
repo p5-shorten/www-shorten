@@ -1,4 +1,34 @@
-#$Id$
+package WWW::Shorten;
+
+use 5.006;
+use strict;
+use warnings;
+
+use base qw(WWW::Shorten::generic);
+use Carp ();
+
+our $DEFAULT_SERVICE = 'TinyURL';
+our @EXPORT          = qw(makeashorterlink makealongerlink);
+our $VERSION         = '3.090';
+$VERSION = eval $VERSION;
+
+my $style;
+
+sub import {
+    my $class = shift;
+    $style = shift;
+    $style = $DEFAULT_SERVICE unless defined $style;
+    my $package = "${class}::${style}";
+    eval {
+        my $file = $package;
+        $file =~ s/::/\//g;
+        require "$file.pm";
+    };
+    Carp::croak($@) if $@;
+    $package->import(@_);
+}
+
+1;
 
 =head1 NAME
 
@@ -47,49 +77,11 @@ identifier.
 
 If anything goes wrong, then either function will return C<undef>.
 
-=cut
-
-package WWW::Shorten;
-
-use 5.006;
-use strict;
-use warnings;
-
-use base qw(WWW::Shorten::generic);
-our @EXPORT = qw(makeashorterlink makealongerlink);
-our $VERSION = '3.08';
-
-our $DEFAULT_SERVICE = 'TinyURL';
-
-use Carp;
-
-my $style;
-
 =head1 Subroutines
 
 =head2 import
 
 Called when the module is C<use>d. Loads the correct sub-module
-
-=cut
-
-sub import {
-    my $class = shift;
-    $style = shift;
-    $style = $DEFAULT_SERVICE unless defined $style;
-    my $package = "${class}::${style}";
-    eval {
-        my $file = $package;
-        $file =~ s/::/\//g;
-        require "$file.pm";
-    };
-    croak $@ if $@;
-    $package->import( @_ );
-}
-
-1;
-
-__END__
 
 =head2 EXPORT
 
@@ -121,31 +113,31 @@ sample program.
 
 The URL-shortening industry is pretty volatile. Many sites exist for a
 while and then go away. The most famous of those is probably Make A Shorter
-Link (the site that originally inspired this suite of modules). MASL has
-been acquired by TinyURL.com and no longer exists.
+Link (the site that originally inspired this suite of modules). http://MASL.com has
+been acquired by http://TinyURL.com and no longer exists.
 
 Here is a list of sites that were once supported by this module and are no
 longer with us:
 
 =over 4
 
-=item MakeAShorterLink
+=item http://MakeAShorterLink.com/
 
-=item BabyURL
+=item http://BabyURL.com/
 
-=item EkDk
+=item http://EkDk.com/
 
-=item Metamark
+=item http://Metamark.com/
 
-=item qURL (although the differently capitalised Qurl.com now uses their old domain)
+=item http://qURL.com/
 
-=item ShortLink
+=item http://ShortLink.com/
 
-=item SmLnk
+=item http://SmLnk.com/
 
-=item URLjr
+=item http://URLjr.com/
 
-=item V3
+=item http://V3.com
 
 =back
 
@@ -178,10 +170,9 @@ Alex Page for the original LWP hacking on which Dave based his code.
 
 Simon Batistoni for giving the C<makealongerlink> idea to Dave.
 
-Eric Hammond for writing the NotLong variant.
+Eric Hammond for writing the L<WWW::Shorten::NotLong> variant.
 
-Shashank Tripathi <shank@shank.com> for providing both SnipURL.com and
-advice on the module.
+Shashank Tripathi <shank@shank.com> for help with L<WWW::Shorten::SnipURL> .
 
 Kevin Gilbertson (Gilby) supplied information on the TinyURL API.
 
@@ -191,10 +182,10 @@ Ask Bjoern Hansen for providing both Metamark.net and advice on the
 module.
 
 Martin Thurn for helping me notice a bug and for a suggestion regarding
-F<MASL.pm>.
+L<WWW::Shorten::MASL>.
 
-Jon and William (jon and wjr at smlnk.com respectively) for providing
-SmLnk.com.
+Jon and William (jon and wjr at http://smlnk.com respectively) for providing
+http://SmLnk.com.
 
 P J Goodwin for providing the code for L<WWW::Shorten::OneShortLink>.
 
@@ -213,7 +204,7 @@ or email:
 This makes it much easier for me to track things and thus means
 your problem is less likely to be neglected.
 
-=head1 LICENCE AND COPYRIGHT
+=head1 LICENSE AND COPYRIGHT
 
 WWW::Shorten::NotLong copyright (c) Eric Hammond <ehammond@thinksome.com>.
 
