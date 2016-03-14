@@ -1,7 +1,11 @@
-use Test::More tests => 1;
-# Basic test of 'does the module load, damnit!'
+use strict;
+use warnings;
+
+use Test::More;
+use Try::Tiny qw(try catch);
 use WWW::Shorten::TinyURL;
 
-eval { WWW::Shorten::TinyURL->import(':invalid') };
+my $res = try { WWW::Shorten::TinyURL->import(':invalid'); undef } catch { $_ };
+ok($res, 'Importing invalid tag failed');
 
-ok($@);
+done_testing();
