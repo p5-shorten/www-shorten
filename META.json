@@ -66,15 +66,12 @@
    },
    "version" : "3.090",
    "x_contributors" : [
-      "Alexandr Ciornii <alexchorny@gmail.com>",
-      "Chase Whitener <chase.whitener@infotechfl.com>",
-      "Chase Whitener <cwhitener@gmail.com>",
-      "Dave Cross <dave@angel.mag-sol.com>",
-      "Dave Cross <dave@dacross.(none)>",
-      "Dave Cross <dave@dave.org.uk>",
-      "Michiel Beijen <michiel.beijen@gmail.com>",
-      "Mohammad S Anwar <mohammad.anwar@yahoo.com>",
-      "yappo <yappo@shibuya.pl>"
+      "Alexandr Ciornii <chorny@cpan.org>",
+      "Chase Whitener <capoeirab@cpan.org>",
+      "Dave Cross <davecross@cpan.org>",
+      "Kazuhiro Osawa <yappo@cpan.org>",
+      "Michiel Beijen <michielb@cpan.org>",
+      "Mohammad S Anwar <manwar@cpan.org>"
    ]
 }
 

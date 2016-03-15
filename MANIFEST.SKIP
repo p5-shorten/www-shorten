@@ -129,3 +129,4 @@
 \btest-
 \.exe$
 \.o$
+\.mailmap$
