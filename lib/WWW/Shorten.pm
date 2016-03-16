@@ -37,12 +37,6 @@ WWW::Shorten - Interface to URL shortening sites.
 =head1 SYNOPSIS
 
   use WWW::Shorten 'Linkz';
-  use WWW::Shorten 'MakeAShorterLink';
-  use WWW::Shorten 'NotLong';
-  use WWW::Shorten 'OneShortLink';
-  use WWW::Shorten 'Shorl';
-  use WWW::Shorten 'TinyClick';
-  use WWW::Shorten 'TinyLink';
   use WWW::Shorten 'TinyURL';
 
   # Individual modules have have their
