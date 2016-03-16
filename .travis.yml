@@ -14,6 +14,8 @@ install:
   - "cpanm -n Test::More Test::Pod Test::Pod::Coverage Test::CheckManifest"
   - "cpanm -n Test::CPAN::Changes Test::Kwalitee Test::Pod::Spelling::CommonMistakes"
   - "cpanm -n --installdeps ."
+script:
+  - perl Makefile.PL && make manifest && make test
 sudo: false
 notifications:
   email: false
