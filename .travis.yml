@@ -11,7 +11,8 @@ perl:
 env:
   - "AUTOMATED_TESTING=1 AUTHOR_TESTING=1 RELEASE_TESTING=1"
 install:
-  - "cpanm -n Test::More Test::Pod Test::Pod::Coverage"
+  - "cpanm -n Test::More Test::Pod Test::Pod::Coverage Test::CheckManifest"
+  - "cpanm -n Test::CPAN::Changes Test::Kwalitee Test::Pod::Spelling::CommonMistakes"
   - "cpanm -n --installdeps ."
 sudo: false
 notifications:
