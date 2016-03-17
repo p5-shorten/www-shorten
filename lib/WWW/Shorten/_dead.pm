@@ -21,7 +21,18 @@ WWW::Shorten::_dead - Where dead link-shortening services go
 
 =head1 SYNOPSIS
 
-  # No appropriate synopsis
+  # just change your service to look like this:
+  package WWW::Shorten::SomeDeadService;
+  use strict;
+  use warnings;
+
+  our $VERSION = '1.001';
+  $VERSION = eval $VERSION;
+
+  # ensure a common error message will be given to the user
+  require WWW::Shorten::_dead;
+
+  1;
 
 =head1 DESCRIPTION
 
