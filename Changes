@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+3.091     2016-03-17
     - Fixed typo on ::_dead (Thanks, @neilb)
     - Add synopsis to ::_dead
     - Cleaned up contributors, alphabetized
