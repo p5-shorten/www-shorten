@@ -2,6 +2,7 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
     - Fixed typo on ::_dead (Thanks, @neilb)
+    - Add synopsis to ::_dead
     - Cleaned up contributors, alphabetized
     - Cleaned up the copyright and license confusion
 
