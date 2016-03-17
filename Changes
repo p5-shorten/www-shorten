@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    - Fixed typo on ::_dead (Thanks, @neilb)
+    - Cleaned up contributors, alphabetized
+    - Cleaned up the copyright and license confusion
 
 3.090     2016-03-16
     - changed to Dist::Zilla

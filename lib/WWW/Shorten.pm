@@ -95,31 +95,7 @@ Iain Truskett C<spoon@cpan.org>
 
 =item *
 
-Dave Cross dave@perlhacks.com -- Authored L<WWW::MakeAShorterLink> on which this was based
-
-=item *
-
 Alex Page -- for the original LWP hacking on which Dave based his code.
-
-=item *
-
-Simon Batistoni -- giving the `makealongerlink` idea to Dave.
-
-=item *
-
-Eric Hammond -- writing L<WWW::Shorten::NotLong>
-
-=item *
-
-Shashank Tripathi C<shank@shank.com> -- for providing L<WWW::Shorten::SnipURL>
-
-=item *
-
-Kevin Gilbertson (Gilby) -- TinyURL API information
-
-=item *
-
-Matt Felsen (mattf) -- shorter function names
 
 =item *
 
@@ -127,7 +103,15 @@ Ask Bjoern Hansen -- providing L<WWW::Shorten::Metamark>
 
 =item *
 
-Martin Thurn -- bug fixes
+Chase Whitener C<capoeirab@cpan.org>
+
+=item *
+
+Dave Cross dave@perlhacks.com -- Authored L<WWW::MakeAShorterLink> on which this was based
+
+=item *
+
+Eric Hammond -- writing L<WWW::Shorten::NotLong>
 
 =item *
 
@@ -135,15 +119,35 @@ Jon and William (wjr) -- smlnk services
 
 =item *
 
-PJ Goodwin -- code for L<WWW::Shorten::OneShortLink>
-
-=item *
-
 Kazuhiro Osawa C<yappo@cpan.org>
 
 =item *
 
-Chase Whitener C<capoeirab@cpan.org>
+Kevin Gilbertson (Gilby) -- TinyURL API information
+
+=item *
+
+Martin Thurn -- bug fixes
+
+=item *
+
+Matt Felsen (mattf) -- shorter function names
+
+=item *
+
+Neil Bowers C<neilb@cpan.org>
+
+=item *
+
+PJ Goodwin -- code for L<WWW::Shorten::OneShortLink>
+
+=item *
+
+Shashank Tripathi C<shank@shank.com> -- for providing L<WWW::Shorten::SnipURL>
+
+=item *
+
+Simon Batistoni -- giving the `makealongerlink` idea to Dave.
 
 =item *
 
@@ -158,12 +162,9 @@ In 2016, Chase Whitener took over the maintenance of this distribution.
 
 =head1 LICENSE AND COPYRIGHT
 
-This module is free software.  You can redistribute it and/or
-modify it under the terms of the Artistic License 2.0.
+Copyright (c) 2002 by Iain Truskett.
 
-This program is distributed in the hope that it will be useful,
-but without any warranty; without even the implied warranty of
-merchantability or fitness for a particular purpose.
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 

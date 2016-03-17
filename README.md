@@ -55,7 +55,7 @@ or email: &lt;bug-www-shorten@rt.cpan.org>
 * https://github.com/p5-shorten/www-shorten/issues
 * http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Shorten
 * ( shorter URL: http://xrl.us/rfb )
-* &lt;bug-www-shorten@rt.cpan.org>
+* bug-www-shorten@rt.cpan.org
 
 # AUTHOR
 
@@ -63,19 +63,20 @@ Iain Truskett spoon@cpan.org
 
 # CONTRIBUTORS
 
-- Dave Cross dave@perlhacks.com -- Authored WWW::MakeAShorterLink on which this was based
 - Alex Page -- for the original LWP hacking on which Dave based his code.
-- Simon Batistoni -- giving the `makealongerlink` idea to Dave.
-- Eric Hammond -- writing [WWW::Shorten::NotLong](https://metacpan.org/pod/WWW::Shorten::NotLong)
-- Shashank Tripathi shank@shank.com -- for providing [WWW::Shorten::SnipURL](https://metacpan.org/pod/WWW::Shorten::SnipURL)
-- Kevin Gilbertson (Gilby) -- TinyURL API information
-- Matt Felsen (mattf) -- shorter function names
 - Ask Bjoern Hansen -- providing [WWW::Shorten::Metamark](https://metacpan.org/pod/WWW::Shorten::Metamark)
-- Martin Thurn -- bug fixes
-- Jon and William (wjr) -- smlnk services
-- PJ Goodwin -- code for [WWW::Shorten::OneShortLink](https://metacpan.org/pod/WWW::Shorten::OneShortLink)
-- Kazuhiro Osawa yappo@cpan.org
 - Chase Whitener capoeirab@cpan.org
+- Dave Cross dave@perlhacks.com -- Authored WWW::MakeAShorterLink on which this was based
+- Eric Hammond -- writing [WWW::Shorten::NotLong](https://metacpan.org/pod/WWW::Shorten::NotLong)
+- Jon and William (wjr) -- smlnk services
+- Kazuhiro Osawa yappo@cpan.org
+- Kevin Gilbertson (Gilby) -- TinyURL API information
+- Martin Thurn -- bug fixes
+- Matt Felsen (mattf) -- shorter function names
+- Neil Bowers neilb@cpan.org
+- PJ Goodwin -- code for [WWW::Shorten::OneShortLink](https://metacpan.org/pod/WWW::Shorten::OneShortLink)
+- Shashank Tripathi shank@shank.com -- for providing [WWW::Shorten::SnipURL](https://metacpan.org/pod/WWW::Shorten::SnipURL)
+- Simon Batistoni -- giving the `makealongerlink` idea to Dave.
 - Everyone else we might have missed.
 
 In 2004 Dave Cross took over the maintenance of this distribution
@@ -85,12 +86,9 @@ In 2016, Chase Whitener took over the maintenance of this distribution.
 
 # LICENCE AND COPYRIGHT
 
-This module is free software.  You can redistribute it and/or
-modify it under the terms of the Artistic License 2.0.
+Copyright (c) 2002 by Iain Truskett.
 
-This program is distributed in the hope that it will be useful,
-but without any warranty; without even the implied warranty of
-merchantability or fitness for a particular purpose.
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 # SEE ALSO
 
