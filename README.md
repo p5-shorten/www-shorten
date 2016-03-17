@@ -6,63 +6,35 @@ WWW::Shorten - Interface to URL shortening sites.
 # SYNOPSIS
 
 ```perl
-use WWW::Shorten 'Linkz';
-use WWW::Shorten 'MakeAShorterLink';
-use WWW::Shorten 'NotLong';
-use WWW::Shorten 'OneShortLink';
-use WWW::Shorten 'Shorl';
-use WWW::Shorten 'TinyClick';
-use WWW::Shorten 'TinyLink';
-use WWW::Shorten 'TinyURL';
+#!/usr/bin/env perl
+use strict;
+use warnings;
 
-# Individual modules have have their
-# own syntactic variations.
+use WWW::Shorten 'TinyURL'; # Recommended
+# use WWW::Shorten 'Linkz'; # or one of the others
+# use WWW::Shorten 'Shorl';
 
-# See the documentation for the particular
-# module you intend to use for details, trips
-# and traps.
+# Individual modules have have their own syntactic variations.
+# See the documentation for the particular module you intend to use for
+#  details, trips and traps.
 
-$short_url = makeashorterlink($long_url);
+my $url = 'https://metacpan.org/pod/WWW::Shorten';
+my $short_url = makeashorterlink($url);
+my $long_url  = makealongerlink($short_url);
 
-$long_url  = makealongerlink($short_url);
 
-# If you don't like the function names:
+# - OR -
+# If you don't like the long function names:
+
 use WWW::Shorten 'TinyURL', ':short';
-$short_url = short_link( $long_url );
-$long_url = long_link( $short_url );
+my $short_url = short_link($url);
+my $long_url = long_link( $short_url );
 ```
-
-# ABSTRACT
-
-A Perl interface to URL shortening sites. These sites maintain
-databases of long URLs, each of which has a unique identifier.
 
 # DESCRIPTION
 
-The function `makeashorterlink` will call the relevant web site
-passing it your long URL and will return the shorter version.
-
-The function `makealongerlink` does the reverse. `makealongerlink`
-will accept as an argument either the full shortened URL or just the
-identifier.
-
-If anything goes wrong, then either function will return `undef`.
-
-# Subroutines
-
-## import
-
-Called when the module is `use`d. Loads the correct sub-module
-
-## EXPORT
-
-makeashorterlink, makealongerlink
-
-Or, if you specify `:short` on the import line, you instead
-get `short_link` and `long_link`. If you explicitly want the
-default set, use `:default`.
-
-Actually these functions are exported from the relevant subclass.
+A Perl interface to various services that shorten URLs. These sites maintain
+databases of long URLs, each of which has a unique identifier.
 
 # COMMAND LINE PROGRAM
 
@@ -70,56 +42,7 @@ A very simple program called `shorten` is supplied in the
 distribution's `bin` folder. This program takes a URL and
 gives you a shortened version of it.
 
-# EXAMPLES and PROGRAMS
-
-Adam Kessel wrote [shorlfilter](http://adam.rosi-kessel.org/weblog/2003/09/07/shorlfilter), a program that uses [WWW::Shorten](https://metacpan.org/pod/WWW::Shorten)
-to filter a file, converting long URLs to short ones.
-
-There is also a `bin` directory in this distribution which contains a
-sample program.
-
-# NO LONGER SUPPORTED
-
-The URL-shortening industry is pretty volatile. Many sites exist for a
-while and then go away. The most famous of those is probably Make A Shorter
-Link (the site that originally inspired this suite of modules). MASL has
-been acquired by TinyURL.com and no longer exists.
-
-Here is a list of sites that were once supported by this module and are no
-longer with us:
-
-- MakeAShorterLink
-- BabyURL
-- EkDk
-- Metamark
-- qURL (although the differently capitalised Qurl.com now uses their old domain)
-- ShortLink
-- SmLnk
-- URLjr
-- V3
-
-See Joshua Schachter's blog entry at
-[http://joshua.schachter.org/2009/04/on-url-shorteners.html](http://joshua.schachter.org/2009/04/on-url-shorteners.html) for some
-very interesting discussion on some problems that can be caused by the
-volatility of this part of the web industry.
-
-# SEE ALSO
-
-## Similar Aim
-
-[WWW::MakeAShorterLink](https://metacpan.org/pod/WWW::MakeAShorterLink) is what this module was originally based upon.
-That module is obsoleted by [WWW::Shorten::MakeAShorterLink](https://metacpan.org/pod/WWW::Shorten::MakeAShorterLink), one of
-the many subclasses of [WWW::Shorten](https://metacpan.org/pod/WWW::Shorten). Of course, with the demise of
-Make A Shorter Link, neither the obsolete module nor its replacement are
-of any use.
-
-## Same Area, Different Purpose
-
-[CGI::Shorten](https://metacpan.org/pod/CGI::Shorten) provides building blocks for you to create your own URL
-shortening service. It provides routines to shorten a URL, lengthen one,
-and it keeps a store. Nice and easy.
-
-# BUGS, REQUESTS, COMMENTS
+# ISSUES OR CONTRIBUTIONS
 
 Please submit any [issues](https://github.com/p5-shorten/www-shorten/issues) you
 might have.  We appreciate all help, suggestions, noted problems, and especially patches.
@@ -137,52 +60,30 @@ or email: &lt;bug-www-shorten@rt.cpan.org>
 
 # AUTHOR
 
-Original Iain Truskett &lt;spoon@cpan.org>
+Iain Truskett spoon@cpan.org
 
-Based on WWW::MakeAShorterLink by Dave Cross &lt;dave@mag-sol.com>
+# CONTRIBUTORS
+
+- Dave Cross dave@perlhacks.com -- Authored WWW::MakeAShorterLink on which this was based
+- Alex Page -- for the original LWP hacking on which Dave based his code.
+- Simon Batistoni -- giving the `makealongerlink` idea to Dave.
+- Eric Hammond -- writing [WWW::Shorten::NotLong](https://metacpan.org/pod/WWW::Shorten::NotLong)
+- Shashank Tripathi shank@shank.com -- for providing [WWW::Shorten::SnipURL](https://metacpan.org/pod/WWW::Shorten::SnipURL)
+- Kevin Gilbertson (Gilby) -- TinyURL API information
+- Matt Felsen (mattf) -- shorter function names
+- Ask Bjoern Hansen -- providing [WWW::Shorten::Metamark](https://metacpan.org/pod/WWW::Shorten::Metamark)
+- Martin Thurn -- bug fixes
+- Jon and William (wjr) -- smlnk services
+- PJ Goodwin -- code for [WWW::Shorten::OneShortLink](https://metacpan.org/pod/WWW::Shorten::OneShortLink)
+- Chase Whitener capoeirab@cpan.org
+- Everyone else we might have missed.
 
 In 2004 Dave Cross took over the maintenance of this distribution
 following the death of Iain Truskett.
 
 In 2016, Chase Whitener took over the maintenance of this distribution.
 
-# THANKS
-
-Dave Cross for [WWW::MakeAShorterLink](https://metacpan.org/pod/WWW::MakeAShorterLink)
-
-Alex Page for the original LWP hacking on which Dave based his code.
-
-Simon Batistoni for giving the `makealongerlink` idea to Dave.
-
-Eric Hammond for writing the NotLong variant.
-
-Shashank Tripathi &lt;shank@shank.com> for providing both SnipURL.com and
-advice on the module.
-
-Kevin Gilbertson (Gilby) supplied information on the TinyURL API.
-
-Matt Felsen (mattf) wanted shorter function names.
-
-Ask Bjoern Hansen for providing both Metamark.net and advice on the
-module.
-
-Martin Thurn for helping me notice a bug and for a suggestion regarding
-`MASL.pm`.
-
-Jon and William (jon and wjr at smlnk.com respectively) for providing
-SmLnk.com.
-
-P J Goodwin for providing the code for [WWW::Shorten::OneShortLink](https://metacpan.org/pod/WWW::Shorten::OneShortLink).
-
-And especial thanks to all providers of these services.
-
 # LICENCE AND COPYRIGHT
-
-[WWW::Shorten::NotLong](https://metacpan.org/pod/WWW::Shorten::NotLong)
-copyright (c) Eric Hammond &lt;ehammond@thinksome.com>.
-
-Other modules copyright (c) Magnum Solutions Ltd., 2007. All rights
-reserved.
 
 This module is free software.  You can redistribute it and/or
 modify it under the terms of the Artistic License 2.0.
@@ -190,3 +91,10 @@ modify it under the terms of the Artistic License 2.0.
 This program is distributed in the hope that it will be useful,
 but without any warranty; without even the implied warranty of
 merchantability or fitness for a particular purpose.
+
+# SEE ALSO
+
+- [See Joshua Schachter's blog](http://joshua.schachter.org/2009/04/on-url-shorteners.html)
+- [shorlfilter](http://adam.rosi-kessel.org/weblog/2003/09/07/shorlfilter) by Addam Kessel
+- [CGI::Shorten](https://metacpan.org/pod/CGI::Shorten)
+- [WWW::Shorten::Simple](https://metacpan.org/pod/WWW::Shorten::Simple)

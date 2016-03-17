@@ -5,6 +5,8 @@ Revision history for {{$dist->name}}
     - added author tests
     - Cleaned up documentation
     - Cleaned up Changes file
+    - added deprecation notices
+    - Cleaned up the Readme.md quite a bit
 
 3.08    2015-12-15
     - Dave Cross (DAVECROSS)
