@@ -46,6 +46,8 @@ gives you a shortened version of it.
 Please submit any [issues](https://github.com/p5-shorten/www-shorten/issues) you
 might have.  We appreciate all help, suggestions, noted problems, and especially patches.
 
+Note that support for extra shortening services should be released as separate modules, like [WWW::Shorten::Googl](https://metacpan.org/pod/WWW::Shorten::Googl) or [WWW::Shorten::Bitly](https://metacpan.org/pod/WWW::Shorten::Bitly).
+
 Support for this module is supplied primarily via the using the
 [GitHub Issues](https://github.com/p5-shorten/www-shorten/issues) but we also
 happily respond to issues submitted to the
