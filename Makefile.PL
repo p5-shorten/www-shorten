@@ -27,7 +27,6 @@ my %WriteMakefileArgs = (
     "LWP::UserAgent" => "2.023",
     "Try::Tiny" => 0,
     "URI" => "1.27",
-    "WWW::Shorten" => "3.08",
     "strict" => 0,
     "warnings" => 0
   },
@@ -36,7 +35,7 @@ my %WriteMakefileArgs = (
   },
   "VERSION" => "3.090",
   "test" => {
-    "TESTS" => "'t/*.t xt/author/*.t xt/release/*.t xt/smoke/*.t'"
+    "TESTS" => "t/*.t"
   }
 );
 
@@ -47,7 +46,6 @@ my %FallbackPrereqs = (
   "Test::More" => "0.88",
   "Try::Tiny" => 0,
   "URI" => "1.27",
-  "WWW::Shorten" => "3.08",
   "strict" => 0,
   "warnings" => 0
 );

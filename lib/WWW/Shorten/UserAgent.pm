@@ -64,6 +64,20 @@ Makes an HTTP GET request and throws an exception on error.
 
 Makes an HTTP POST request and throws an exception on error.
 
+=head1 AUTHOR
+
+Dave Cross <dave@mag-sol.com>
+
+=head1 CONTRIBUTORS
+
+=over
+
+=item *
+
+Chase Whitener C<capoeirab@cpan.org>
+
+=back
+
 =head1 LICENSE AND COPYRIGHT
 
 Copyright (c) Magnum Solutions Ltd., 2012. All rights reserved.
@@ -74,9 +88,5 @@ modify it under the terms of the Artistic License 2.0.
 This program is distributed in the hope that it will be useful,
 but without any warranty; without even the implied warranty of
 merchantability or fitness for a particular purpose.
-
-=head1 AUTHOR
-
-Dave Cross <dave@mag-sol.com>
 
 =cut

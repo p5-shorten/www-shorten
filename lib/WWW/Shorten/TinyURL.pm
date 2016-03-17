@@ -123,6 +123,6 @@ Iain Truskett <spoon@cpan.org>
 
 =head1 SEE ALSO
 
-L<WWW::Shorten>, L<perl>, L<http://tinyurl.com/>
+L<WWW::Shorten>, L<http://tinyurl.com/>
 
 =cut

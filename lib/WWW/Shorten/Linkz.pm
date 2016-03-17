@@ -96,8 +96,22 @@ See the main L<WWW::Shorten> docs.
 
 Iain Truskett <spoon@cpan.org>
 
+=head1 CONTRIBUTORS
+
+=over
+
+=item *
+
+Chase Whitener C<capoeirab@cpan.org>
+
+=item *
+
+Dave Cross C<dave@perlhacks.com>
+
+=back
+
 =head1 SEE ALSO
 
-L<WWW::Shorten>, L<perl>, L<http://lin.kz/>
+L<WWW::Shorten>, L<http://lin.kz/>
 
 =cut

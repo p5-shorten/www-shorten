@@ -1,6 +1,6 @@
 # NAME
 
-WWW::Shorten - Interface to URL shortening sites.
+WWW::Shorten - Perl Interface to services to shorten URLs
 [![Build Status](https://travis-ci.org/p5-shorten/www-shorten.svg?branch=master)](https://travis-ci.org/p5-shorten/www-shorten)
 
 # SYNOPSIS
@@ -15,8 +15,7 @@ use WWW::Shorten 'TinyURL'; # Recommended
 # use WWW::Shorten 'Shorl';
 
 # Individual modules have have their own syntactic variations.
-# See the documentation for the particular module you intend to use for
-#  details, trips and traps.
+# See the documentation for the particular module you intend to use for details
 
 my $url = 'https://metacpan.org/pod/WWW::Shorten';
 my $short_url = makeashorterlink($url);
@@ -75,6 +74,7 @@ Iain Truskett spoon@cpan.org
 - Martin Thurn -- bug fixes
 - Jon and William (wjr) -- smlnk services
 - PJ Goodwin -- code for [WWW::Shorten::OneShortLink](https://metacpan.org/pod/WWW::Shorten::OneShortLink)
+- Kazuhiro Osawa yappo@cpan.org
 - Chase Whitener capoeirab@cpan.org
 - Everyone else we might have missed.
 
@@ -94,7 +94,5 @@ merchantability or fitness for a particular purpose.
 
 # SEE ALSO
 
-- [See Joshua Schachter's blog](http://joshua.schachter.org/2009/04/on-url-shorteners.html)
-- [shorlfilter](http://adam.rosi-kessel.org/weblog/2003/09/07/shorlfilter) by Addam Kessel
 - [CGI::Shorten](https://metacpan.org/pod/CGI::Shorten)
 - [WWW::Shorten::Simple](https://metacpan.org/pod/WWW::Shorten::Simple)

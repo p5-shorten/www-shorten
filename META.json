@@ -4,7 +4,7 @@
       "Iain Truskett <spoon@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.043, CPAN::Meta::Converter version 2.150001",
+   "generated_by" : "Dist::Zilla version 5.043, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -40,7 +40,6 @@
             "LWP::UserAgent" : "2.023",
             "Try::Tiny" : "0",
             "URI" : "1.27",
-            "WWW::Shorten" : "3.08",
             "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
