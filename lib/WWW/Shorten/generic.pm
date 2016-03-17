@@ -7,7 +7,7 @@ use warnings;
 use Carp ();
 use WWW::Shorten::UserAgent;
 
-our $VERSION = '3.090';
+our $VERSION = '3.091';
 $VERSION = eval $VERSION;
 
 my %name_sets = (

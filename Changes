@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+3.090     2016-03-16
     - changed to Dist::Zilla
     - added author tests
     - Cleaned up documentation

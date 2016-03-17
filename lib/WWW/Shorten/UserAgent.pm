@@ -5,6 +5,9 @@ use warnings;
 
 use base 'LWP::UserAgent';
 
+our $VERSION = '3.091';
+$VERSION = eval $VERSION;
+
 sub get {
     my $self = shift;
     my $resp = $self->SUPER::get(@_);

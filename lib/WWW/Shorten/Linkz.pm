@@ -8,7 +8,7 @@ use base qw( WWW::Shorten::generic Exporter );
 use Carp ();
 
 our @EXPORT  = qw(makeashorterlink makealongerlink);
-our $VERSION = '3.090';
+our $VERSION = '3.091';
 $VERSION = eval $VERSION;
 
 

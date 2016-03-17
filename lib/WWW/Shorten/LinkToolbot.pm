@@ -3,7 +3,7 @@ package WWW::Shorten::LinkToolbot;
 use strict;
 use warnings;
 
-our $VERSION = '3.090';
+our $VERSION = '3.091';
 $VERSION = eval $VERSION;
 
 require WWW::Shorten::_dead;
