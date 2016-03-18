@@ -9,16 +9,14 @@ use utf8;
 
 # modernize Getopt::Long
 Getopt::Long::Configure(qw(default gnu_getopt no_auto_abbrev no_ignore_case));
-GetOptions(
-    's|service=s' => \my $service,
-    'l'  => \my $long,
-);
+GetOptions('s|service=s' => \my $service, 'l' => \my $long,);
 
 # eval in case we don't have Config::Auto installed
 my $config = try {
     require Config::Auto;
     return Config::Auto::parse();
-} catch {
+}
+catch {
     warn "You must have Config::Auto in order to use a config file\n"
         unless $_ =~ /No config file/;
     {};
@@ -32,13 +30,15 @@ $service = "WWW::Shorten::$service" unless $service =~ /^WWW::Shorten/;
 try {
     (my $mod = $service) =~ s/::/\//g;
     require "$mod.pm";
-} catch {
+}
+catch {
     die "Error trying to use $service: $_\n";
 };
 
 # determine the method to use;
 my $method = $long ? 'makealongerlink' : 'makeashorterlink';
-die "Sorry, $service can't $method\n" unless (my $call = $service->can($method));
+die "Sorry, $service can't $method\n"
+    unless (my $call = $service->can($method));
 
 # Get argument
 my $url = shift(@ARGV) || '';
