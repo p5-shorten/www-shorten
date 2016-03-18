@@ -11,7 +11,7 @@ use utf8;
 Getopt::Long::Configure(qw(default gnu_getopt no_auto_abbrev no_ignore_case));
 GetOptions(
     's|service=s' => \my $service,
-    'l|longer'  => \my $long,
+    'l'  => \my $long,
 );
 
 # eval in case we don't have Config::Auto installed
@@ -19,7 +19,7 @@ my $config = try {
     require Config::Auto;
     return Config::Auto::parse();
 } catch {
-    warn "You must have Config::Auto in order to use a config file"
+    warn "You must have Config::Auto in order to use a config file\n"
         unless $_ =~ /No config file/;
     {};
 };
@@ -33,30 +33,29 @@ try {
     (my $mod = $service) =~ s/::/\//g;
     require "$mod.pm";
 } catch {
-    warn "Error trying to use $service: $_";
-    exit(1);
+    die "Error trying to use $service: $_\n";
 };
 
-# Get argument
-die "No URL specified!\n" unless @ARGV;
-my $url = $ARGV[0];
-$url = "http://$url" unless $url =~ m[^\w+://];
+# determine the method to use;
+my $method = $long ? 'makealongerlink' : 'makeashorterlink';
+die "Sorry, $service can't $method\n" unless (my $call = $service->can($method));
 
-# Convert
-my $method = 'makeashorterlink';
-$method = 'makealongerlink' if ($long);
-die "Sorry, $service can't $method" unless (my $call = $service->can($method));
+# Get argument
+my $url = shift(@ARGV) || '';
+die "No URL specified!\n" unless $url;
+unless ($long) {
+    $url = "http://$url" unless $url =~ m[^\w+://];
+}
 
 my $out = try {
     $call->($url);
 }
 catch {
-    die "WHAT?!? $_";
+    die "Error: $_\n";
 };
 
-$out = $out || 'Error';
-
 # Output
+$out = $out || 'Error';
 print "$out\n";
 
 __END__
