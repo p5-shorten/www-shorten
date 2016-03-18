@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
     - Clear note about how to contribute other shorten services. Thanks, @ambs
+    - Updated shorten CLI app to add a lengthen option.  #9
+    - Pared down the requirements
 
 3.091     2016-03-17
     - Fixed typo on ::_dead (Thanks, @neilb)

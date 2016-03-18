@@ -1,32 +1,41 @@
-#!perl -w
+#!perl
+
+use 5.006;
 use strict;
 use warnings;
+use Getopt::Long 'GetOptions';
+use Try::Tiny qw(try catch);
+use utf8;
 
-use Getopt::Long;
+# modernize Getopt::Long
+Getopt::Long::Configure(qw(default gnu_getopt no_auto_abbrev no_ignore_case));
+GetOptions(
+    's|service=s' => \my $service,
+    'l|longer'  => \my $long,
+);
 
-my %args;
-GetOptions(\%args, 'service=s');
-
-# Determine our service, default is Metamark for no real reason
-my $config;
 # eval in case we don't have Config::Auto installed
-eval 'use Config::Auto 0.04';
+my $config = try {
+    require Config::Auto;
+    return Config::Auto::parse();
+} catch {
+    warn "You must have Config::Auto in order to use a config file"
+        unless $_ =~ /No config file/;
+    {};
+};
 
-unless ($@) {
-  # eval in case we don't have a config file
-  $config = eval 'Config::Auto::parse()';
-}
-
-my $service = $args{service} || $ENV{SHORTEN_SERVICE} ||
-              $config->{service} || 'TinyURL';
-$service = "WWW::Shorten::$service";
+# Determine our service, default is TinyURL
+$service = $service || $ENV{SHORTEN_SERVICE} || $config->{service} || 'TinyURL';
+$service = "WWW::Shorten::$service" unless $service =~ /^WWW::Shorten/;
 
 # Import it
-eval "require $service";
-if ($@) {
-    die "Invalid service in your configuration.\n";
-}
-$service->import('makeashorterlink');
+try {
+    (my $mod = $service) =~ s/::/\//g;
+    require "$mod.pm";
+} catch {
+    warn "Error trying to use $service: $_";
+    exit(1);
+};
 
 # Get argument
 die "No URL specified!\n" unless @ARGV;
@@ -34,8 +43,18 @@ my $url = $ARGV[0];
 $url = "http://$url" unless $url =~ m[^\w+://];
 
 # Convert
-my $out = eval 'makeashorterlink( $url )';
-$out = "Error" if $@ or not defined $out;
+my $method = 'makeashorterlink';
+$method = 'makealongerlink' if ($long);
+die "Sorry, $service can't $method" unless ($service && $service->can($method));
+
+my $out = try {
+    $service->can($method)->($url);
+}
+catch {
+    die "WHAT?!? $_";
+};
+
+$out = $out || 'Error';
 
 # Output
 print "$out\n";
@@ -66,13 +85,15 @@ shorten - CLI program to demonstrate use of WWW::Shorten
     $ shorten books.perl.org/book/171
     http://tinyurl.com/ye7gjf4
 
+    # Lengthen a URL
+    $ shorten -l http://tinyurl.com/ye7gjf4
 
 =head1 CONFIGURATION
 
 The service used can be controlled in various ways. The program will
 use the first of the following values that it finds:
 
-=over 4
+=over
 
 =item *
 
@@ -123,27 +144,33 @@ which is simple and works. C<service> is the only configuration keyword
 at present. Its value should be a correctly capitalized service name as
 per L<WWW::Shorten>'s documentation.
 
-=head1 BUGS, REQUESTS, COMMENTS
-
-Please report any requests, suggestions or bugs via the system at
-L<http://rt.cpan.org/>, or email E<lt>bug-WWW-Shorten@rt.cpan.orgE<gt>.
-This makes it much easier for me to track things and thus means
-your problem is less likely to be neglected.
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright E<copy> Magnum Solutions Ltd, 2002 - 2010. All rights reserved.
+Copyright 2002 - 2010, Magnum Solutions Ltd. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
-Dave Cross <dave@mag-sol.com>, taking over from
 Iain Truskett <spoon@cpan.org>
+
+=head1 CONTRIBUTORS
+
+=over
+
+=item *
+
+Chase Whitener C<capoeirab@cpan.org>
+
+=item *
+
+Dave Cross <davecross@cpan.org>
+
+=back
 
 =head1 SEE ALSO
 
-L<perl>
+L<WWW::Shorten>
 
 =cut

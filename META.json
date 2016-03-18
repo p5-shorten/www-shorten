@@ -36,10 +36,9 @@
       "runtime" : {
          "requires" : {
             "Carp" : "0",
-            "LWP" : "5.75",
-            "LWP::UserAgent" : "2.023",
-            "Try::Tiny" : "0",
-            "URI" : "1.27",
+            "Getopt::Long" : "2.4",
+            "LWP::UserAgent" : "5.835",
+            "Try::Tiny" : "0.24",
             "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
@@ -113,6 +112,7 @@
    "version" : "3.092",
    "x_contributors" : [
       "Alexandr Ciornii <chorny@cpan.org>",
+      "ambs <ambs@cpan.org>",
       "Chase Whitener <capoeirab@cpan.org>",
       "Dave Cross <davecross@cpan.org>",
       "Kazuhiro Osawa <yappo@cpan.org>",
