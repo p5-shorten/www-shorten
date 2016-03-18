@@ -45,10 +45,10 @@ $url = "http://$url" unless $url =~ m[^\w+://];
 # Convert
 my $method = 'makeashorterlink';
 $method = 'makealongerlink' if ($long);
-die "Sorry, $service can't $method" unless ($service && $service->can($method));
+die "Sorry, $service can't $method" unless (my $call = $service->can($method));
 
 my $out = try {
-    $service->can($method)->($url);
+    $call->($url);
 }
 catch {
     die "WHAT?!? $_";
