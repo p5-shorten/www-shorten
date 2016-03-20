@@ -3,7 +3,7 @@ package WWW::Shorten::_dead;
 use strict;
 use warnings;
 
-our $VERSION = '3.092';
+our $VERSION = '3.093';
 $VERSION = eval $VERSION;
 
 die <<'EOF';

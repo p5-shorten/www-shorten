@@ -5,7 +5,7 @@ use warnings;
 
 use base 'LWP::UserAgent';
 
-our $VERSION = '3.092';
+our $VERSION = '3.093';
 $VERSION = eval $VERSION;
 
 sub get {

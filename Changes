@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+3.092     2016-03-20
     - Clear note about how to contribute other shorten services. Thanks, @ambs
     - Updated shorten CLI app to add a lengthen option.  #9
     - Pared down the requirements
