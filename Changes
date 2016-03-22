@@ -2,6 +2,7 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
     - lin.kz no longer exists, so WWW::Shorten::Linkz is deprecated
+    - added deprecation/removal notices in accordance with issue #8
 
 3.092     2016-03-20
     - Clear note about how to contribute other shorten services. Thanks, @ambs

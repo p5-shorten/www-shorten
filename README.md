@@ -35,6 +35,21 @@ my $long_url = long_link( $short_url );
 A Perl interface to various services that shorten URLs. These sites maintain
 databases of long URLs, each of which has a unique identifier.
 
+# DEPRECATION NOTICE
+
+The following shorten services have been deprecated as the endpoints no longer
+exist or function:
+
+- WWW::Shorten::LinkToolbot
+- WWW::Shorten::Linkz
+- WWW::Shorten::MakeAShorterLink
+- WWW::Shorten::Metamark
+- WWW::Shorten::TinyClick
+- WWW::Shorten::Tinylink
+
+When version 3.100 is released, these deprecated services will not be part of
+the distribution.
+
 # COMMAND LINE PROGRAM
 
 A very simple program called `shorten` is supplied in the

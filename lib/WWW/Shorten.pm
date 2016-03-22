@@ -63,6 +63,42 @@ WWW::Shorten - Interface to URL shortening sites.
 A Perl interface to various services that shorten URLs. These sites maintain
 databases of long URLs, each of which has a unique identifier.
 
+# DEPRECATION NOTICE
+
+The following shorten services have been deprecated as the endpoints no longer
+exist or function:
+
+=over
+
+=item *
+
+L<WWW::Shorten::LinkToolbot>
+
+=item *
+
+L<WWW::Shorten::Linkz>
+
+=item *
+
+L<WWW::Shorten::MakeAShorterLink>
+
+=item *
+
+L<WWW::Shorten::Metamark>
+
+=item *
+
+L<WWW::Shorten::TinyClick>
+
+=item *
+
+L<WWW::Shorten::Tinylink>
+
+=back
+
+When version 3.100 is released, these deprecated services will not be part of
+the distribution.
+
 =head1 COMMAND LINE PROGRAM
 
 A very simple program called F<shorten> is supplied in the
