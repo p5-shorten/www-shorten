@@ -62,7 +62,8 @@
       },
       "WWW::Shorten::Linkz" : {
          "file" : "lib/WWW/Shorten/Linkz.pm",
-         "version" : "3.093"
+         "version" : "3.093",
+         "x_deprecated" : 1
       },
       "WWW::Shorten::MakeAShorterLink" : {
          "file" : "lib/WWW/Shorten/MakeAShorterLink.pm",
