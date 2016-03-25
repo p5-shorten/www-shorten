@@ -94,9 +94,17 @@ L<WWW::Shorten::TinyClick>
 
 L<WWW::Shorten::Tinylink>
 
+=item *
+
+L<WWW::Shorten::Qurl>
+
+=item *
+
+L<WWW::Shorten::Qwer>
+
 =back
 
-When version 3.100 is released, these deprecated services will not be part of
+When version C<3.100> is released, these deprecated services will not be part of
 the distribution.
 
 =head1 COMMAND LINE PROGRAM

@@ -46,6 +46,8 @@ exist or function:
 - WWW::Shorten::Metamark
 - WWW::Shorten::TinyClick
 - WWW::Shorten::Tinylink
+- WWW::Shorten::Qurl
+- WWW::Shorten::Qwer
 
 When version 3.100 is released, these deprecated services will not be part of
 the distribution.
