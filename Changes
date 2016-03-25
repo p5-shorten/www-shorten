@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+3.093     2016-03-25
     - lin.kz no longer exists, so WWW::Shorten::Linkz is deprecated
     - added deprecation/removal notices in accordance with issue #8
     - Folded ::Qurl into the deprecated modules
