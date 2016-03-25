@@ -75,6 +75,16 @@
          "version" : "3.093",
          "x_deprecated" : 1
       },
+      "WWW::Shorten::Qurl" : {
+         "file" : "lib/WWW/Shorten/Qurl.pm",
+         "version" : "3.093",
+         "x_deprecated" : 1
+      },
+      "WWW::Shorten::Qwer" : {
+         "file" : "lib/WWW/Shorten/Qwer.pm",
+         "version" : "3.093",
+         "x_deprecated" : 1
+      },
       "WWW::Shorten::TinyClick" : {
          "file" : "lib/WWW/Shorten/TinyClick.pm",
          "version" : "3.093",
