@@ -63,7 +63,7 @@ WWW::Shorten - Interface to URL shortening sites.
 A Perl interface to various services that shorten URLs. These sites maintain
 databases of long URLs, each of which has a unique identifier.
 
-# DEPRECATION NOTICE
+=head1 DEPRECATION NOTICE
 
 The following shorten services have been deprecated as the endpoints no longer
 exist or function:
