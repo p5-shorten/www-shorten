@@ -1,6 +1,5 @@
 package WWW::Shorten::Metamark;
 
-use 5.006;
 use strict;
 use warnings;
 
