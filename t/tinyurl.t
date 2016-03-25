@@ -2,7 +2,9 @@ use strict;
 use warnings;
 use Try::Tiny qw(try catch);
 use WWW::Shorten::TinyURL;
-use Test::More tests => 6;
+use Test::More;
+
+BEGIN { $ENV{'WWW-SHORTEN-TESTING'} = 1; };
 
 my $url = 'https://metacpan.org/release/WWW-Shorten';
 my $prefix = 'http://tinyurl.com/';
@@ -14,17 +16,38 @@ my $prefix = 'http://tinyurl.com/';
 
     $err = try { makealongerlink(); } catch { $_ };
     ok($err, 'makealongerlink: proper error response');
+    $err = undef;
+
+    $err = makeashorterlink('http://www.google.com');
+    is($err, undef, 'makeashorterlink: proper error with wrong testing URL');
+    is($WWW::Shorten::TinyURL::_error_message, 'Incorrect URL for testing purposes', 'makeashorterlink: proper error message');
+    $err = undef;
+
+    $err = makealongerlink('http://www.google.com');
+    is($err, undef, 'makealongerlink: proper error with wrong testing URL');
+    is($WWW::Shorten::TinyURL::_error_message, 'Incorrect URL for testing purposes', 'makealongerlink: proper error message');
+    $err = undef;
 }
 
-my $return = makeashorterlink($url);
+# shorter
+my $code = '';
+my $short = makeashorterlink($url);
+is($WWW::Shorten::TinyURL::_error_message, '', 'makeashorterlink: no errors');
+if ($short && $short =~ /(\w+)$/) {
+    $code = $1;
+}
+is($short, 'http://tinyurl.com/abc12345', 'makeashorterlink: proper response');
+is($code, 'abc12345', 'makeashorterlink: proper code');
+is($short, $prefix.$code, 'makeashorterlink: URL exactly as we expected');
 
-ok($return, 'not a error') or diag $WWW::Shorten::TinyURL::_error_message;
-my ($code) = $return =~ /(\w+)$/;
-is ( makeashorterlink($url), $prefix.$code, 'make it shorter');
-# Slight pause to increase the chance that all of TinyURL's servers
-# know about the new link
-sleep(5);
-is ( makealongerlink($prefix.$code), $url, 'make it longer')
-    or diag $WWW::Shorten::TinyURL::_error_message;
-is ( makealongerlink($code), $url, 'make it longer by Id',)
-    or diag $WWW::Shorten::TinyURL::_error_message;
+# longer
+my $longer = makealongerlink($prefix.$code);
+is($WWW::Shorten::TinyURL::_error_message, '', 'makealongerlink: no errors');
+is($longer, $url, 'makealongerlink: proper response');
+
+$longer = undef;
+$longer = makealongerlink($code);
+is($WWW::Shorten::TinyURL::_error_message, '', 'makealongerlink: no errors');
+is($longer, $url, 'makealongerlink: proper response');
+
+done_testing();

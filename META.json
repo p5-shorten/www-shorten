@@ -39,7 +39,7 @@
             "Getopt::Long" : "2.4",
             "LWP::UserAgent" : "5.835",
             "Try::Tiny" : "0.24",
-            "perl" : "5.006",
+            "perl" : "5.008001",
             "strict" : "0",
             "warnings" : "0"
          }

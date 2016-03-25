@@ -5,6 +5,8 @@ Revision history for {{$dist->name}}
     - added deprecation/removal notices in accordance with issue #8
     - Folded ::Qurl into the deprecated modules
     - Folded ::Qwer into the deprecated modules
+    - Temporarily hault live testing against TinyURL with ugly hack
+    - Bump Perl requirement to 5.8.1
 
 3.092     2016-03-20
     - Clear note about how to contribute other shorten services. Thanks, @ambs
