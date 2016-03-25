@@ -41,8 +41,7 @@ WWW::Shorten - Interface to URL shortening sites.
   use warnings;
 
   use WWW::Shorten 'TinyURL'; # Recommended
-  # use WWW::Shorten 'Linkz'; # or one of the others
-  # use WWW::Shorten 'Shorl';
+  # use WWW::Shorten 'Bitly'; # or one of the others
 
   # Individual modules have have their own syntactic variations.
   # See the documentation for the particular module you intend to use for details
@@ -107,7 +106,7 @@ L<WWW::Shorten::Qwer>
 When version C<3.100> is released, these deprecated services will not be part of
 the distribution.
 
-=head1 COMMAND LINE PROGRAM
+=head1 SHORTEN APP
 
 A very simple program called F<shorten> is supplied in the
 distribution's F<bin> folder. This program takes a URL and
@@ -118,19 +117,10 @@ gives you a shortened version of it.
 Please submit any L<issues|https://github.com/p5-shorten/www-shorten/issues> you
 might have.  We appreciate all help, suggestions, noted problems, and especially patches.
 
-Note that support for extra shortening services should be released as separate modules,
-like L<WWW::Shorten::Googl> or L<WWW::Shorten::Bitly>.
-
-Support for this module is supplied primarily via the using the
-L<GitHub Issues|https://github.com/p5-shorten/www-shorten/issues> but we also
-happily respond to issues submitted to the
-L<CPAN RT|http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Shorten> system via the web
-or email: C<bug-www-shorten@rt.cpan.org>
-
-* https://github.com/p5-shorten/www-shorten/issues
-* http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-Shorten
-* ( shorter URL: http://xrl.us/rfb )
-* C<bug-www-shorten@rt.cpan.org>
+* If you know of a shorten service that we don't already have, make your own
+service and release it as a separate module, like L<WWW::Shorten::Googl> or
+L<WWW::Shorten::Bitly>.  Alternatively, you can let us know and we'll be happy
+to work it up for you.
 
 =head1 AUTHOR
 

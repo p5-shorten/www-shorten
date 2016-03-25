@@ -1,7 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
-    - fixed a pod error
+    - Fixed up some documentation issues.
+    - No longer reference deprecated services in the docs.
 
 3.093     2016-03-25
     - lin.kz no longer exists, so WWW::Shorten::Linkz is deprecated
