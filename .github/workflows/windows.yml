@@ -1,0 +1,44 @@
+name: windows
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+jobs:
+  perl:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        perl-version:
+          - '5.32'
+          # - '5.30'
+          # - '5.28'
+          # - '5.26'
+          # - '5.24'
+          # - '5.22'
+          # - '5.20'
+          # - '5.18'
+          # - '5.16'
+          - '5.14'
+    steps:
+      - name: Setup perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: ${{ matrix.perl-version }}
+          distribution: strawberry
+      - name: Set git to use LF
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
+      - uses: actions/checkout@v2
+      - name: perl -V
+        run: perl -V
+      - name: Ensure old Strawberries have a good toolchain
+        run: cpanm ExtUtils::Manifest App::cpanminus
+      - name: Install Dependencies
+        run: cpanm --installdeps .
+      - name: Run Tests
+        run: cpanm --test-only -v .

@@ -1,0 +1,42 @@
+name: linux
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+jobs:
+  perl:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        perl-version:
+          - '5.32'
+          # - '5.30'
+          # - '5.28'
+          # - '5.26'
+          # - '5.24'
+          # - '5.22'
+          # - '5.20'
+          - '5.18'
+          # - '5.16'
+          # - '5.14'
+          # - '5.12'
+          - '5.10'
+    container:
+      image: perl:${{ matrix.perl-version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: perl -V
+        run: perl -V
+      - name: Install Dependencies
+        run: cpanm -n --installdeps .
+      - name: Create a non-root user called "runner"
+        run: adduser --disabled-password --gecos '' runner
+      - name: Run Tests as non-root user "runner"
+        run: |
+          chown -R runner:runner .
+          runuser runner -c 'perl Makefile.PL'
+          runuser runner -c 'make'
+          runuser runner -c 'make test'
