@@ -1,3 +1,7 @@
+[![Actions Status](https://github.com/p5-shorten/www-shorten/workflows/linux/badge.svg)](https://github.com/p5-shorten/www-shorten/actions)
+[![Actions Status](https://github.com/p5-shorten/www-shorten/workflows/macos/badge.svg)](https://github.com/p5-shorten/www-shorten/actions)
+[![Actions Status](https://github.com/p5-shorten/www-shorten/workflows/windows/badge.svg)](https://github.com/p5-shorten/www-shorten/actions)
+
 # NAME
 
 WWW::Shorten - Interface to URL shortening sites.
