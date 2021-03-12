@@ -1,7 +1,10 @@
+[![Actions Status](https://github.com/p5-shorten/www-shorten/workflows/linux/badge.svg)](https://github.com/p5-shorten/www-shorten/actions)
+[![Actions Status](https://github.com/p5-shorten/www-shorten/workflows/macos/badge.svg)](https://github.com/p5-shorten/www-shorten/actions)
+[![Actions Status](https://github.com/p5-shorten/www-shorten/workflows/windows/badge.svg)](https://github.com/p5-shorten/www-shorten/actions)
+
 # NAME
 
-WWW::Shorten - Perl Interface to services to shorten URLs
-[![Build Status](https://travis-ci.org/p5-shorten/www-shorten.svg?branch=master)](https://travis-ci.org/p5-shorten/www-shorten)
+WWW::Shorten - Interface to URL shortening sites.
 
 # SYNOPSIS
 
@@ -19,7 +22,6 @@ use WWW::Shorten 'TinyURL'; # Recommended
 my $url = 'https://metacpan.org/pod/WWW::Shorten';
 my $short_url = makeashorterlink($url);
 my $long_url  = makealongerlink($short_url);
-
 
 # - OR -
 # If you don't like the long function names:
@@ -39,16 +41,16 @@ databases of long URLs, each of which has a unique identifier.
 The following shorten services have been deprecated as the endpoints no longer
 exist or function:
 
-- WWW::Shorten::LinkToolbot
-- WWW::Shorten::Linkz
-- WWW::Shorten::MakeAShorterLink
-- WWW::Shorten::Metamark
-- WWW::Shorten::TinyClick
-- WWW::Shorten::Tinylink
-- WWW::Shorten::Qurl
-- WWW::Shorten::Qwer
+- [WWW::Shorten::LinkToolbot](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ALinkToolbot)
+- [WWW::Shorten::Linkz](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ALinkz)
+- [WWW::Shorten::MakeAShorterLink](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3AMakeAShorterLink)
+- [WWW::Shorten::Metamark](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3AMetamark)
+- [WWW::Shorten::TinyClick](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ATinyClick)
+- [WWW::Shorten::Tinylink](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ATinylink)
+- [WWW::Shorten::Qurl](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3AQurl)
+- [WWW::Shorten::Qwer](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3AQwer)
 
-When version 3.100 is released, these deprecated services will not be part of
+When version `3.100` is released, these deprecated services will not be part of
 the distribution.
 
 # SHORTEN APP
@@ -57,36 +59,36 @@ A very simple program called `shorten` is supplied in the
 distribution's `bin` folder. This program takes a URL and
 gives you a shortened version of it.
 
-# ISSUES OR CONTRIBUTIONS
+# BUGS, REQUESTS, COMMENTS
 
 Please submit any [issues](https://github.com/p5-shorten/www-shorten/issues) you
 might have.  We appreciate all help, suggestions, noted problems, and especially patches.
 
-*  If you know of a shorten service that we don't already have, make your own
-service and release it as a separate module, like
-[WWW::Shorten::Googl](https://metacpan.org/pod/WWW::Shorten::Googl) or [WWW::Shorten::Bitly](https://metacpan.org/pod/WWW::Shorten::Bitly).
-Alternatively, you can let us know and we'll be happy to work it up for you.
+\* If you know of a shorten service that we don't already have, make your own
+service and release it as a separate module, like [WWW::Shorten::Googl](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3AGoogl) or
+[WWW::Shorten::Bitly](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ABitly).  Alternatively, you can let us know and we'll be happy
+to work it up for you.
 
 # AUTHOR
 
-Iain Truskett spoon@cpan.org
+Iain Truskett `spoon@cpan.org`
 
 # CONTRIBUTORS
 
 - Alex Page -- for the original LWP hacking on which Dave based his code.
-- Ask Bjoern Hansen -- providing [WWW::Shorten::Metamark](https://metacpan.org/pod/WWW::Shorten::Metamark)
-- Chase Whitener capoeirab@cpan.org
-- Dave Cross dave@perlhacks.com -- Authored WWW::MakeAShorterLink on which this was based
-- Eric Hammond -- writing [WWW::Shorten::NotLong](https://metacpan.org/pod/WWW::Shorten::NotLong)
+- Ask Bjoern Hansen -- providing [WWW::Shorten::Metamark](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3AMetamark)
+- Chase Whitener `capoeirab@cpan.org`
+- Dave Cross dave@perlhacks.com -- Authored [WWW::MakeAShorterLink](https://metacpan.org/pod/WWW%3A%3AMakeAShorterLink) on which this was based
+- Eric Hammond -- writing [WWW::Shorten::NotLong](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ANotLong)
 - Jon and William (wjr) -- smlnk services
-- Kazuhiro Osawa yappo@cpan.org
+- Kazuhiro Osawa `yappo@cpan.org`
 - Kevin Gilbertson (Gilby) -- TinyURL API information
 - Martin Thurn -- bug fixes
 - Matt Felsen (mattf) -- shorter function names
-- Neil Bowers neilb@cpan.org
-- PJ Goodwin -- code for [WWW::Shorten::OneShortLink](https://metacpan.org/pod/WWW::Shorten::OneShortLink)
-- Shashank Tripathi shank@shank.com -- for providing [WWW::Shorten::SnipURL](https://metacpan.org/pod/WWW::Shorten::SnipURL)
-- Simon Batistoni -- giving the `makealongerlink` idea to Dave.
+- Neil Bowers `neilb@cpan.org`
+- PJ Goodwin -- code for [WWW::Shorten::OneShortLink](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3AOneShortLink)
+- Shashank Tripathi `shank@shank.com` -- for providing [WWW::Shorten::SnipURL](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ASnipURL)
+- Simon Batistoni -- giving the \`makealongerlink\` idea to Dave.
 - Everyone else we might have missed.
 
 In 2004 Dave Cross took over the maintenance of this distribution
@@ -94,7 +96,7 @@ following the death of Iain Truskett.
 
 In 2016, Chase Whitener took over the maintenance of this distribution.
 
-# LICENCE AND COPYRIGHT
+# LICENSE AND COPYRIGHT
 
 Copyright (c) 2002 by Iain Truskett.
 
@@ -102,5 +104,4 @@ This library is free software; you can redistribute it and/or modify it under th
 
 # SEE ALSO
 
-- [CGI::Shorten](https://metacpan.org/pod/CGI::Shorten)
-- [WWW::Shorten::Simple](https://metacpan.org/pod/WWW::Shorten::Simple)
+[CGI::Shorten](https://metacpan.org/pod/CGI%3A%3AShorten), [WWW::Shorten::Simple](https://metacpan.org/pod/WWW%3A%3AShorten%3A%3ASimple)
