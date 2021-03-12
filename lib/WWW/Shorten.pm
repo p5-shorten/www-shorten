@@ -9,8 +9,7 @@ use Carp ();
 
 our $DEFAULT_SERVICE = 'TinyURL';
 our @EXPORT          = qw(makeashorterlink makealongerlink);
-our $VERSION         = '3.094';
-$VERSION = eval $VERSION;
+our $VERSION = '3.095';
 
 my $style;
 
