@@ -41,7 +41,7 @@ sub makeashorterlink {
         }
         return undef;
     }
-    if ($resp->content =~ m!(\Qhttps://tinyurl.com/\E\w+)!x) {
+    if ($resp->content =~ m!(https?\Q://tinyurl.com/\E\w+)!x) {
         return $1;
     }
     return;
@@ -52,7 +52,7 @@ sub makealongerlink {
         or Carp::croak('No TinyURL key / URL passed to makealongerlink');
     $_error_message = '';
     $url = "https://tinyurl.com/$url"
-        unless $url =~ m!^https://!i;
+        unless $url =~ m!^https?://!i;
 
     # terrible, bad!  skip live testing for now.
     if ( $ENV{'WWW-SHORTEN-TESTING'} ) {
