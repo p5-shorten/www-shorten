@@ -6,7 +6,7 @@ use warnings;
 use Carp ();
 use WWW::Shorten::UserAgent;
 
-our $VERSION = '3.095';
+our $VERSION = '3.096';
 
 my %name_sets = (
     default => [qw( makeashorterlink makealongerlink )],

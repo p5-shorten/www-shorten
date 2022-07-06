@@ -7,7 +7,7 @@ use Getopt::Long 'GetOptions';
 use Try::Tiny qw(try catch);
 use utf8;
 
-our $VERSION = '3.095';
+our $VERSION = '3.096';
 
 
 # modernize Getopt::Long
