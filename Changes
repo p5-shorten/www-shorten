@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+3.035     2022-07-06
+    - Handle both https and http from TinyURL
+
 3.094     2021-03-12
     - Fixed up some documentation issues.
     - No longer reference deprecated services in the docs.
