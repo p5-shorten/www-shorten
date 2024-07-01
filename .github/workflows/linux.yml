@@ -12,11 +12,12 @@ jobs:
     strategy:
       matrix:
         perl-version:
+          - '5.40'
           - '5.38'
           - '5.18'
           - '5.10'
     container:
-      image: perl:${{ matrix.perl-version }}
+      image: perl:${{ matrix.perl-version }}-buster
     steps:
       - uses: actions/checkout@v4
       - name: perl -V

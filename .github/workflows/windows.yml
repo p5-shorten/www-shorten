@@ -13,6 +13,7 @@ jobs:
       fail-fast: true
       matrix:
         perl-version:
+          # - '5.40' Not yet for windows.
           - '5.38'
           - '5.14'
     steps:
