@@ -24,7 +24,7 @@ see L<WWW::Shorten> instead.
 
 =head1 AUTHOR
 
-Dave Cross C<davecross@cpan.org>
+Dave Cross C<dave@perlhacks.com>
 
 =head1 CONTRIBUTORS
 
